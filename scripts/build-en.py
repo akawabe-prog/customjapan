@@ -56,7 +56,7 @@ def chrome(page, title, desc, body, header_solid=True, with_loader=False):
   <nav class="header__nav">
 {nav}
     <a href="../{page}" class="header__lang">日本語</a>
-    <a href="https://recruit.customjapan.jp/" target="_blank" rel="noopener" class="header__recruit">
+    <a href="../recruit/index.html" class="header__recruit">
       <span class="header__recruit-en">RECRUIT</span>
       <span class="header__recruit-jp">JP ONLY</span>
     </a>
@@ -68,7 +68,7 @@ def chrome(page, title, desc, body, header_solid=True, with_loader=False):
   <nav>
 {mnav}
     <a href="../{page}">日本語</a>
-    <a href="https://recruit.customjapan.jp/" target="_blank" rel="noopener" class="mobile-menu__recruit">RECRUIT (JP)</a>
+    <a href="../recruit/index.html" class="mobile-menu__recruit">RECRUIT (JP)</a>
   </nav>
 </div>
 
@@ -301,7 +301,7 @@ INDEX_BODY = """
     <p class="sec-label sec-label--light reveal">RECRUIT</p>
     <h2 class="recruit__title reveal">Join us in crafting<br>the future of riding.</h2>
     <p class="recruit__lead reveal">Product development, marketing, ICT and logistics — in Osaka, Japan.<br>(Recruiting site is in Japanese)</p>
-    <a href="https://recruit.customjapan.jp/" target="_blank" rel="noopener" class="btn-solid reveal">Careers (JP)</a>
+    <a href="../recruit/index.html" class="btn-solid reveal">Careers (JP)</a>
   </div>
 </section>"""
 

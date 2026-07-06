@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Global Talent | Custom Japan Co., Ltd. RECRUIT</title>
+<meta name="description" content="At Custom Japan, staff from overseas thrive at the front line of product development and global business. Bring your language and experience to Japan's mobility business. (Applying requires JLPT N1.)">
+<link rel="icon" href="../../assets/logo/cj-mascot.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+.gl-hero{
+  position:relative;background:linear-gradient(120deg,var(--c-blue),#002d5c);color:#fff;
+  padding:20vh 0 9vh;overflow:hidden;
+}
+.gl-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.gl-hero::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(0,45,92,.94) 0%,rgba(0,45,92,.68) 48%,rgba(0,45,92,.24) 100%);
+  pointer-events:none;
+}
+.gl-hero::after{
+  content:"";position:absolute;right:-10%;top:-40%;width:60%;aspect-ratio:1;z-index:1;
+  background:radial-gradient(circle,rgba(255,255,255,.14),transparent 68%);pointer-events:none;
+}
+.gl-hero .inner{position:relative;z-index:2}
+.gl-hero__label{font-family:var(--font-en);font-weight:800;font-size:12px;letter-spacing:.4em;color:#9cc4ff;margin-bottom:20px}
+.gl-hero__title{font-size:clamp(28px,5vw,58px);font-weight:900;line-height:1.5;letter-spacing:.04em}
+.gl-hero__lead{margin-top:18px;color:rgba(255,255,255,.88);font-size:clamp(13px,1.5vw,15.5px);line-height:2.1}
+.gl-note{
+  display:inline-block;margin-top:22px;font-size:11.5px;color:#9cc4ff;
+  border:1px solid rgba(156,196,255,.5);border-radius:100px;padding:6px 18px;
+}
+.gl-video{max-width:900px;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(13,15,18,.16);background:#000}
+.gl-video video{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+.gl-points{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:768px){.gl-points{grid-template-columns:1fr}}
+.gl-point{border:1px solid var(--c-line);border-radius:16px;padding:32px 30px;background:var(--c-white)}
+.gl-point b{font-family:var(--font-en);font-weight:800;font-size:12px;color:var(--c-blue);letter-spacing:.2em;display:block;margin-bottom:12px}
+.gl-point h3{font-size:16px;font-weight:900;margin-bottom:10px;line-height:1.7}
+.gl-point p{font-size:12.5px;color:#3c4149;line-height:2}
+.gl-steps{max-width:760px;counter-reset:st}
+.gl-steps li{
+  display:flex;gap:20px;align-items:baseline;padding:20px 6px;border-bottom:1px solid var(--c-line);
+  font-size:14px;font-weight:500;line-height:1.9;
+}
+.gl-steps li::before{
+  counter-increment:st;content:counter(st);
+  font-family:var(--font-en);font-weight:800;font-size:15px;color:#fff;background:var(--c-blue);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transform:translateY(4px);
+}
+.gl-steps li small{display:block;font-size:11.5px;color:var(--c-gray);font-weight:400}
+</style>
+<link rel="canonical" href="https://customjapan.jp/recruit/en/global.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Custom Japan Co., Ltd.">
+<meta property="og:locale" content="en_US"><meta property="og:title" content="For Global Talent | Custom Japan Co., Ltd.">
+<meta property="og:description" content="Bring your language and experience to Japan's mobility business."><meta property="og:url" content="https://customjapan.jp/recruit/en/global.html">
+<meta property="og:image" content="https://customjapan.jp/assets/img/recruit-work-catalog.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ja" href="https://customjapan.jp/recruit/global.html"><link rel="alternate" hreflang="en" href="https://customjapan.jp/recruit/en/global.html"><link rel="alternate" hreflang="x-default" href="https://customjapan.jp/recruit/global.html">
+</head>
+<body>
+<header class="header header--solid" id="header">
+  <a href="index.html" class="header__logo">
+    <img src="../../assets/logo/cj-logo-white-text.svg" alt="" class="header__logo-white" aria-hidden="true">
+    <img src="../../assets/logo/cj-logo-black-text.svg" alt="Custom Japan Co., Ltd." class="header__logo-color">
+  </a>
+  <nav class="header__nav">
+    <a href="index.html">RECRUIT TOP</a><a href="index.html#jobs">JOBS</a><a href="index.html#people">PEOPLE</a><a href="index.html#benefits">BENEFITS</a>
+    <a href="../global.html" class="header__lang">日本語</a>
+    <a href="index.html#entry" class="header__recruit"><span class="header__recruit-en">ENTRY</span><span class="header__recruit-jp">Apply</span></a>
+  </nav>
+  <button class="header__menu-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobileMenu"><nav>
+  <a href="index.html">RECRUIT TOP</a><a href="index.html#jobs">JOBS</a><a href="index.html#people">PEOPLE</a><a href="index.html#benefits">BENEFITS</a>
+  <a href="../global.html">日本語</a><a href="index.html#entry" class="mobile-menu__recruit">ENTRY — Apply</a>
+</nav></div>
+<button class="mascot-top" id="mascotTop" aria-label="Back to top"><img src="../../assets/logo/cj-mascot.svg" alt=""><span>TOP</span></button>
+<main>
+<section class="gl-hero">
+  <div class="inner">
+    <p class="gl-hero__label">FOR GLOBAL TALENT</p>
+    <h1 class="gl-hero__title">Bring your language and experience<br>to Japan's mobility business.</h1>
+    <p class="gl-hero__lead">Members from many countries work at Custom Japan.<br class="pc">Our product development and global business teams trade overseas every day. We need your strength.</p>
+    <span class="gl-note">Applying requires JLPT N1 (business-level Japanese).</span>
+  </div>
+</section>
+<div class="crumb"><a href="../../en/index.html">Corporate</a><span>/</span><a href="index.html">Careers</a><span>/</span>For Global Talent</div>
+
+<section class="page-section">
+  <div class="inner">
+    <p class="sec-label reveal">INTERVIEW MOVIE</p>
+    <h2 class="sec-title sec-title--sm reveal">A message from our team</h2>
+    <p class="sec-lead reveal">Hear from colleagues who work here every day. See who they are and how it feels to work at Custom Japan.</p>
+    <div class="gl-video reveal">
+      <video src="../../assets/video/interview-global.mp4" poster="../../assets/img/iv-global-poster.jpg" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</section>
+
+<section class="page-section page-section--off">
+  <div class="inner">
+    <p class="sec-label reveal">WHY GLOBAL TALENT</p>
+    <h2 class="sec-title sec-title--sm reveal">Three reasons your strength shines</h2>
+    <div class="gl-points">
+      <div class="gl-point reveal"><b>REASON 01</b><h3>Overseas trade, every day</h3><p>We source products from makers worldwide — China, Taiwan, Vietnam, Cambodia, the Philippines, Indonesia, Europe. Knowing a partner country's language and culture is itself a major strength.</p></div>
+      <div class="gl-point reveal"><b>REASON 02</b><h3>Mother tongue + Japanese widens your career</h3><p>Overseas buyers negotiate with local makers; the global business team opens ASEAN markets. Work that "Japanese-only" or "mother-tongue-only" can't do exists here. You work as a business owner, not an interpreter.</p></div>
+      <div class="gl-point reveal"><b>REASON 03</b><h3>Already a multinational team</h3><p>Staff from overseas are active at the front line of product development and global trade. This isn't a workplace with "just one foreigner." A place where those who can both debate in Japanese and connect to the world in their mother tongue can shine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="inner">
+    <p class="sec-label reveal">POSITIONS</p>
+    <h2 class="sec-title sec-title--sm reveal">Especially welcome positions</h2>
+    <div class="gl-points">
+      <div class="gl-point reveal"><b>GLOBAL BUYER</b><h3>Overseas Buyer (Development, Buying)</h3><p>Find products around the world and sell them in Japan. Negotiate with overseas makers, check quality and plan products. You may travel to overseas shows and factories.</p></div>
+      <div class="gl-point reveal"><b>GLOBAL BUSINESS</b><h3>Global Business (Sales & Development)</h3><p>Build new business in Vietnam, Cambodia, the Philippines, Indonesia, China and Taiwan. Find distributors, build cross-border EC and more.</p></div>
+      <div class="gl-point reveal"><b>AND MORE</b><h3>All positions are open</h3><p>You can apply to any role — marketing, engineering, EC operations and more. No restriction by nationality. <a href="index.html#jobs" style="color:var(--c-blue);text-decoration:underline">See our work</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section page-section--off">
+  <div class="inner">
+    <p class="sec-label reveal">Q&amp;A</p>
+    <h2 class="sec-title sec-title--sm reveal">Frequently asked questions</h2>
+    <div class="faq reveal" style="max-width:860px">
+      <details style="border-bottom:1px solid var(--c-line);padding:6px 4px"><summary style="cursor:pointer;font-weight:700;font-size:14.5px;padding:18px 0;list-style:none">How much Japanese do I need?</summary><p style="font-size:13px;color:#3c4149;padding:0 0 20px 0;line-height:2">JLPT N1 is required to apply. Internal communication and negotiations are mainly in Japanese, so we ask for business-level Japanese. On that basis, your mother tongue and overseas experience become strengths.</p></details>
+      <details style="border-bottom:1px solid var(--c-line);padding:6px 4px"><summary style="cursor:pointer;font-weight:700;font-size:14.5px;padding:18px 0;list-style:none">Can I ask about visa status?</summary><p style="font-size:13px;color:#3c4149;padding:0 0 20px 0;line-height:2">Yes. Tell us your current status and desired position, and let's discuss it at the interview. You can also ask by email (recruit@customjapan.jp).</p></details>
+      <details style="border-bottom:1px solid var(--c-line);padding:6px 4px"><summary style="cursor:pointer;font-weight:700;font-size:14.5px;padding:18px 0;list-style:none">How does selection work?</summary><p style="font-size:13px;color:#3c4149;padding:0 0 20px 0;line-height:2">About 2–4 weeks from application to offer. No restriction by education, gender or nationality. We ask for a resume in Japanese; if unsure, feel free to consult us.</p></details>
+      <details style="border-bottom:1px solid var(--c-line);padding:6px 4px"><summary style="cursor:pointer;font-weight:700;font-size:14.5px;padding:18px 0;list-style:none">Do I need to know cars or bikes?</summary><p style="font-size:13px;color:#3c4149;padding:0 0 20px 0;line-height:2">No. You'll learn naturally on the job. If you love vehicles or gadgets, all the better.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="inner">
+    <p class="sec-label reveal">HOW TO APPLY</p>
+    <h2 class="sec-title sec-title--sm reveal">How to apply</h2>
+    <ol class="gl-steps reveal">
+      <li><span>Apply from the entry form<small>Choose a position you're interested in on the Careers top.</small></span></li>
+      <li><span>Interview (online OK)<small>You can casually discuss Japanese level and visa status here.</small></span></li>
+      <li><span>Selection (about 2–4 weeks)<small>We look at your experience and potential.</small></span></li>
+      <li><span>Offer → Join<small>Three-month probation. Get up to speed comfortably through OJT.</small></span></li>
+    </ol>
+    <div class="reveal" style="margin-top:44px;display:flex;gap:16px;flex-wrap:wrap">
+      <a href="index.html#entry" class="btn-solid">Apply</a>
+      <a href="mailto:recruit@customjapan.jp" class="btn-line">Ask by email</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer__top">
+      <div class="footer__company">
+        <img src="../../assets/logo/cj-logo-white-text.svg" alt="CUSTOM JAPAN" class="footer__logo">
+        <p class="footer__address">Custom Japan Co., Ltd.<br>Nipponbashi Center Bldg. 6F, 2-9-16 Nipponbashi, Chuo-ku, Osaka 542-0073, Japan<br>Careers: recruit@customjapan.jp</p>
+      </div>
+      <nav class="footer__nav"><a href="index.html">RECRUIT TOP</a><a href="index.html#jobs">JOBS</a><a href="index.html#people">PEOPLE</a><a href="../global.html">日本語</a><a href="../../en/index.html">Corporate</a></nav>
+      <div class="footer__contact"><p>Apply here</p><a href="index.html#entry" class="btn-line btn-line--light">Entry form</a></div>
+    </div>
+    <p class="footer__copy">&copy; Custom Japan Co., Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+</main>
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/vendor/ScrollTrigger.min.js"></script>
+<script src="../../js/vendor/lenis.min.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

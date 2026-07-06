@@ -16,7 +16,7 @@ DIVISIONS = [
         "code": "R&D / BUYING",
         "jp": "商品開発・企画部門",
         "en": "PRODUCT DEVELOPMENT",
-        "img": "../../assets/img/recruit-work-product.jpg",
+        "img": "../../assets/img/recruit-division-product-hero.jpg",
         "global": True,
         "lead": "世界から商品を発掘し、日本のヒットを生む。次世代モビリティを、ゼロからつくる。",
         "body": "部品商社の枠を超え「企画から販売まで」を担うカスタムジャパンの心臓部です。世界中からバイク・自転車・自動車の部品や用品、工具、ケミカルを探し出し、商品化・仕入れ・販売までを一気通貫で手がけます。さらに、クルマやバイクの枠を超えた「まだ世の中にないモビリティ」の開発にも挑戦。海外との取引が多く、多国籍のメンバーが活躍している部門です。",
@@ -30,15 +30,15 @@ DIVISIONS = [
             ("海外バイヤー（商品開発・企画、仕入・品質管理）", "世界に眠る“まだ知られていない商品”を発掘し、日本のお客様へ届ける仕事。"),
             ("国内バイヤー（仕入・交渉・管理、販売企画）", "新規仕入先の開拓から販促・ブランディングまで、多くの判断と決断を担うバイヤー業務。"),
         ],
-        "interview": ("https://recruit.customjapan.jp/interview/6756", "INTERVIEW 04 — 次世代モビリティ / M.K."),
-        "interview2": ("https://recruit.customjapan.jp/interview/6796", "INTERVIEW 02 — 商品開発・企画 / Y.N."),
+        "interview": ("../index.html#people", "INTERVIEW 04 — 次世代モビリティ / M.K."),
+        "interview2": ("../index.html#people", "INTERVIEW 02 — 商品開発・企画 / Y.N."),
     },
     {
         "slug": "global",
         "code": "GLOBAL",
         "jp": "海外事業部",
         "en": "GLOBAL BUSINESS",
-        "img": "../../assets/img/world-ride.jpg",
+        "img": "../../assets/img/recruit-division-global-hero.jpg",
         "global": True,
         "lead": "アジア市場を舞台に、まだ正解のない事業を、自分の手で形にする。",
         "body": "ASEANを中心とした海外市場で新たな事業機会を創出し、グループの成長を推進する部門です。ベトナム・カンボジア・フィリピン・インドネシア、そして中国・台湾を対象に、海外メーカーや代理店、販売店との関係を築きます。代理店営業や販路開拓だけでなく、越境ECやデジタルマーケティングなど新しい販売チャネルの構築にも挑戦。市場調査から商品企画、ブランド展開、販売戦略の立案まで幅広く関わります。",
@@ -50,7 +50,7 @@ DIVISIONS = [
         "positions": [
             ("海外事業部（海外営業・事業開発）", "ASEAN・中国・台湾での代理店開拓、越境EC構築、市場調査から販売戦略立案まで。"),
         ],
-        "interview": ("https://recruit.customjapan.jp/interview/6605", "INTERVIEW 07 — 商品開発・企画 / S.Y."),
+        "interview": ("../index.html#people", "INTERVIEW 07 — 商品開発・企画 / S.Y."),
         "interview2": None,
     },
     {
@@ -58,7 +58,7 @@ DIVISIONS = [
         "code": "MARKETING",
         "jp": "マーケティング部門",
         "en": "MARKETING",
-        "img": "../../assets/img/iv-06.jpg",
+        "img": "../../assets/img/recruit-division-marketing-hero.jpg",
         "global": False,
         "lead": "13万人の会員と50万SKU。データを起点に、EC事業の成長を牽引する。",
         "body": "BtoB/BtoC向けに自社ECサイトや通販モールの運営、紙カタログやDMを活用したマーケティングを推進しています。基幹システムから取得したデータを活用し、BIツールによるデータ分析基盤を整備。今後はMAツールを使ったシナリオマーケティングを導入し、データを起点とした顧客体験の最適化を目指しています。",
@@ -71,7 +71,7 @@ DIVISIONS = [
             ("BtoB/BtoC マーケティング・プロモーションプランナー", "ECサイト・通販モール・紙カタログ/DMの運営と、データドリブンな施策設計。"),
             ("ECサイトの受発注オペレーター", "注文処理・発送手配・問い合わせ対応に加え、スタッフマネジメントも担う運営職。"),
         ],
-        "interview": ("https://recruit.customjapan.jp/interview/6125", "INTERVIEW 06 — マーケティングB2C / A.H."),
+        "interview": ("../index.html#people", "INTERVIEW 06 — マーケティングB2C / A.H."),
         "interview2": None,
     },
     {
@@ -79,7 +79,7 @@ DIVISIONS = [
         "code": "ENGINEERING",
         "jp": "ICT・エンジニアリング部門",
         "en": "ICT & ENGINEERING",
-        "img": "../../assets/img/iv-07.jpg",
+        "img": "../../assets/img/recruit-division-ict-hero.jpg",
         "global": False,
         "lead": "“最もレガシーな乗り物業界”で、世界一のECサービスをつくる。",
         "body": "バイク業界は“最もレガシーな乗り物業界”とも言われますが、私たちはそこで最先端の開発に挑戦しています。その代表例が、世界最大級のバイク適合データベースを元にした「バイク適合検索」。半世紀以上にわたり積み重ねた部品販売と適合情報をもとに、どのパーツがどのバイクに合うのかを瞬時に検索できる仕組みを実現しました。最先端のヘッドレスECシステムを自社構築し、No.1専門ECサイトへの挑戦を進めています。",
@@ -92,7 +92,7 @@ DIVISIONS = [
             ("フロントエンド・クラウドエンジニア", "世界最大級のバイク適合DBとヘッドレスECを自社開発するエンジニア。"),
             ("社内SE・情報システム管理", "社内システム・ネットワークの構築と改善で、全部門の業務を支える。"),
         ],
-        "interview": ("https://recruit.customjapan.jp/interview/1014", "INTERVIEW 05 — ICT / T.S."),
+        "interview": ("../index.html#people", "INTERVIEW 05 — ICT / T.S."),
         "interview2": None,
     },
     {
@@ -100,7 +100,7 @@ DIVISIONS = [
         "code": "LOGISTICS",
         "jp": "SCM・フルフィルメント部門",
         "en": "SCM & FULFILLMENT",
-        "img": "../../assets/img/iv-01.jpg",
+        "img": "../../assets/img/recruit-division-scm-hero.jpg",
         "global": False,
         "lead": "当日出荷を支える、物流の心臓部。現場の声を、仕組みに変える。",
         "body": "国内外の物流拠点と自社システムでサプライチェーン全体をコントロールし、在庫品の当日出荷を実現しています。85万点の商品を、確実に・スムーズにお客様へ届ける——プロの調達を止めないための、事業の根幹を担う部門です。現場で気づいた改善点が、そのまま全社の仕組みになっていくダイナミズムがあります。",
@@ -112,15 +112,15 @@ DIVISIONS = [
         "positions": [
             ("物流オペレーター", "ロジスティクスセンターで当日出荷を支える現場職。改善提案が仕組みになります。"),
         ],
-        "interview": ("https://recruit.customjapan.jp/interview/6820", "INTERVIEW 01 — SCMフルフィルメント / K.I."),
-        "interview2": ("https://recruit.customjapan.jp/interview/6769", "INTERVIEW 03 — SCMフルフィルメント / N.T."),
+        "interview": ("../index.html#people", "INTERVIEW 01 — SCMフルフィルメント / K.I."),
+        "interview2": ("../index.html#people", "INTERVIEW 03 — SCMフルフィルメント / N.T."),
     },
     {
         "slug": "corporate",
         "code": "CORPORATE",
         "jp": "コーポレート部門",
         "en": "CORPORATE",
-        "img": "../../assets/img/recruit-office-2.jpg",
+        "img": "../../assets/img/recruit-division-corporate-hero.jpg",
         "global": False,
         "lead": "成長する会社の、土台をつくる。制度づくりから携われるフェーズ。",
         "body": "経理・総務・人事として、会社の成長を足元から支える部門です。創業20年・社員107名、いままさに事業を拡大しているフェーズだからこそ、既存業務を回すだけでなく、制度や仕組みそのものを一緒につくっていく面白さがあります。挑戦を続ける現場を、安心して働ける環境で支える役割です。",
@@ -231,6 +231,7 @@ def page(d, others):
   </a>
   <nav class="header__nav">
 {nav}
+    <a href="../en/division/{d['slug']}.html" class="header__lang">EN</a>
     <a href="../index.html#entry" class="header__recruit">
       <span class="header__recruit-en">ENTRY</span>
       <span class="header__recruit-jp">応募する</span>
@@ -242,6 +243,7 @@ def page(d, others):
 <div class="mobile-menu" id="mobileMenu">
   <nav>
 {nav}
+    <a href="../en/division/{d['slug']}.html">EN — English</a>
     <a href="../index.html#entry" class="mobile-menu__recruit">ENTRY — 応募する</a>
   </nav>
 </div>

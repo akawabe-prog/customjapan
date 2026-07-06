@@ -23,4 +23,12 @@
   <url><loc>https://customjapan.jp/recruit/division/scm.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://customjapan.jp/recruit/global.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://customjapan.jp/recruit/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/global.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/corporate.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/global.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/ict.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/marketing.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/product.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://customjapan.jp/recruit/en/division/scm.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
