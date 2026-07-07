@@ -45,6 +45,9 @@ def chrome(page, title, desc, body, header_solid=True, with_loader=False):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="alternate" hreflang="ja" href="https://customjapan.jp/{page}">
+<link rel="alternate" hreflang="en" href="https://customjapan.jp/en/{page}">
+<link rel="alternate" hreflang="x-default" href="https://customjapan.jp/{page}">
 </head>
 <body>
 {loader}
@@ -207,6 +210,51 @@ INDEX_BODY = """
   </div>
 </section>
 
+<section class="strengths-sec" id="strengths">
+  <div class="inner">
+    <p class="sec-label reveal">OUR STRENGTHS</p>
+    <h2 class="sec-title sec-title--sm reveal">Five reasons professionals choose Custom Japan</h2>
+    <p class="sec-lead reveal">We back up "find it, choose it, deliver it" with systems. A catalog, Japan's first exact-match parts search, human support, thorough quality control and same-day logistics — five strengths refined over 70 years keep the professional field running.</p>
+    <div class="str-cards">
+      <article class="str-card reveal">
+        <div class="str-card__img"><span class="str-card__num">01</span><img src="../assets/img/recruit-work-catalog.jpg" alt="Staff reviewing the wholesale catalog" loading="lazy"></div>
+        <div class="str-card__body">
+          <h3>Industry-leading wholesale catalog —<br>print &amp; members-only web</h3>
+          <p>A print catalog covering the essential parts for commuting, school and business vehicles, paired with a closed, members-only web catalog that keeps prices off public search engines. Filtering and product-comparison tools, refined daily as our range grows, guide you to the right part fast — across 500,000+ SKUs.</p>
+        </div>
+      </article>
+      <article class="str-card reveal">
+        <div class="str-card__img"><span class="str-card__num">02</span><img src="../assets/img/recruit-division-ict-hero.jpg" alt="Engineers building the parts compatibility search" loading="lazy"></div>
+        <div class="str-card__body">
+          <h3>Japan's first exact-match<br>parts compatibility search, built in-house</h3>
+          <p>We were the first in the industry to build an open search that finds compatible parts by frame number, model code or OEM part number. It also supports OEM-number lookup and brand-wide search in one query. Powered by our own database — updated daily — it pinpoints the right item from hundreds of thousands.</p>
+        </div>
+      </article>
+      <article class="str-card reveal">
+        <div class="str-card__img"><span class="str-card__num">03</span><img src="../assets/img/strength-callcenter.jpg" alt="Customer center operator on the phone" loading="lazy"></div>
+        <div class="str-card__body">
+          <h3>A customer center staffed<br>by our own operators</h3>
+          <p>To handle parts fitting per vehicle and selection from hundreds of thousands of items, we run our own customer center. Beyond web and fax, we take phone orders too. Conversations with customers surface industry issues early, and we feed them straight into our services and product development.</p>
+        </div>
+      </article>
+      <article class="str-card reveal">
+        <div class="str-card__img"><span class="str-card__num">04</span><img src="../assets/img/strength-qc.jpg" alt="Outbound inspection and quality control at a factory" loading="lazy"></div>
+        <div class="str-card__body">
+          <h3>Thorough quality control<br>by dedicated staff</h3>
+          <p>Every item is inspected at inbound and outbound. Our development staff also travel to overseas factories in person to manage the production process and run shipment inspections on site — an uncompromising quality regime that delivers only safe, reliable products.</p>
+        </div>
+      </article>
+      <article class="str-card reveal">
+        <div class="str-card__img"><span class="str-card__num">05</span><img src="../assets/img/strength-logistics.jpg" alt="Logistics center storing hundreds of thousands of items" loading="lazy"></div>
+        <div class="str-card__body">
+          <h3>Logistics that ship hundreds of<br>thousands of items same-day</h3>
+          <p>With logistics hubs in Japan and overseas, we control the entire flow — from the point of manufacture to the customer's hands, including storage and service — through our own systems. By optimizing the whole supply chain, we achieve same-day shipping of in-stock items.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="brands" id="brands">
   <div class="inner">
     <p class="sec-label reveal">BRANDS</p>
@@ -292,6 +340,44 @@ INDEX_BODY = """
     <div class="brands__group reveal" style="text-align:center">
       <a href="brands.html" class="btn-line">View all brands</a>
     </div>
+  </div>
+</section>
+
+<section class="news" id="news">
+  <div class="inner">
+    <div class="news__head reveal">
+      <div>
+        <p class="sec-label">NEWS</p>
+        <h2 class="sec-title">Latest news</h2>
+      </div>
+      <a href="news.html" class="btn-line">View all</a>
+    </div>
+    <ul class="news__list">
+      <li class="reveal"><a href="https://note.com/fair_auk890/n/nc095a7961e8d" target="_blank" rel="noopener">
+        <time>2026.06.16</time><span class="news__cat news__cat--info">INFO</span>
+        <p>Over 20 straight years of revenue growth — we're hiring people to build that growth with us</p>
+      </a></li>
+      <li class="reveal"><a href="https://www.motomegane.com/car_news/pickup-car/customjapan-10_20260610" target="_blank" rel="noopener">
+        <time>2026.06.13</time><span class="news__cat news__cat--media">MEDIA</span>
+        <p>Automotive web magazine “Moto Megane CARS” features SmartCarLink</p>
+      </a></li>
+      <li class="reveal"><a href="https://www.customjapan.net/a/cycle/16781" target="_blank" rel="noopener">
+        <time>2026.06.08</time><span class="news__cat news__cat--media">MEDIA</span>
+        <p>Electric kickboard “eXs”, adopted at EXPO 2025, to appear on BS TV Tokyo's “Trend EYE”</p>
+      </a></li>
+      <li class="reveal"><a href="https://www.customjapan.net/a/car/15808" target="_blank" rel="noopener">
+        <time>2026.05.01</time><span class="news__cat">PRODUCT</span>
+        <p>“SmartCarLink” launches — turn your car navigation into a smartphone</p>
+      </a></li>
+      <li class="reveal"><a href="https://prtimes.jp/main/html/rd/p/000000083.000070755.html" target="_blank" rel="noopener">
+        <time>2026.04.21</time><span class="news__cat">PRESS</span>
+        <p>Japan premiere: SHAD's urban bicycle line “Shad Bikes” debuts</p>
+      </a></li>
+      <li class="reveal"><a href="https://www.customjapan.net/a/moto/14699" target="_blank" rel="noopener">
+        <time>2026.04.07</time><span class="news__cat news__cat--event">EVENT</span>
+        <p>Tokyo Motorcycle Show 2026 — after-report &amp; photo album</p>
+      </a></li>
+    </ul>
   </div>
 </section>
 
@@ -593,25 +679,39 @@ NEWS_ITEMS = [
     ("2025.03.14", "EVENT", "eXs supports smooth venue operations at EXPO 2025 Osaka-Kansai", "000000056"),
 ]
 
-NEWS_BODY = page_hero("NEWS", "TOPICS", "Press releases and announcements", "News") + """
+NEWS_EN_LIST = (Path(__file__).resolve().parent / "news_en_list.html").read_text(encoding="utf-8")
+NEWS_EN_COUNT = NEWS_EN_LIST.count("<li ")
+NEWS_BODY = page_hero("NEWS", "TOPICS", "News, press releases and media coverage", "News") + f"""
 <section class="page-section">
   <div class="inner">
     <div class="news__head reveal">
       <div>
-        <p class="sec-label">PRESS RELEASE</p>
-        <h2 class="sec-title sec-title--sm">Latest news</h2>
+        <p class="sec-label">ALL TOPICS</p>
+        <h2 class="sec-title sec-title--sm">News archive</h2>
       </div>
-      <a href="https://prtimes.jp/main/html/searchrlp/company_id/70755" target="_blank" rel="noopener" class="btn-line">PR TIMES (JP)</a>
     </div>
-    <ul class="news__list">
-""" + "\n".join(
-    f'      <li class="reveal"><a href="https://prtimes.jp/main/html/rd/p/{pid}.000070755.html" target="_blank" rel="noopener"><time>{d}</time><span class="news__cat">{c}</span><p>{t}</p></a></li>'
-    for d, c, t, pid in NEWS_ITEMS
-) + """
+    <div class="news-filter reveal" id="newsFilter">
+      <button class="is-active" data-filter="all">All</button>
+      <button data-filter="info">News</button>
+      <button data-filter="press">Press releases</button>
+      <button data-filter="media">Media</button>
+      <span class="news-filter__count" id="newsCount"></span>
+    </div>
+    <ul class="news__list" id="newsList">
+{NEWS_EN_LIST}
     </ul>
-    <p style="margin-top:40px;font-size:12.5px;color:var(--c-gray)">* Press releases link to the original Japanese articles on PR TIMES.</p>
+    <p style="margin-top:36px;font-size:12px;color:var(--c-gray)">* An archive of {NEWS_EN_COUNT} items — news, media coverage and press releases. Each item links to the source (PR TIMES, the original media outlet or our own sites); some sources are in Japanese.</p>
   </div>
-</section>"""
+</section>
+<script>
+(function(){{
+  var f=document.getElementById('newsFilter'), list=document.getElementById('newsList'), cnt=document.getElementById('newsCount');
+  var items=[].slice.call(list.querySelectorAll('li'));
+  function apply(cat){{var n=0;items.forEach(function(li){{var s=cat==='all'||li.getAttribute('data-cat')===cat;li.hidden=!s;if(s)n++;}});cnt.textContent=n+' items';}}
+  f.addEventListener('click',function(e){{var b=e.target.closest('button');if(!b)return;f.querySelectorAll('button').forEach(function(x){{x.classList.remove('is-active');}});b.classList.add('is-active');apply(b.getAttribute('data-filter'));}});
+  apply('all');
+}})();
+</script>"""
 
 # ---------------------------------------------------------------- contact
 CONTACT_BODY = page_hero("CONTACT", "GET IN TOUCH", "Business, support and media inquiries", "Contact") + """
