@@ -274,6 +274,41 @@ INDEX_BODY = '''
   </div>
 </section>
 
+<!-- EVENTS gallery -->
+<section class="page-section page-section--off" id="events">
+  <div class="inner">
+    <p class="sec-label reveal">EVENTS</p>
+    <h2 class="sec-title sec-title--sm reveal">The kind of events we exhibit at.</h2>
+    <p class="sec-lead reveal">It's not only about delivering products. We exhibit at events across Japan — including the Tokyo and Osaka Motorcycle Shows — bringing the brands we plan and our mascot “39 (Thank-you Boy)” straight to the fans. It's B2B, yet there's this much work out in the spotlight. These photos are from our booth at the Tokyo Motorcycle Show 2026.</p>
+    <div class="rc-events__grid">
+      <a class="rc-ev rc-ev--asmax reveal" href="../../assets/img/events/tmcs2026-asmax-booth.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/tmcs2026-asmax-booth.jpg" alt="Photo with mascot 39 and a guest at the ASMAX booth" loading="lazy">
+        <span class="rc-ev__cap"><small>ASMAX BOOTH</small>A lively “name the mascot 39” quiz</span>
+      </a>
+      <a class="rc-ev rc-ev--suzuka reveal" href="../../assets/img/events/suzuka8h-2026.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/suzuka8h-2026.jpg" alt="Staff giving a thumbs-up on the grid at the Suzuka 8 Hours" loading="lazy">
+        <span class="rc-ev__cap"><small>SUZUKA 8 HOURS</small>Our first exhibit at the Suzuka 8 Hours, before a packed grandstand</span>
+      </a>
+      <a class="rc-ev rc-ev--scooter reveal" href="../../assets/img/events/tmcs2026-timsun-scooter.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/tmcs2026-timsun-scooter.jpg" alt="Custom scooter display at the TIMSUN booth" loading="lazy">
+        <span class="rc-ev__cap"><small>TIMSUN</small>Custom machine display</span>
+      </a>
+      <a class="rc-ev rc-ev--stage reveal" href="../../assets/img/events/tmcs2026-timsun-stage.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/tmcs2026-timsun-stage.jpg" alt="TIMSUN stage event" loading="lazy">
+        <span class="rc-ev__cap"><small>STAGE</small>A stage telling the brand story</span>
+      </a>
+      <a class="rc-ev rc-ev--venue reveal" href="../../assets/img/events/tmcs2026-venue.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/tmcs2026-venue.jpg" alt="The bustling Tokyo Motorcycle Show venue" loading="lazy">
+        <span class="rc-ev__cap"><small>THE VENUE</small>The buzzing Tokyo Motorcycle Show 2026</span>
+      </a>
+      <a class="rc-ev rc-ev--shad reveal" href="../../assets/img/events/tmcs2026-shad-cases.jpg" target="_blank" rel="noopener">
+        <img src="../../assets/img/events/tmcs2026-shad-cases.jpg" alt="SHAD panniers and top cases on display" loading="lazy">
+        <span class="rc-ev__cap"><small>SHAD</small>Products from the brands we handle</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FLOW -->
 <section class="page-section" id="flow">
   <div class="inner">

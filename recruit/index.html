@@ -254,6 +254,36 @@
 .rc-band__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:#ff6b6a;margin-bottom:18px}
 .rc-band__title{font-size:clamp(26px,4.4vw,50px);font-weight:900;line-height:1.5;letter-spacing:.04em}
 .rc-band__text{max-width:620px;margin-top:22px;color:rgba(255,255,255,.85);font-size:clamp(13px,1.5vw,15px);line-height:2.05}
+/* EVENTS gallery (bento) */
+.rc-events__grid{display:grid;gap:14px;margin-top:8px;
+  grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;
+  grid-template-areas:
+    "asmax asmax suzuka scooter"
+    "asmax asmax suzuka stage"
+    "venue venue shad shad";}
+.rc-ev{position:relative;overflow:hidden;border-radius:14px;background:var(--c-dark);display:block;height:100%}
+.rc-ev--asmax{grid-area:asmax}
+.rc-ev--suzuka{grid-area:suzuka}
+.rc-ev--scooter{grid-area:scooter}
+.rc-ev--stage{grid-area:stage}
+.rc-ev--venue{grid-area:venue}
+.rc-ev--shad{grid-area:shad}
+.rc-ev img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.rc-ev--suzuka img{object-position:center 30%}
+.rc-ev:hover img{transform:scale(1.06)}
+.rc-ev__cap{position:absolute;left:0;right:0;bottom:0;padding:26px 20px 16px;color:#fff;font-size:12.5px;font-weight:700;line-height:1.6;
+  background:linear-gradient(to top,rgba(8,10,14,.9) 0%,rgba(8,10,14,.45) 55%,transparent 100%)}
+.rc-ev__cap small{display:block;font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.16em;color:#ff8a89;margin-bottom:5px}
+@media(max-width:768px){
+  .rc-events__grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;gap:10px;
+    grid-template-areas:
+      "asmax asmax"
+      "asmax asmax"
+      "scooter stage"
+      "suzuka venue"
+      "suzuka shad";}
+  .rc-ev__cap{font-size:11.5px;padding:22px 14px 12px}
+}
 </style>
 <link rel="canonical" href="https://customjapan.jp/recruit/">
 <meta property="og:type" content="website">
@@ -520,6 +550,41 @@
     <p class="rc-band__label">OUR FIELD</p>
     <h2 class="rc-band__title">挑戦できる現場が、<br>ここにある。</h2>
     <p class="rc-band__text">大阪・関西万博の公式サプライヤー。鈴鹿8耐に初出展。エヴァンゲリオンとのコラボ。次々に生まれる自社ブランド——。安定した基盤の上で、これだけの挑戦が同時に走っています。あなたのアイデアが、次の「話題」になるかもしれません。</p>
+  </div>
+</section>
+
+<!-- EVENTS gallery -->
+<section class="page-section page-section--off" id="events">
+  <div class="inner">
+    <p class="sec-label reveal">EVENTS</p>
+    <h2 class="sec-title sec-title--sm reveal">こんなイベントに、出展しています。</h2>
+    <p class="sec-lead reveal">商品を届けるだけじゃない。東京・大阪モーターサイクルショーをはじめ、全国のイベントに出展しています。自分たちが企画したブランドやマスコット「39（サンキューボーイ）」を、ファンに直接届ける——BtoBだけど、こんなに“表に出る”仕事もある。写真は2026年 東京モーターサイクルショーの出展の様子です。</p>
+    <div class="rc-events__grid">
+      <a class="rc-ev rc-ev--asmax reveal" href="../assets/img/events/tmcs2026-asmax-booth.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/tmcs2026-asmax-booth.jpg" alt="ASMAXブースでマスコット39とゲストの記念撮影" loading="lazy">
+        <span class="rc-ev__cap"><small>ASMAX BOOTH</small>マスコット「39」の名前当てクイズで大盛り上がり</span>
+      </a>
+      <a class="rc-ev rc-ev--suzuka reveal" href="../assets/img/events/suzuka8h-2026.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/suzuka8h-2026.jpg" alt="鈴鹿8耐のグリッドでサムズアップするスタッフ" loading="lazy">
+        <span class="rc-ev__cap"><small>SUZUKA 8 HOURS</small>鈴鹿8耐に初出展。満員のスタンドを前に</span>
+      </a>
+      <a class="rc-ev rc-ev--scooter reveal" href="../assets/img/events/tmcs2026-timsun-scooter.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/tmcs2026-timsun-scooter.jpg" alt="TIMSUNブースのカスタムスクーター展示" loading="lazy">
+        <span class="rc-ev__cap"><small>TIMSUN</small>カスタム車両の展示</span>
+      </a>
+      <a class="rc-ev rc-ev--stage reveal" href="../assets/img/events/tmcs2026-timsun-stage.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/tmcs2026-timsun-stage.jpg" alt="TIMSUNステージイベント" loading="lazy">
+        <span class="rc-ev__cap"><small>STAGE</small>ブランドを伝えるステージ</span>
+      </a>
+      <a class="rc-ev rc-ev--venue reveal" href="../assets/img/events/tmcs2026-venue.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/tmcs2026-venue.jpg" alt="東京モーターサイクルショー会場の賑わい" loading="lazy">
+        <span class="rc-ev__cap"><small>THE VENUE</small>来場者でにぎわう、東京モーターサイクルショー2026</span>
+      </a>
+      <a class="rc-ev rc-ev--shad reveal" href="../assets/img/events/tmcs2026-shad-cases.jpg" target="_blank" rel="noopener">
+        <img src="../assets/img/events/tmcs2026-shad-cases.jpg" alt="SHADのパニアケース・トップケース展示" loading="lazy">
+        <span class="rc-ev__cap"><small>SHAD</small>取り扱いブランドの製品展示</span>
+      </a>
+    </div>
   </div>
 </section>
 
