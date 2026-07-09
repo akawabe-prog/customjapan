@@ -215,6 +215,27 @@ a.btn-solid:hover{transform:translateY(-2px)}
 .ai-conclusion .vs-card--cj{background:linear-gradient(160deg,#33280c,#1b1f27);border-color:#ffd24a}
 .ai-conclusion .vs-card--cj h3{color:#ffd24a}
 .ai-conclusion .vs-card--cj p{color:rgba(255,255,255,.85)}
+/* ▼ 大胆化: 4 THINGS YOU GET と同スケールに */
+.ai-conclusion .ai-subhead{font-size:clamp(26px,4.8vw,54px);line-height:1.3;letter-spacing:.02em;margin:0 0 clamp(36px,6vh,64px)}
+.ai-conclusion .ai-subhead + .focus-big,.ai-conclusion .ai-subhead + .ai-skills{margin-top:0}
+/* FOCUS: 巨大アウトライン番号の大型ロー */
+.focus-big{max-width:1160px;margin:0 auto}
+.focus-big__item{display:grid;grid-template-columns:minmax(96px,.4fr) 1fr;gap:clamp(20px,4vw,60px);align-items:start;
+  padding:clamp(30px,5vh,56px) 0;border-top:1px solid rgba(255,255,255,.16);transition:background .4s var(--ease)}
+.focus-big__item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.focus-big__item:hover{background:linear-gradient(90deg,rgba(255,210,74,.06),transparent)}
+.focus-big__num{font-family:var(--font-en);font-weight:800;font-size:clamp(46px,7vw,90px);line-height:.9;letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1.6px rgba(255,255,255,.55);text-stroke:1.6px rgba(255,255,255,.55);transition:color .5s var(--ease),-webkit-text-stroke .5s var(--ease)}
+.focus-big__item:hover .focus-big__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
+.focus-big__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.24em;color:#ffd24a;display:block;margin-bottom:12px}
+.focus-big h3{font-size:clamp(22px,3.2vw,36px);font-weight:900;line-height:1.45;margin-bottom:14px;color:#fff;letter-spacing:.02em}
+.focus-big p{font-size:clamp(13px,1.5vw,16px);color:rgba(255,255,255,.75);line-height:2;max-width:680px}
+@media(max-width:640px){.focus-big__item{grid-template-columns:1fr;gap:8px}.focus-big__num{font-size:50px}}
+/* 他社比較: カードも大きく */
+.ai-conclusion .vs-cards{gap:24px}
+.ai-conclusion .vs-card{padding:clamp(30px,3.4vw,48px);border-radius:18px}
+.ai-conclusion .vs-card h3{font-size:clamp(16px,2vw,22px);margin-bottom:18px;font-weight:800}
+.ai-conclusion .vs-card p{font-size:clamp(13px,1.5vw,15px);line-height:2.05}
 .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:8vh}
 @media(max-width:768px){.ai-grid{grid-template-columns:1fr}}
 .ai-card{
@@ -578,11 +599,11 @@ a.btn-solid:hover{transform:translateY(-2px)}
 
   <div class="inner">
     <h3 class="sec-title sec-title--sm reveal ai-subhead" style="margin-top:3vh">だから、若いうちにここへ注力してほしい</h3>
-    <ol class="ai-skills reveal">
-      <li><span class="ai-skills__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9.5 3v2.5M14.5 3v2.5M9.5 18.5V21M14.5 18.5V21M3 9.5h2.5M3 14.5h2.5M18.5 9.5H21M18.5 14.5H21"/></svg></span><b>FOCUS 01</b><div><h4>AIを「使い倒す側」の実務経験</h4><p>企画・制作・分析の現場で、AIツールを使うことを歓迎します。「AIを禁止する会社」と「AIで若手の生産性を上げる会社」なら、選ぶべきは後者。使い方は仕事の中でしか身につきません。</p></div></li>
-      <li><span class="ai-skills__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 19.5c0-2 1-3.6 3-3.6s3 1.6 3 3.6"/></svg></span><b>FOCUS 02</b><div><h4>AIの外側にある、体温のある仕事</h4><p>海外メーカーとの交渉、展示会やレースの現場、ブランドの世界観づくり。人と会い、信頼をつくり、熱量を動かす仕事はAIに代替されません。ここでしか積めない経験を、学生のうちに。</p></div></li>
-      <li><span class="ai-skills__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1 5.1-2.1z"/></svg></span><b>FOCUS 03</b><div><h4>「決める」経験</h4><p>AIの進化で、実行のコストはどんどん下がります。価値が上がるのは「何をやるか決める人」。インターンに小さくても持ち場と意思決定を任せるのは、この筋肉を鍛えてほしいからです。</p></div></li>
-    </ol>
+    <div class="focus-big reveal">
+      <div class="focus-big__item"><span class="focus-big__num">01</span><div><span class="focus-big__label">FOCUS 01</span><h3>AIを「使い倒す側」の実務経験</h3><p>企画・制作・分析の現場で、AIツールを使うことを歓迎します。「AIを禁止する会社」と「AIで若手の生産性を上げる会社」なら、選ぶべきは後者。使い方は仕事の中でしか身につきません。</p></div></div>
+      <div class="focus-big__item"><span class="focus-big__num">02</span><div><span class="focus-big__label">FOCUS 02</span><h3>AIの外側にある、体温のある仕事</h3><p>海外メーカーとの交渉、展示会やレースの現場、ブランドの世界観づくり。人と会い、信頼をつくり、熱量を動かす仕事はAIに代替されません。ここでしか積めない経験を、学生のうちに。</p></div></div>
+      <div class="focus-big__item"><span class="focus-big__num">03</span><div><span class="focus-big__label">FOCUS 03</span><h3>「決める」経験</h3><p>AIの進化で、実行のコストはどんどん下がります。価値が上がるのは「何をやるか決める人」。インターンに小さくても持ち場と意思決定を任せるのは、この筋肉を鍛えてほしいからです。</p></div></div>
+    </div>
 
     <h3 class="sec-title sec-title--sm reveal ai-subhead" style="margin-top:3vh">他の会社と、何がちがうのか</h3>
     <div class="vs-cards reveal">
