@@ -29,13 +29,23 @@
 .intern-hero__msg{margin-top:24px;font-size:clamp(15px,2.3vw,26px);font-weight:800;line-height:1.7;letter-spacing:.03em;color:#fff;max-width:30em;word-break:keep-all;overflow-wrap:anywhere}
 .intern-hero__msg em{font-style:normal;color:#ffd24a;white-space:nowrap}
 .intern-hero__lead{margin-top:20px;color:rgba(255,255,255,.8);font-size:clamp(13px,1.4vw,15px);word-break:keep-all;overflow-wrap:anywhere}
-.intern-marquee{
-  position:relative;z-index:2;overflow:hidden;border-top:1px solid rgba(255,255,255,.18);
-  padding:14px 0;background:rgba(8,10,14,.4);backdrop-filter:blur(4px);
+/* HERO全面: キーワードを横スクロールさせる多段ウォール(文字サイズは13pxのまま) */
+.intern-hero__mqwall{
+  position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;
+  gap:clamp(12px,2.6vh,30px);overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
 }
-.intern-marquee__track{display:flex;gap:48px;width:max-content;animation:intmq 26s linear infinite;
-  font-family:var(--font-en);font-weight:800;font-size:13px;letter-spacing:.3em;color:rgba(255,255,255,.75);white-space:nowrap}
-@keyframes intmq{to{transform:translateX(-50%)}}
+.intern-hero__mqwall .mqrow{
+  display:flex;gap:48px;width:max-content;white-space:nowrap;will-change:transform;
+  font-family:var(--font-en);font-weight:800;font-size:13px;letter-spacing:.3em;color:rgba(255,255,255,.12);
+}
+.intern-hero__mqwall .mqrow.accent{color:rgba(255,210,74,.22)}
+.intern-hero__mqwall .mqrow.ltr{animation:intmqL var(--dur,54s) linear infinite}
+.intern-hero__mqwall .mqrow.rtl{animation:intmqR var(--dur,54s) linear infinite}
+@keyframes intmqL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes intmqR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.intern-hero__mqwall .mqrow{animation:none}}
 
 .intern-why{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
 .why-title{
@@ -362,12 +372,7 @@ a.btn-solid:hover{transform:translateY(-2px)}
     <p class="intern-hero__msg">モビリティは、入り口。<br>持ち帰るのは、AI時代にも消えない<em>ビジネススキル</em>。</p>
     <p class="intern-hero__lead">乗り物好きは大歓迎。でも詳しくなくても大丈夫。<br class="pc">企画・マーケ・SNS・制作・海外取引——"手伝い"ではなく"実戦"で、どこでも通用する力が身につきます。</p>
   </div>
-  <div class="intern-marquee" aria-hidden="true">
-    <div class="intern-marquee__track">
-      <span>BIZ DEV</span><span>MARKETING</span><span>SNS</span><span>CREATIVE DIRECTION</span><span>PRODUCTION</span><span>GLOBAL TRADE</span><span>EVENT</span><span>E-COMMERCE</span>
-      <span>BIZ DEV</span><span>MARKETING</span><span>SNS</span><span>CREATIVE DIRECTION</span><span>PRODUCTION</span><span>GLOBAL TRADE</span><span>EVENT</span><span>E-COMMERCE</span>
-    </div>
-  </div>
+  <div class="intern-hero__mqwall" id="mqWall" aria-hidden="true"></div>
 </section>
 <div class="crumb"><a href="index.html">TOP</a><span>/</span>長期インターン</div>
 
@@ -690,6 +695,32 @@ a.btn-solid:hover{transform:translateY(-2px)}
 <script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
 <script>
+/* ---- HERO 全面キーワード・ウォール(多段の横スクロール)を高さぶんだけ生成 ---- */
+(function () {
+  var wall = document.getElementById('mqWall');
+  if (!wall) return;
+  var WORDS = ['BIZ DEV','MARKETING','SNS','CREATIVE DIRECTION','PRODUCTION','GLOBAL TRADE','EVENT','E-COMMERCE','BRANDING','PLANNING'];
+  function build() {
+    wall.textContent = '';
+    var h = wall.clientHeight || window.innerHeight;
+    var stride = 13 * 1.9 + 24;                 // 1行の占有高さ(フォント+行間+gap)の目安
+    var rows = Math.max(6, Math.ceil(h / stride) + 1);
+    for (var i = 0; i < rows; i++) {
+      var row = document.createElement('div');
+      row.className = 'mqrow ' + (i % 2 ? 'rtl' : 'ltr') + (i % 4 === 1 ? ' accent' : '');
+      row.style.setProperty('--dur', (46 + (i % 5) * 6) + 's');   // 46〜70sで速度をずらす
+      // 行ごとに語順をずらして単調さを消す / 2連結でシームレスループ
+      var seq = WORDS.slice(i % WORDS.length).concat(WORDS.slice(0, i % WORDS.length));
+      var half = seq.map(function (w) { return '<span>' + w + '</span>'; }).join('');
+      row.innerHTML = half + half;
+      wall.appendChild(row);
+    }
+  }
+  build();
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(build, 250); });
+})();
+
 /* ---- intern page: scroll motion & micro-animations (main.jsのrevealに重ねる) ---- */
 (function () {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
