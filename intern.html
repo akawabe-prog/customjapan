@@ -203,7 +203,10 @@ a.btn-solid:hover{transform:translateY(-2px)}
 /* DECISION MAKING(ダーク帯) → その後はフルブリード白セクション */
 .ai-conclusion .decision-visual{margin:0 0 12vh}   /* 帯は自前のダーク背景を維持 */
 /* 小見出しをヒーロースケール(白背景・濃色) */
-#ai-era .ai-subhead{font-size:clamp(26px,4.8vw,54px);line-height:1.3;letter-spacing:.02em}
+#ai-era .inner{max-width:1360px;padding-left:clamp(20px,4vw,60px);padding-right:clamp(20px,4vw,60px)}
+#ai-era .focus-big{max-width:none}
+#ai-era .ai-subhead{font-size:clamp(26px,4.15vw,56px);line-height:1.3;letter-spacing:.02em;white-space:nowrap}
+@media(max-width:560px){#ai-era .ai-subhead{white-space:normal;text-wrap:balance;font-size:clamp(24px,7vw,32px)}}
 /* FOCUS: 巨大アウトライン番号の大型ロー(白背景) */
 .focus-big{max-width:1160px;margin:0 auto}
 .focus-big__item{display:grid;grid-template-columns:minmax(96px,.4fr) 1fr;gap:clamp(20px,4vw,60px);align-items:start;
@@ -284,7 +287,7 @@ a.btn-solid:hover{transform:translateY(-2px)}
 .ai-grid{margin-bottom:11vh}
 .ai-skills{margin-bottom:11vh}
 /* AI中間見出し(だから/他の会社と)を独立した区切りに */
-#ai-era .ai-subhead{margin:0 0 40px}
+#ai-era .ai-subhead{margin:clamp(56px,8vh,90px) 0 clamp(30px,4.5vh,46px)}
 /* 募集要項テーブルをゆったり */
 .profile-table th,.profile-table td{padding-top:26px;padding-bottom:26px}
 /* FAQを1問ずつ広く */
@@ -584,14 +587,14 @@ a.btn-solid:hover{transform:translateY(-2px)}
   </div>
 
   <div class="inner">
-    <h3 class="sec-title sec-title--sm reveal ai-subhead" style="margin-top:3vh">だから、若いうちにここへ注力してほしい</h3>
+    <h3 class="sec-title sec-title--sm reveal ai-subhead">だから、若いうちにここへ注力してほしい</h3>
     <div class="focus-big reveal">
       <div class="focus-big__item"><span class="focus-big__num">01</span><div><span class="focus-big__label">FOCUS 01</span><h3>AIを「使い倒す側」の実務経験</h3><p>企画・制作・分析の現場で、AIツールを使うことを歓迎します。「AIを禁止する会社」と「AIで若手の生産性を上げる会社」なら、選ぶべきは後者。使い方は仕事の中でしか身につきません。</p></div></div>
       <div class="focus-big__item"><span class="focus-big__num">02</span><div><span class="focus-big__label">FOCUS 02</span><h3>AIの外側にある、体温のある仕事</h3><p>海外メーカーとの交渉、展示会やレースの現場、ブランドの世界観づくり。人と会い、信頼をつくり、熱量を動かす仕事はAIに代替されません。ここでしか積めない経験を、学生のうちに。</p></div></div>
       <div class="focus-big__item"><span class="focus-big__num">03</span><div><span class="focus-big__label">FOCUS 03</span><h3>「決める」経験</h3><p>AIの進化で、実行のコストはどんどん下がります。価値が上がるのは「何をやるか決める人」。インターンに小さくても持ち場と意思決定を任せるのは、この筋肉を鍛えてほしいからです。</p></div></div>
     </div>
 
-    <h3 class="sec-title sec-title--sm reveal ai-subhead" style="margin-top:3vh">他の会社と、何がちがうのか</h3>
+    <h3 class="sec-title sec-title--sm reveal ai-subhead">他の会社と、何がちがうのか</h3>
     <div class="vs-cards reveal">
       <div class="vs-card">
         <h3>大手企業のインターン</h3>
