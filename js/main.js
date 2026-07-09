@@ -59,18 +59,22 @@
 
   /* ---- header state ---- */
   const header = document.getElementById('header');
-  ScrollTrigger.create({
-    start: 'top -80',
-    onUpdate: (self) => header.classList.toggle('is-scrolled', self.scroll() > 80),
-  });
+  if (header) {
+    ScrollTrigger.create({
+      start: 'top -80',
+      onUpdate: (self) => header.classList.toggle('is-scrolled', self.scroll() > 80),
+    });
+  }
 
   /* ---- mascot floater (back to top) ---- */
   const mascotTop = document.getElementById('mascotTop');
-  ScrollTrigger.create({
-    start: 'top -600',
-    onUpdate: (self) => mascotTop.classList.toggle('is-visible', self.scroll() > 600),
-  });
-  mascotTop.addEventListener('click', () => lenis.scrollTo(0, { duration: 1.6 }));
+  if (mascotTop) {
+    ScrollTrigger.create({
+      start: 'top -600',
+      onUpdate: (self) => mascotTop.classList.toggle('is-visible', self.scroll() > 600),
+    });
+    mascotTop.addEventListener('click', () => lenis.scrollTo(0, { duration: 1.6 }));
+  }
 
   /* ---- loader → hero intro (top page only) ---- */
   const loader = document.getElementById('loader');
@@ -184,22 +188,50 @@
     gsap.to(track, { xPercent: -50, ease: 'none', duration: 38, repeat: -1 });
   }
 
-  /* ---- events scroller: drag to scroll ---- */
-  const scroller = document.getElementById('eventsScroller');
-  if (scroller) {
-    let isDown = false, startX = 0, startLeft = 0;
+  /* ---- horizontal scrollers: drag to scroll ---- */
+  document.querySelectorAll('#eventsScroller, #strengthsScroller').forEach((scroller) => {
+    let isDown = false, startX = 0, startLeft = 0, moved = 0;
     scroller.addEventListener('pointerdown', (e) => {
-      isDown = true; startX = e.clientX; startLeft = scroller.scrollLeft;
+      isDown = true; moved = 0; startX = e.clientX; startLeft = scroller.scrollLeft;
       scroller.setPointerCapture(e.pointerId);
     });
     scroller.addEventListener('pointermove', (e) => {
       if (!isDown) return;
-      scroller.scrollLeft = startLeft - (e.clientX - startX);
+      moved = e.clientX - startX;
+      if (Math.abs(moved) > 4) scroller.classList.add('is-dragging');
+      scroller.scrollLeft = startLeft - moved;
     });
     ['pointerup', 'pointercancel'].forEach((ev) =>
-      scroller.addEventListener(ev, () => (isDown = false))
+      scroller.addEventListener(ev, () => { isDown = false; scroller.classList.remove('is-dragging'); })
     );
-  }
+    // prevent click navigation after a drag
+    scroller.addEventListener('click', (e) => {
+      if (Math.abs(moved) > 6) { e.preventDefault(); }
+    }, true);
+  });
+
+  /* ---- slider arrow nav ---- */
+  document.querySelectorAll('.str-nav').forEach((nav) => {
+    const track = document.getElementById(nav.dataset.scroller);
+    if (!track) return;
+    const step = () => {
+      const card = track.querySelector('.str-card');
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 24) || 24;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    };
+    const prev = nav.querySelector('[data-dir="prev"]');
+    const next = nav.querySelector('[data-dir="next"]');
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max;
+    };
+    if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
 
   /* ---- recruit bg parallax ---- */
   if (document.querySelector('.recruit__bg img')) {

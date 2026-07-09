@@ -173,7 +173,8 @@
     <p class="sec-label reveal">OUR STRENGTHS</p>
     <h2 class="sec-title sec-title--sm reveal">カスタムジャパンが選ばれる、5つの強み</h2>
     <p class="sec-lead reveal">「探す・選ぶ・届ける」を、仕組みで支える。カタログ、業界初の適合検索システム、人によるサポート、徹底した品質管理、当日出荷の物流——70年の歴史で磨いた5つの強みが、プロの現場を止めません。</p>
-    <div class="str-cards">
+    <div class="str-slider reveal">
+    <div class="str-cards" id="strengthsScroller">
       <article class="str-card reveal">
         <div class="str-card__img"><span class="str-card__num">01</span><img src="assets/img/recruit-work-catalog.jpg" alt="仕入総合カタログを開くスタッフ" loading="lazy"></div>
         <div class="str-card__body">
@@ -209,6 +210,11 @@
           <p>物流拠点を国内・海外に設置し、商品の製造地点からお客様の手元に届くまでの流れ・保管・サービスを、自社システムで一元コントロール。サプライチェーン全体を最適化し、在庫品の当日出荷を実現しています。</p>
         </div>
       </article>
+    </div>
+    <div class="str-nav reveal" data-scroller="strengthsScroller">
+      <button type="button" data-dir="prev" aria-label="前へ">‹</button>
+      <button type="button" data-dir="next" aria-label="次へ">›</button>
+    </div>
     </div>
   </div>
 </section>
@@ -455,6 +461,34 @@
     <div class="reveal" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
       <a href="recruit/index.html" class="btn-solid">採用サイトへ</a>
       <a href="intern.html" class="btn-line btn-line--light">学生向け 長期インターン募集中</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= EXPLORE (About / Business / Brands) ======= -->
+<section class="explore">
+  <div class="inner">
+    <p class="sec-label reveal">EXPLORE</p>
+    <h2 class="sec-title sec-title--sm reveal">カスタムジャパンを、もっと知る。</h2>
+    <div class="explore__grid">
+      <a href="about.html" class="explore-card reveal">
+        <span class="explore-card__en">ABOUT</span>
+        <h3>私たちについて</h3>
+        <p>1954年創業、70年の歩み。理念・行動指針と会社概要から、カスタムジャパンの土台をご紹介します。</p>
+        <span class="explore-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="business.html" class="explore-card reveal">
+        <span class="explore-card__en">BUSINESS</span>
+        <h3>事業・強み</h3>
+        <p>世界のメーカーと全国のプロショップをつなぐ、仕入れプラットフォームの仕組みと5つの強み。</p>
+        <span class="explore-card__arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="brands.html" class="explore-card reveal">
+        <span class="explore-card__en">BRANDS</span>
+        <h3>ブランド</h3>
+        <p>自ら開発するオリジナルブランドと、日本総代理店として預かる世界のブランドの数々。</p>
+        <span class="explore-card__arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
