@@ -738,7 +738,7 @@ a.btn-solid:hover{transform:translateY(-2px)}
   });
 
   /* vs-cards / gain-list: 子要素をスタッガー登場(role-cardは個別revealのため対象外) */
-  [['.vs-cards', '.vs-card'], ['.gain-points', '.gain-point']].forEach(function (pair) {
+  [['.gain-points', '.gain-point']].forEach(function (pair) {
     var wrap = document.querySelector(pair[0]);
     if (!wrap) return;
     gsap.from(wrap.querySelectorAll(pair[1]), {
