@@ -200,42 +200,28 @@ a.btn-solid:hover{transform:translateY(-2px)}
 .decision-visual__body h3{font-size:clamp(22px,3vw,38px);font-weight:900;line-height:1.5;margin-bottom:16px;letter-spacing:.02em}
 .decision-visual__body p{font-size:clamp(13px,1.5vw,15px);color:rgba(255,255,255,.8);line-height:2}
 @media(max-width:900px){.decision-visual{grid-template-columns:1fr;margin:6vh 0 8vh}.decision-visual img{min-height:260px}}
-/* DECISION MAKING〜他社比較 を連続フルブリードのダークゾーンに */
-#ai-era{padding-bottom:0}
-.ai-conclusion{background:var(--c-dark);color:#fff;padding-bottom:14vh}
-.ai-conclusion .decision-visual{margin:0 0 12vh}
-.ai-conclusion .ai-subhead{color:#fff}
-.ai-conclusion .ai-skills li{border-bottom-color:rgba(255,255,255,.15)}
-.ai-conclusion .ai-skills li h4{color:#fff}
-.ai-conclusion .ai-skills li p{color:rgba(255,255,255,.72)}
-.ai-conclusion .ai-skills li:hover{background:linear-gradient(90deg,rgba(255,210,74,.07),transparent)}
-.ai-conclusion .vs-card{background:#1b1f27;border-color:rgba(255,255,255,.12)}
-.ai-conclusion .vs-card h3{color:#fff}
-.ai-conclusion .vs-card p{color:rgba(255,255,255,.74)}
-.ai-conclusion .vs-card--cj{background:linear-gradient(160deg,#33280c,#1b1f27);border-color:#ffd24a}
-.ai-conclusion .vs-card--cj h3{color:#ffd24a}
-.ai-conclusion .vs-card--cj p{color:rgba(255,255,255,.85)}
-/* ▼ 大胆化: 4 THINGS YOU GET と同スケールに */
-.ai-conclusion .ai-subhead{font-size:clamp(26px,4.8vw,54px);line-height:1.3;letter-spacing:.02em;margin:0 0 clamp(36px,6vh,64px)}
-.ai-conclusion .ai-subhead + .focus-big,.ai-conclusion .ai-subhead + .ai-skills{margin-top:0}
-/* FOCUS: 巨大アウトライン番号の大型ロー */
+/* DECISION MAKING(ダーク帯) → その後はフルブリード白セクション */
+.ai-conclusion .decision-visual{margin:0 0 12vh}   /* 帯は自前のダーク背景を維持 */
+/* 小見出しをヒーロースケール(白背景・濃色) */
+#ai-era .ai-subhead{font-size:clamp(26px,4.8vw,54px);line-height:1.3;letter-spacing:.02em}
+/* FOCUS: 巨大アウトライン番号の大型ロー(白背景) */
 .focus-big{max-width:1160px;margin:0 auto}
 .focus-big__item{display:grid;grid-template-columns:minmax(96px,.4fr) 1fr;gap:clamp(20px,4vw,60px);align-items:start;
-  padding:clamp(30px,5vh,56px) 0;border-top:1px solid rgba(255,255,255,.16);transition:background .4s var(--ease)}
-.focus-big__item:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
-.focus-big__item:hover{background:linear-gradient(90deg,rgba(255,210,74,.06),transparent)}
+  padding:clamp(30px,5vh,56px) 0;border-top:1px solid var(--c-line);transition:background .4s var(--ease)}
+.focus-big__item:last-child{border-bottom:1px solid var(--c-line)}
+.focus-big__item:hover{background:linear-gradient(90deg,rgba(201,30,29,.05),transparent)}
 .focus-big__num{font-family:var(--font-en);font-weight:800;font-size:clamp(46px,7vw,90px);line-height:.9;letter-spacing:-.02em;
-  color:transparent;-webkit-text-stroke:1.6px rgba(255,255,255,.55);text-stroke:1.6px rgba(255,255,255,.55);transition:color .5s var(--ease),-webkit-text-stroke .5s var(--ease)}
-.focus-big__item:hover .focus-big__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
-.focus-big__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.24em;color:#ffd24a;display:block;margin-bottom:12px}
-.focus-big h3{font-size:clamp(22px,3.2vw,36px);font-weight:900;line-height:1.45;margin-bottom:14px;color:#fff;letter-spacing:.02em}
-.focus-big p{font-size:clamp(13px,1.5vw,16px);color:rgba(255,255,255,.75);line-height:2;max-width:680px}
+  color:transparent;-webkit-text-stroke:1.6px rgba(16,18,22,.32);text-stroke:1.6px rgba(16,18,22,.32);transition:color .5s var(--ease),-webkit-text-stroke .5s var(--ease)}
+.focus-big__item:hover .focus-big__num{color:var(--c-red);-webkit-text-stroke-color:var(--c-red)}
+.focus-big__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.24em;color:var(--c-red);display:block;margin-bottom:12px}
+.focus-big h3{font-size:clamp(22px,3.2vw,36px);font-weight:900;line-height:1.45;margin-bottom:14px;color:var(--c-black);letter-spacing:.02em}
+.focus-big p{font-size:clamp(13px,1.5vw,16px);color:#3c4149;line-height:2;max-width:680px}
 @media(max-width:640px){.focus-big__item{grid-template-columns:1fr;gap:8px}.focus-big__num{font-size:50px}}
-/* 他社比較: カードも大きく */
-.ai-conclusion .vs-cards{gap:24px}
-.ai-conclusion .vs-card{padding:clamp(30px,3.4vw,48px);border-radius:18px}
-.ai-conclusion .vs-card h3{font-size:clamp(16px,2vw,22px);margin-bottom:18px;font-weight:800}
-.ai-conclusion .vs-card p{font-size:clamp(13px,1.5vw,15px);line-height:2.05}
+/* 他社比較(白背景・大きめ、CJカードはダーク強調のまま) */
+#ai-era .vs-cards{gap:24px}
+#ai-era .vs-card{padding:clamp(30px,3.4vw,48px);border-radius:18px}
+#ai-era .vs-card h3{font-size:clamp(16px,2vw,22px);margin-bottom:18px;font-weight:800}
+#ai-era .vs-card p{font-size:clamp(13px,1.5vw,15px);line-height:2.05}
 .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:8vh}
 @media(max-width:768px){.ai-grid{grid-template-columns:1fr}}
 .ai-card{
