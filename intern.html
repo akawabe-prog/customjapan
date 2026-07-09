@@ -189,16 +189,32 @@ a.btn-solid:hover{transform:translateY(-2px)}
 .ai-visual__body h3{font-size:clamp(20px,2.4vw,30px);font-weight:900;line-height:1.6;margin-bottom:10px}
 .ai-visual__body p{font-size:13px;color:#3c4149;line-height:2}
 @media(max-width:900px){.ai-visual{grid-template-columns:1fr}.ai-visual__body{padding-left:20px}}
+/* DECISION MAKING: フルブリード2カラム帯 */
 .decision-visual{
-  display:grid;grid-template-columns:1fr .72fr;gap:34px;align-items:center;margin:0 0 8vh;
-  border:1px solid var(--c-line);border-radius:18px;overflow:hidden;background:var(--c-white);
+  display:grid;grid-template-columns:1.12fr .88fr;align-items:stretch;
+  margin:8vh 0 11vh;background:var(--c-dark);color:#fff;overflow:hidden;
 }
-.decision-visual img{width:100%;height:100%;min-height:340px;object-fit:cover}
-.decision-visual__body{padding:34px 34px 34px 0}
-.decision-visual__body b{font-family:var(--font-en);font-size:11px;font-weight:800;letter-spacing:.22em;color:var(--c-red);display:block;margin-bottom:12px}
-.decision-visual__body h3{font-size:clamp(20px,2.4vw,30px);font-weight:900;line-height:1.6;margin-bottom:10px}
-.decision-visual__body p{font-size:13px;color:#3c4149;line-height:2}
-@media(max-width:900px){.decision-visual{grid-template-columns:1fr}.decision-visual img{min-height:240px}.decision-visual__body{padding:0 24px 28px}}
+.decision-visual img{width:100%;height:100%;min-height:clamp(340px,54vh,560px);object-fit:cover;display:block}
+.decision-visual__body{padding:clamp(40px,6vw,84px) clamp(28px,6vw,88px);display:flex;flex-direction:column;justify-content:center}
+.decision-visual__body b{font-family:var(--font-en);font-size:11px;font-weight:800;letter-spacing:.24em;color:#ffd24a;display:block;margin-bottom:16px}
+.decision-visual__body h3{font-size:clamp(22px,3vw,38px);font-weight:900;line-height:1.5;margin-bottom:16px;letter-spacing:.02em}
+.decision-visual__body p{font-size:clamp(13px,1.5vw,15px);color:rgba(255,255,255,.8);line-height:2}
+@media(max-width:900px){.decision-visual{grid-template-columns:1fr;margin:6vh 0 8vh}.decision-visual img{min-height:260px}}
+/* DECISION MAKING〜他社比較 を連続フルブリードのダークゾーンに */
+#ai-era{padding-bottom:0}
+.ai-conclusion{background:var(--c-dark);color:#fff;padding-bottom:14vh}
+.ai-conclusion .decision-visual{margin:0 0 12vh}
+.ai-conclusion .ai-subhead{color:#fff}
+.ai-conclusion .ai-skills li{border-bottom-color:rgba(255,255,255,.15)}
+.ai-conclusion .ai-skills li h4{color:#fff}
+.ai-conclusion .ai-skills li p{color:rgba(255,255,255,.72)}
+.ai-conclusion .ai-skills li:hover{background:linear-gradient(90deg,rgba(255,210,74,.07),transparent)}
+.ai-conclusion .vs-card{background:#1b1f27;border-color:rgba(255,255,255,.12)}
+.ai-conclusion .vs-card h3{color:#fff}
+.ai-conclusion .vs-card p{color:rgba(255,255,255,.74)}
+.ai-conclusion .vs-card--cj{background:linear-gradient(160deg,#33280c,#1b1f27);border-color:#ffd24a}
+.ai-conclusion .vs-card--cj h3{color:#ffd24a}
+.ai-conclusion .vs-card--cj p{color:rgba(255,255,255,.85)}
 .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:8vh}
 @media(max-width:768px){.ai-grid{grid-template-columns:1fr}}
 .ai-card{
@@ -548,16 +564,19 @@ a.btn-solid:hover{transform:translateY(-2px)}
         <p>巨大市場はAIスタートアップと大資本の主戦場になります。モビリティアフターマーケットというニッチで確固たる地位があるからこそ、価格競争に巻き込まれず、AIを道具として使う余裕があります。</p>
       </div>
     </div>
+  </div>
 
-    <div class="decision-visual reveal">
-      <img src="assets/img/intern-planning-whiteboard.jpg" alt="企画案をホワイトボードでプレゼンするインターン">
-      <div class="decision-visual__body">
-        <b>DECISION MAKING</b>
-        <h3>提案し、議論し、決める場に立つ。</h3>
-        <p>調べたことを資料にして終わりではなく、社員の前で提案し、何をやるかを一緒に決める経験を積みます。</p>
-      </div>
+  <div class="ai-conclusion">
+  <div class="decision-visual reveal">
+    <img src="assets/img/intern-planning-whiteboard.jpg" alt="企画案をホワイトボードでプレゼンするインターン">
+    <div class="decision-visual__body">
+      <b>DECISION MAKING</b>
+      <h3>提案し、議論し、決める場に立つ。</h3>
+      <p>調べたことを資料にして終わりではなく、社員の前で提案し、何をやるかを一緒に決める経験を積みます。</p>
     </div>
+  </div>
 
+  <div class="inner">
     <h3 class="sec-title sec-title--sm reveal ai-subhead" style="margin-top:3vh">だから、若いうちにここへ注力してほしい</h3>
     <ol class="ai-skills reveal">
       <li><span class="ai-skills__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9.5 3v2.5M14.5 3v2.5M9.5 18.5V21M14.5 18.5V21M3 9.5h2.5M3 14.5h2.5M18.5 9.5H21M18.5 14.5H21"/></svg></span><b>FOCUS 01</b><div><h4>AIを「使い倒す側」の実務経験</h4><p>企画・制作・分析の現場で、AIツールを使うことを歓迎します。「AIを禁止する会社」と「AIで若手の生産性を上げる会社」なら、選ぶべきは後者。使い方は仕事の中でしか身につきません。</p></div></li>
@@ -580,6 +599,7 @@ a.btn-solid:hover{transform:translateY(-2px)}
         <p>創業以来20年以上連続増収の安定した土台の上で、新ブランド立ち上げという挑戦の現場に入れる。社員メンターがつき、裁量と伴走の両方がある。「安定×挑戦」のいいとこ取りが、ここの本質です。</p>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
