@@ -1,2 +1,3 @@
 .DS_Store
 dist/
+intern-entry-config.local.php

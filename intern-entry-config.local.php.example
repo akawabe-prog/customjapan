@@ -1,0 +1,31 @@
+<?php
+/**
+ * intern-entry.php 用 送信設定（サンプル）
+ *
+ * 使い方:
+ *   1. このファイルを intern-entry-config.local.php にコピー
+ *   2. 実際の宛先・SMTP 情報を記入
+ *   3. intern-entry-config.local.php は Git 管理外（.gitignore 済み）
+ *
+ * SMTP を設定しない場合は intern-entry.php が自動的に mb_send_mail で送信します
+ * （サーバーのメール送信が有効であることが前提）。
+ */
+return [
+    // 応募通知の宛先（複数可）
+    'to' => ['recruit@customjapan.jp'],
+    // CC（任意）
+    'cc' => [],
+    // 差出人
+    'from' => 'noreply@customjapan.jp',
+    'from_name' => 'CUSTOM JAPAN Internship',
+
+    // SMTP を使う場合のみ設定（PHPMailer が必要）。
+    // vendor/autoload.php もしくは _PhP_Mailer_/src を同梱してください。
+    'smtp' => [
+        'host'     => '',        // 例: smtp.example.com
+        'port'     => 587,
+        'username' => '',
+        'password' => '',
+        'secure'   => 'tls',     // 'tls' | 'ssl' | ''
+    ],
+];
