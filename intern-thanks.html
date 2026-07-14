@@ -34,13 +34,21 @@
   <div class="card">
     <p class="eyebrow">INTERNSHIP 2026</p>
     <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="5 13 10 18 19 6"></polyline></svg></div>
-    <h1>エントリーありがとうございます</h1>
-    <p>長期インターンへのご応募を受け付けました。<br>内容を確認のうえ、担当者より数日以内にご連絡いたします。</p>
+    <h1 id="tkTitle">エントリーありがとうございます</h1>
+    <p id="tkMsg">長期インターンへのご応募を受け付けました。<br>内容を確認のうえ、担当者より数日以内にご連絡いたします。</p>
     <p class="contact">お急ぎの場合 : recruit@customjapan.jp / TEL 06-6563-9317（平日 9:00–18:00）</p>
     <div class="actions">
       <a href="index.html" class="btn btn-solid">インターンページへ戻る</a>
       <a href="index.html" class="btn btn-line">TOPへ</a>
     </div>
   </div>
+  <script>
+    (function(){
+      if(new URLSearchParams(location.search).get('type')==='casual'){
+        document.getElementById('tkTitle').textContent='カジュアル面談のお申し込みを受け付けました';
+        document.getElementById('tkMsg').innerHTML='ありがとうございます。担当者より、面談日程についてメールでご連絡いたします。<br>「何を話せばいいか分からない」でも大丈夫。当日は気軽にお越しください。';
+      }
+    })();
+  </script>
 </body>
 </html>

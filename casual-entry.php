@@ -2,10 +2,8 @@
 declare(strict_types=1);
 
 /**
- * 長期インターン エントリーフォーム 受信ハンドラ
- * eXs (exs-mobi) の contact_submit.php / partner-entry.php を参考に作成。
- * SMTP 設定 (intern-entry-config.local.php) があれば PHPMailer、
- * なければ mb_send_mail にフォールバックする。
+ * 長期インターン カジュアル面談 受信ハンドラ（最小項目版）
+ * 大学・学部・名前 + 連絡用メール。intern-entry.php と同じ送信方式。
  */
 
 header('X-Frame-Options: SAMEORIGIN');
@@ -13,7 +11,7 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
-    header('Location: entry.html');
+    header('Location: casual.html');
     exit;
 }
 
@@ -28,7 +26,7 @@ function allowOriginOrReferer(array $allowedHosts): bool
 {
     $check = static function (string $url) use ($allowedHosts): bool {
         if ($url === '') {
-            return true; // 送られてこない環境もあるため許容
+            return true;
         }
         $host = strtolower((string)parse_url($url, PHP_URL_HOST));
         return $host !== '' && in_array($host, $allowedHosts, true);
@@ -38,75 +36,46 @@ function allowOriginOrReferer(array $allowedHosts): bool
 }
 
 /* ---- 入力取得 ---- */
-$position  = posted('position');
-$start     = posted('start');
-$name      = posted('name');
-$kana      = posted('kana');
-$email     = posted('email');
-$tel       = posted('tel');
-$school    = posted('school');
-$faculty   = posted('faculty');
-$grade     = posted('grade');
-$grad      = posted('grad');
-$area      = posted('area');
-$portfolio = posted('portfolio');
-$interest  = posted('interest');
-$message   = posted('message');
-$privacy   = posted('privacy');
+$name    = posted('name');
+$grade   = posted('grade');
+$school  = posted('school');
+$faculty = posted('faculty');
+$email   = posted('email');
+$privacy = posted('privacy');
 
-/* ---- スパム対策フィールド ---- */
-$honeypot      = posted('company_hp');   // 人間には見えない。値が入っていたらボット。
-$jsEnabled     = posted('js_enabled');   // JS で 1 に書き換わる
-$csrfToken     = posted('csrf_token');   // JS が付与
+/* ---- スパム対策 ---- */
+$honeypot      = posted('company_hp');
+$jsEnabled     = posted('js_enabled');
+$csrfToken     = posted('csrf_token');
 $formStartedAt = (int)posted('form_started_at');
 
 /* ---- バリデーション ---- */
 $errors = [];
 $now = time();
 
-$allowedPositions = ['企画・マーケティング', 'クリエイティブ制作', 'まだ決めていない・相談したい'];
-
-if (!in_array($position, $allowedPositions, true)) {
-    $errors[] = 'position';
-}
 if ($name === '' || mb_strlen($name) > 80 || preg_match('/[\r\n]/', $name)) {
     $errors[] = 'name';
-}
-if ($kana === '' || mb_strlen($kana) > 80 || preg_match('/[\r\n]/', $kana)) {
-    $errors[] = 'kana';
-}
-if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 255 || preg_match('/[\r\n]/', $email)) {
-    $errors[] = 'email';
-}
-if ($tel === '' || !preg_match('/^[0-9+\-() ]{6,30}$/', $tel)) {
-    $errors[] = 'tel';
-}
-if ($school === '' || mb_strlen($school) > 120 || preg_match('/[\r\n]/', $school)) {
-    $errors[] = 'school';
-}
-// 区分により必須項目を変える
-$inSchool = in_array($grade, ['学部1年', '学部2年', '学部3年', '学部4年', '修士1年', '修士2年', '海外大学', '短大', '専門学校生', '高専'], true);
-$facultyRequired = $inSchool || in_array($grade, ['既卒', '第二新卒'], true);
-if (mb_strlen($faculty) > 120 || preg_match('/[\r\n]/', $faculty)) {
-    $errors[] = 'faculty';
-} elseif ($facultyRequired && $faculty === '') {
-    $errors[] = 'faculty';
 }
 if ($grade === '' || mb_strlen($grade) > 40) {
     $errors[] = 'grade';
 }
-// 在学中は卒業予定年月を必須に
-if ($inSchool && $grad === '') {
-    $errors[] = 'grad';
+if ($school === '' || mb_strlen($school) > 120 || preg_match('/[\r\n]/', $school)) {
+    $errors[] = 'school';
 }
-if (mb_strlen($interest) > 2000 || mb_strlen($message) > 3000) {
-    $errors[] = 'length';
+// 高卒・その他は学部/学科が無いため任意
+$facultyOptional = in_array($grade, ['高卒', 'その他'], true);
+if (mb_strlen($faculty) > 120 || preg_match('/[\r\n]/', $faculty)) {
+    $errors[] = 'faculty';
+} elseif (!$facultyOptional && $faculty === '') {
+    $errors[] = 'faculty';
+}
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 255 || preg_match('/[\r\n]/', $email)) {
+    $errors[] = 'email';
 }
 if ($privacy !== '1') {
     $errors[] = 'privacy';
 }
 
-/* ---- ボット・不正送信対策 ---- */
 $allowedHosts = ['customjapan.jp', 'www.customjapan.jp'];
 $requestHost = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
 if ($requestHost !== '') {
@@ -126,13 +95,12 @@ if ($csrfToken === '') {
 if (!allowOriginOrReferer($allowedHosts)) {
     $errors[] = 'origin';
 }
-// フォーム表示から 1 秒未満 / 2 時間超は不正・期限切れ扱い
 if ($formStartedAt <= 0 || ($now - $formStartedAt) < 1 || ($now - $formStartedAt) > 7200) {
     $errors[] = 'time';
 }
 
 if (!empty($errors)) {
-    header('Location: intern-error.html?form=intern');
+    header('Location: intern-error.html?type=casual');
     exit;
 }
 
@@ -140,28 +108,15 @@ if (!empty($errors)) {
 $ip = (string)($_SERVER['REMOTE_ADDR'] ?? 'unknown');
 $ua = substr((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 180);
 
-$subject = '【カスタムジャパン】長期インターン エントリー';
+$subject = '【カスタムジャパン】長期インターン カジュアル面談 希望';
 $body = implode("\n", [
-    '長期インターン エントリーフォームから応募がありました。',
+    '長期インターンのカジュアル面談 申し込みがありました。',
     '',
-    '希望職種: ' . $position,
-    '勤務開始時期: ' . ($start !== '' ? $start : '未定'),
     'お名前: ' . $name,
-    'フリガナ: ' . $kana,
+    '現在の区分・学年: ' . $grade,
+    '大学・学校名: ' . $school,
+    '学部・学科: ' . ($faculty !== '' ? $faculty : '(該当なし)'),
     'メールアドレス: ' . $email,
-    '電話番号: ' . $tel,
-    '学校名: ' . $school,
-    '学部・学科: ' . $faculty,
-    '学年: ' . $grade,
-    '卒業予定: ' . ($grad !== '' ? $grad : '未定'),
-    'お住まい: ' . ($area !== '' ? $area : '-'),
-    'ポートフォリオ/SNS: ' . ($portfolio !== '' ? $portfolio : '-'),
-    '',
-    '興味のある領域:',
-    ($interest !== '' ? $interest : '-'),
-    '',
-    '志望動機・自己PR:',
-    ($message !== '' ? $message : '-'),
     '',
     '---',
     '送信元IP: ' . $ip,
@@ -169,7 +124,7 @@ $body = implode("\n", [
     'Referer: ' . (string)($_SERVER['HTTP_REFERER'] ?? '-'),
 ]);
 
-/* ---- 設定ロード (任意) ---- */
+/* ---- 設定ロード (intern-entry と共通の設定ファイルを流用) ---- */
 $config = [];
 $configPath = __DIR__ . '/intern-entry-config.local.php';
 if (file_exists($configPath)) {
@@ -204,7 +159,6 @@ $useSmtp = $phpMailerReady
 $sent = false;
 
 if ($useSmtp) {
-    /* ---- SMTP 送信 (PHPMailer) ---- */
     try {
         $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
         $mail->isSMTP();
@@ -244,11 +198,10 @@ if ($useSmtp) {
         $mail->isHTML(false);
         $sent = $mail->send();
     } catch (\Throwable $e) {
-        error_log('[intern-entry] SMTP send failed: ' . $e->getMessage());
+        error_log('[casual-entry] SMTP send failed: ' . $e->getMessage());
         $sent = false;
     }
 } else {
-    /* ---- フォールバック: mb_send_mail ---- */
     $headers = [
         'From: ' . mb_encode_mimeheader($fromName) . ' <' . $from . '>',
         'Reply-To: ' . $email,
@@ -268,5 +221,5 @@ if ($useSmtp) {
     }
 }
 
-header('Location: ' . ($sent ? 'intern-thanks.html' : 'intern-error.html?form=intern'));
+header('Location: ' . ($sent ? 'intern-thanks.html?type=casual' : 'intern-error.html?type=casual'));
 exit;

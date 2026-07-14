@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>長期インターン カジュアル面談のお申し込み | 株式会社カスタムジャパン</title>
+<meta name="description" content="株式会社カスタムジャパンの長期インターン カジュアル面談 お申し込みフォームです。まずは気軽にお話ししましょう。">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="assets/logo/cj-mascot.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="form-topbar">
+  <a href="index.html" class="form-topbar__logo" aria-label="長期インターン募集ページ"><img src="assets/logo/cj-logo-black-text.svg" alt="CUSTOM JAPAN"></a>
+  <a href="index.html#entry" class="form-topbar__back">← 応募方法の選択に戻る</a>
+</header>
+
+<main class="form-main">
+  <span class="ef-badge ef-badge--blue">INTERNSHIP 2026 — カジュアル面談</span>
+  <h1 class="sec-title sec-title--sm">まずは、話を聞きに来てください。</h1>
+  <p style="color:#3c4149;line-height:2;margin:12px 0 32px;max-width:640px">「何ができるか分からない」でOK。オンラインでも対応します。必要なのは3項目だけ。あとは面談で、あなたの興味と持ち場を一緒に考えます。<br>そのまま応募したい方は <a href="entry.html" style="color:var(--c-red);text-decoration:underline">エントリーフォーム</a> へ。</p>
+
+  <form class="entry-form" id="casualForm" action="casual-entry.php" method="POST" novalidate>
+    <input type="hidden" name="entry_type" value="長期インターン（カジュアル面談）">
+    <!-- スパム対策(人間には非表示 / JSが値を付与) -->
+    <input type="text" name="company_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+    <input type="hidden" name="js_enabled" value="0">
+    <input type="hidden" name="form_started_at" value="">
+    <input type="hidden" name="csrf_token" value="">
+
+    <div class="ef-row"><label>お名前<span class="req">必須</span></label>
+      <input type="text" name="name" placeholder="山田 太郎" required>
+      <p class="ef-error">お名前を入力してください</p></div>
+    <div class="ef-2col">
+      <div class="ef-row"><label>現在の区分・学年<span class="req">必須</span></label>
+        <select name="grade" id="gradeSelect" required>
+          <option value="">選択してください</option>
+          <optgroup label="大学・大学院（在学）">
+            <option>学部1年</option><option>学部2年</option><option>学部3年</option><option>学部4年</option>
+            <option>修士1年</option><option>修士2年</option>
+            <option>海外大学</option>
+          </optgroup>
+          <optgroup label="短大・専門・高専（在学）">
+            <option>短大</option><option>専門学校生</option><option>高専</option>
+          </optgroup>
+          <optgroup label="卒業後・社会人">
+            <option>既卒</option><option>第二新卒</option><option>高卒</option>
+          </optgroup>
+          <option>その他</option>
+        </select>
+        <p class="ef-error">選択してください</p></div>
+      <div class="ef-row"><label>大学・学校名<span class="req">必須</span></label>
+        <input type="text" name="school" placeholder="〇〇大学 / 〇〇専門学校 など" required>
+        <p class="ef-error">大学・学校名を入力してください</p></div>
+    </div>
+    <div class="ef-2col">
+      <div class="ef-row" id="facultyRow"><label>学部・学科<span class="req">必須</span></label>
+        <input type="text" name="faculty" placeholder="経済学部 経営学科" required>
+        <p class="ef-error">学部・学科を入力してください</p></div>
+      <div class="ef-row"><label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <p class="ef-error">正しいメールアドレスを入力してください</p></div>
+    </div>
+    <p class="ef-note" style="margin-top:-8px;margin-bottom:24px">※ メールアドレスは面談日程のご連絡に使用します。</p>
+
+    <label class="ef-consent"><input type="checkbox" name="privacy" value="1" required><span><a href="https://customjapan.jp/" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します。ご入力いただいた情報は採用選考の目的にのみ利用します。<span class="req">必須</span></span></label>
+    <button type="submit" class="btn-solid" style="border:none;cursor:pointer;font-family:inherit">カジュアル面談を申し込む</button>
+    <p class="ef-note">※ 学業を最優先に日程を調整します。バイクの知識は不要です。<br>※ お問い合わせ: TEL 06-6563-9317(平日9:00–18:00) / MAIL recruit@customjapan.jp</p>
+  </form>
+</main>
+
+<script>
+/* カジュアル面談フォーム: クライアント検証 + casual-entry.php へ POST */
+(function () {
+  var form = document.getElementById('casualForm');
+  if (!form) return;
+  var js = form.querySelector('[name="js_enabled"]'); if (js) js.value = '1';
+  var started = form.querySelector('[name="form_started_at"]'); if (started) started.value = String(Math.floor(Date.now() / 1000));
+  var csrf = form.querySelector('[name="csrf_token"]');
+  if (csrf) {
+    var token = '';
+    try { if (window.crypto && window.crypto.getRandomValues) { var a = new Uint8Array(16); window.crypto.getRandomValues(a); token = Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); } } catch (e) {}
+    if (!token) token = String(Date.now()) + Math.random().toString(16).slice(2);
+    csrf.value = token;
+  }
+
+  /* 区分により「学部・学科」の必須/任意を切替(高卒・その他は学部が無いため任意) */
+  var gradeSel = form.querySelector('[name="grade"]');
+  var facultyInput = form.querySelector('[name="faculty"]');
+  function syncFaculty() {
+    if (!gradeSel || !facultyInput) return;
+    var row = facultyInput.closest('.ef-row'); if (!row) return;
+    var badge = row.querySelector('label span');
+    var v = gradeSel.value;
+    var optional = (v === '高卒' || v === 'その他');
+    facultyInput.required = !optional;
+    facultyInput.placeholder = optional ? '該当なしの場合は空欄でOK' : '経済学部 経営学科';
+    if (badge) { badge.className = optional ? 'opt' : 'req'; badge.textContent = optional ? '任意' : '必須'; }
+    if (optional) row.classList.remove('is-invalid');
+  }
+  if (gradeSel) { gradeSel.addEventListener('change', syncFaculty); syncFaculty(); }
+
+  form.addEventListener('submit', function (e) {
+    var ok = true;
+    form.querySelectorAll('[required]').forEach(function (f) {
+      var row = f.closest('.ef-row') || f.closest('.ef-consent');
+      var bad = (f.type === 'checkbox') ? !f.checked : !String(f.value).trim() || (f.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+      if (row && row.classList) row.classList.toggle('is-invalid', bad);
+      if (bad) ok = false;
+    });
+    if (!ok) { e.preventDefault(); var first = form.querySelector('.is-invalid'); if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  });
+  form.querySelectorAll('input,select,textarea').forEach(function (f) {
+    f.addEventListener('input', function () { var r = f.closest('.ef-row') || f.closest('.ef-consent'); if (r && r.classList) r.classList.remove('is-invalid'); });
+  });
+})();
+</script>
+</body>
+</html>

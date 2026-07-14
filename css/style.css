@@ -774,3 +774,42 @@ ul{list-style:none}
 }
 .header__lang:hover{opacity:1}
 .header__lang::after{display:none!important}
+
+/* ===== エントリー/カジュアル面談 フォーム(共有) ===== */
+.entry-form{max-width:780px;margin-top:8px}
+.ef-row{margin-bottom:22px}
+.ef-row label{display:block;font-size:12.5px;font-weight:700;margin-bottom:8px}
+.ef-row label .req{color:var(--c-red);font-size:10px;font-weight:700;margin-left:8px;border:1px solid currentColor;border-radius:3px;padding:1px 5px;vertical-align:middle}
+.ef-row label .opt{color:var(--c-gray);font-size:10px;font-weight:500;margin-left:8px}
+.ef-row input,.ef-row select,.ef-row textarea{width:100%;font-family:inherit;font-size:14px;color:var(--c-black);background:var(--c-white);border:1px solid var(--c-line);border-radius:10px;padding:13px 15px;transition:border-color .3s}
+.ef-row input:focus,.ef-row select:focus,.ef-row textarea:focus{outline:none;border-color:var(--c-blue)}
+.ef-row textarea{resize:vertical;min-height:120px;line-height:1.8}
+.ef-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.ef-2col{grid-template-columns:1fr}}
+.ef-consent{display:flex;gap:12px;align-items:flex-start;font-size:12.5px;color:#3c4149;line-height:1.8;background:var(--c-off);border-radius:12px;padding:18px 20px;margin-bottom:24px}
+.ef-consent input{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.ef-consent a{color:var(--c-blue);text-decoration:underline}
+.ef-error{color:var(--c-red);font-size:11.5px;margin-top:6px;display:none}
+.ef-row.is-invalid input,.ef-row.is-invalid select,.ef-row.is-invalid textarea{border-color:var(--c-red)}
+.ef-row.is-invalid .ef-error{display:block}
+.ef-note{font-size:11.5px;color:var(--c-gray);margin-top:16px;line-height:1.8}
+.ef-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,30,29,.08);color:var(--c-red);font-weight:800;font-size:12px;letter-spacing:.08em;border-radius:100px;padding:8px 16px;margin-bottom:20px}
+.ef-badge--blue{background:rgba(0,70,140,.08);color:var(--c-blue)}
+/* フォームページ用の簡易ヘッダー */
+.form-topbar{display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,5vw,56px);border-bottom:1px solid var(--c-line)}
+.form-topbar__logo img{height:26px;width:auto;display:block}
+.form-topbar__back{font-size:12.5px;font-weight:700;color:var(--c-dark);text-decoration:none;letter-spacing:.02em}
+.form-topbar__back:hover{color:var(--c-red)}
+.form-main{max-width:860px;margin:0 auto;padding:clamp(40px,7vh,72px) clamp(20px,5vw,40px) 12vh}
+/* インターンページ: エントリー2択 */
+.entry-choice{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:0 auto}
+@media(max-width:760px){.entry-choice{grid-template-columns:1fr}}
+.entry-choice__card{display:flex;flex-direction:column;background:var(--c-white);border:1px solid var(--c-line);border-radius:18px;padding:clamp(28px,4vw,40px);text-decoration:none;color:var(--c-dark);transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.entry-choice__card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(13,15,18,.1);border-color:var(--c-red)}
+.entry-choice__card--casual:hover{border-color:var(--c-blue)}
+.entry-choice__tag{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--c-red);margin-bottom:14px}
+.entry-choice__card--casual .entry-choice__tag{color:var(--c-blue)}
+.entry-choice__card h3{font-size:clamp(20px,2.6vw,26px);font-weight:900;letter-spacing:.02em;margin-bottom:12px}
+.entry-choice__card p{font-size:13px;color:#3c4149;line-height:1.95;flex:1}
+.entry-choice__go{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--c-red)}
+.entry-choice__card--casual .entry-choice__go{color:var(--c-blue)}

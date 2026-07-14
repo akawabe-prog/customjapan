@@ -38,9 +38,15 @@
     <p>お手数ですが、少し時間をおいて再度お試しください。<br>必須項目の未入力や、通信環境が原因の場合があります。</p>
     <p class="contact">解決しない場合 : recruit@customjapan.jp / TEL 06-6563-9317（平日 9:00–18:00）までご連絡ください。</p>
     <div class="actions">
-      <a href="index.html#entry" class="btn btn-solid">フォームに戻る</a>
+      <a id="erBack" href="entry.html" class="btn btn-solid">フォームに戻る</a>
       <a href="index.html" class="btn btn-line">TOPへ</a>
     </div>
   </div>
+  <script>
+    (function(){
+      var back=document.getElementById('erBack');
+      back.href = (new URLSearchParams(location.search).get('type')==='casual') ? 'casual.html' : 'entry.html';
+    })();
+  </script>
 </body>
 </html>
