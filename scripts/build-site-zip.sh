@@ -11,9 +11,12 @@ mkdir -p "$STAGE"
 # ---- ルート直下のページ/スクリプト ----
 PAGES=(
   index.html                 # TOP = インターンページ
+  entry.html                  # 応募(本エントリー)フォーム
+  casual.html                 # カジュアル面談フォーム
   intern-thanks.html
   intern-error.html
   intern-entry.php
+  casual-entry.php
   intern-entry-config.local.php.example
 )
 
@@ -24,7 +27,8 @@ for f in "${PAGES[@]}"; do
   [ -f "$f" ] && cp "$f" "$STAGE/$f"
 done
 for d in "${DIRS[@]}"; do
-  [ -d "$d" ] && rsync -a --exclude '.DS_Store' "$d" "$STAGE/"
+  # DSC01101-optimized.jpg(未使用の巨大元データ)は除外
+  [ -d "$d" ] && rsync -a --exclude '.DS_Store' --exclude 'DSC01101-optimized.jpg' "$d" "$STAGE/"
 done
 
 # ---- デプロイ手順メモ ----

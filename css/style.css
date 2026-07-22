@@ -813,3 +813,10 @@ ul{list-style:none}
 .entry-choice__card p{font-size:13px;color:#3c4149;line-height:1.95;flex:1}
 .entry-choice__go{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--c-red)}
 .entry-choice__card--casual .entry-choice__go{color:var(--c-blue)}
+
+/* エントリー完了パネル(プロトタイプのページ内確認) */
+.ef-done{display:none;text-align:center;padding:8vh 6vw;border:1px solid var(--c-line);border-radius:18px;background:var(--c-off)}
+.ef-done h3{font-size:22px;font-weight:900;margin-bottom:14px}
+.ef-done p{font-size:13px;color:#3c4149;line-height:2}
+.entry-form.is-submitted{display:none}
+.entry-form.is-submitted + .ef-done{display:block}

@@ -81,7 +81,7 @@
 .person__body p{font-size:11.5px;color:var(--c-gray)}
 .person{cursor:pointer;text-align:left;width:100%;font:inherit;color:inherit}
 .person__more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:var(--font-en);font-weight:700;font-size:10.5px;letter-spacing:.12em;color:var(--c-blue)}
-.person__more::after{content:"＋";font-size:13px}
+.person__more::after{content:"→";font-size:13px}
 .iv-modal__head{display:flex;gap:18px;align-items:center;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--c-line)}
 .iv-modal__head img{width:96px;height:96px;object-fit:cover;border-radius:12px;flex-shrink:0}
 #ivBody p{font-size:13px;color:#3c4149;line-height:2.05;margin-bottom:1.2em}
@@ -304,7 +304,7 @@
 <body>
 
 <header class="header header--solid" id="header">
-  <a href="../index.html" class="header__logo">
+  <a href="../corporate/index.html" class="header__logo">
     <img src="../assets/logo/cj-logo-white-text.svg" alt="" class="header__logo-white" aria-hidden="true">
     <img src="../assets/logo/cj-logo-black-text.svg" alt="株式会社カスタムジャパン" class="header__logo-color">
   </a>
@@ -317,7 +317,7 @@
     <a href="#faq">FAQ</a>
     <a href="en/index.html" class="header__lang">EN</a>
     <a href="global.html" class="header__lang">海外出身の方へ</a>
-    <a href="#entry" class="header__recruit">
+    <a href="entry.html" class="header__recruit">
       <span class="header__recruit-en">ENTRY</span>
       <span class="header__recruit-jp">応募する</span>
     </a>
@@ -335,7 +335,7 @@
     <a href="#faq">FAQ</a>
     <a href="en/index.html">EN — English</a>
     <a href="global.html">海外出身の方へ</a>
-    <a href="#entry" class="mobile-menu__recruit">ENTRY — 応募する</a>
+    <a href="entry.html" class="mobile-menu__recruit">ENTRY — 応募する</a>
   </nav>
 </div>
 
@@ -355,7 +355,7 @@
     <p class="rc-hero__lead">創業20年・社員107名。モビリティの未来に挑戦しながら、<br class="pc">現実的に働きやすい環境を、本気で整えている会社です。</p>
     <div class="rc-hero__btns">
       <a href="#positions" class="btn-solid">募集職種を見る</a>
-      <a href="#entry" class="btn-line btn-line--light">エントリー</a>
+      <a href="entry.html" class="btn-line btn-line--light">エントリー</a>
     </div>
   </div>
   <div class="rc-strip" aria-label="働く環境データ">
@@ -365,7 +365,7 @@
     <div><b>7.25<small>年</small></b><span>平均勤続</span></div>
   </div>
 </section>
-<div class="crumb"><a href="../index.html">企業サイト</a><span>/</span>採用情報</div>
+<div class="crumb"><a href="../corporate/index.html">企業サイト</a><span>/</span>採用情報</div>
 
 <!-- DATA -->
 <section class="page-section" id="data">
@@ -621,7 +621,7 @@
     </table>
     <p class="reveal" style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
       <a href="#positions" class="btn-solid">募集職種を見る</a>
-      <a href="#entry" class="btn-line">エントリーフォームへ</a>
+      <a href="entry.html" class="btn-line">エントリーフォームへ</a>
     </p>
   </div>
 </section>
@@ -708,63 +708,10 @@
 </section>
 
 <!-- ENTRY -->
-<section class="page-section" id="entry">
-  <div class="inner">
-    <p class="sec-label reveal">ENTRY</p>
-    <h2 class="sec-title sec-title--sm reveal">エントリーフォーム</h2>
-    <p class="sec-lead reveal">中途・新卒とも、こちらのフォームからご応募いただけます。ご応募から内定まで約2〜4週間。学歴・性別・国籍による制限はありません。</p>
-
-    <form class="entry-form reveal" id="entryForm" novalidate>
-      <div class="ef-2col">
-        <div class="ef-row"><label>応募区分<span class="req">必須</span></label>
-          <select name="type" required><option value="">選択してください</option><option>中途採用</option><option>新卒採用</option><option>長期インターン</option></select>
-          <p class="ef-error">選択してください</p></div>
-        <div class="ef-row"><label>希望職種<span class="req">必須</span></label>
-          <select name="position" id="posSelect" required><option value="">選択してください</option></select>
-          <p class="ef-error">選択してください</p></div>
-      </div>
-      <div class="ef-2col">
-        <div class="ef-row"><label>お名前<span class="req">必須</span></label>
-          <input type="text" name="name" placeholder="山田 太郎" required>
-          <p class="ef-error">お名前を入力してください</p></div>
-        <div class="ef-row"><label>フリガナ<span class="req">必須</span></label>
-          <input type="text" name="kana" placeholder="ヤマダ タロウ" required>
-          <p class="ef-error">フリガナを入力してください</p></div>
-      </div>
-      <div class="ef-2col">
-        <div class="ef-row"><label>メールアドレス<span class="req">必須</span></label>
-          <input type="email" name="email" placeholder="you@example.com" required>
-          <p class="ef-error">正しいメールアドレスを入力してください</p></div>
-        <div class="ef-row"><label>電話番号<span class="req">必須</span></label>
-          <input type="tel" name="tel" placeholder="09012345678" required>
-          <p class="ef-error">電話番号を入力してください</p></div>
-      </div>
-      <div class="ef-2col">
-        <div class="ef-row"><label>お住まい(都道府県)<span class="opt">任意</span></label>
-          <input type="text" name="area" placeholder="大阪府"></div>
-        <div class="ef-row"><label>現在のご状況<span class="opt">任意</span></label>
-          <select name="status"><option value="">選択してください</option><option>在職中</option><option>離職中</option><option>学生</option><option>その他</option></select></div>
-      </div>
-      <div class="ef-row"><label>履歴書・職務経歴書<span class="opt">任意</span></label>
-        <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png">
-        <p class="ef-note" style="margin-top:8px">※ PDF・Word・画像に対応。後日メールでのご提出も可能です。</p></div>
-      <div class="ef-row"><label>志望動機・自己PR<span class="opt">任意</span></label>
-        <textarea name="message" placeholder="これまでのご経験や、当社でチャレンジしたいことをお聞かせください。"></textarea></div>
-      <label class="ef-consent"><input type="checkbox" name="consent" required><span><a href="https://customjapan.jp/" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します。ご入力いただいた情報は採用選考の目的にのみ利用します。<span class="req">必須</span></span></label>
-      <button type="submit" class="btn-solid" style="border:none;cursor:pointer;font-family:inherit">この内容で応募する</button>
-      <p class="ef-note">※ 海外出身の方の応募には日本語能力試験N1が必要です。<br>※ お問い合わせ: TEL 06-6563-9317(平日9:00–18:00) / MAIL recruit@customjapan.jp<br>※ 学生向けの長期インターンは<a href="../index.html" style="color:var(--c-blue);text-decoration:underline">こちらのページ</a>もご覧ください。</p>
-    </form>
-    <div class="ef-done" id="efDone">
-      <h3>ご応募ありがとうございます</h3>
-      <p>内容を確認のうえ、担当者より2〜4週間以内にご連絡いたします。<br>お急ぎの場合は recruit@customjapan.jp までお問い合わせください。</p>
-    </div>
-  </div>
-</section>
-
 <!-- JOB MODAL -->
 <div class="modal" id="jobModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal__backdrop" data-close></div>
-  <div class="modal__panel">
+  <div class="modal__panel" data-lenis-prevent>
     <div class="modal__head">
       <button class="modal__close" data-close aria-label="閉じる">×</button>
       <span class="modal__div" id="mDiv"></span>
@@ -788,7 +735,7 @@
         <tr><th>選考</th><td id="mFlow"></td></tr>
       </table>
       <div class="modal__apply">
-        <a href="#entry" class="btn-solid" data-close id="mApply">この職種に応募する</a>
+        <a href="entry.html" class="btn-solid" data-close id="mApply">この職種に応募する</a>
       </div>
     </div>
   </div>
@@ -797,7 +744,7 @@
 <!-- INTERVIEW MODAL -->
 <div class="modal" id="ivModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal__backdrop" data-close></div>
-  <div class="modal__panel">
+  <div class="modal__panel" data-lenis-prevent>
     <div class="modal__head">
       <button class="modal__close" data-close aria-label="閉じる">×</button>
       <span class="modal__div" id="ivNo"></span>
@@ -811,7 +758,7 @@
       </div>
       <div id="ivBody"></div>
       <div class="modal__apply">
-        <a href="#entry" class="btn-solid" data-close>この会社で働きたい — 応募する</a>
+        <a href="entry.html" class="btn-solid" data-close>この会社で働きたい — 応募する</a>
       </div>
     </div>
   </div>
@@ -832,11 +779,11 @@
         <a href="#blog">NOTE</a>
         <a href="global.html">GLOBAL</a>
         <a href="../index.html">INTERN</a>
-        <a href="../index.html">企業サイト</a>
+        <a href="../corporate/index.html">企業サイト</a>
       </nav>
       <div class="footer__contact">
         <p>ご応募はこちら</p>
-        <a href="#entry" class="btn-line btn-line--light">エントリーフォーム</a>
+        <a href="entry.html" class="btn-line btn-line--light">エントリーフォーム</a>
       </div>
     </div>
     <p class="footer__copy">&copy; Custom Japan Co., Ltd. All Rights Reserved.</p>
@@ -892,7 +839,7 @@
     set('mEmploy', common.employ); set('mPlace', common.place); set('mHours', common.hours);
     set('mSalary', common.salary); set('mHoliday', common.holiday); set('mBenefit', common.benefit); set('mFlow', common.flow);
     var apply = document.getElementById('mApply');
-    apply.onclick = function(){ closeModal(); if(sel){ sel.value = j.title; } if(window.lenis){ window.lenis.scrollTo('#entry',{offset:-70,duration:1.2}); } };
+    if (apply) apply.href = 'entry.html?position=' + encodeURIComponent(j.title);
     modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.documentElement.style.overflow='hidden';
   }
   function closeModal(){ modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.documentElement.style.overflow=''; }
@@ -905,14 +852,13 @@
   var pGrid = document.getElementById('peopleGrid');
   if (pGrid) {
     ivs.forEach(function(v){
-      var b = document.createElement('button');
-      b.type = 'button'; b.className = 'person';
-      b.setAttribute('data-iv', v.id);
+      var b = document.createElement('a');
+      b.className = 'person';
+      b.href = 'interview/' + v.id + '.html';
       b.innerHTML = '<div class="person__img"><img src="../assets/img/'+esc(v.img)+'" alt="" loading="lazy"></div>'+
         '<div class="person__body"><p class="person__meta">INTERVIEW '+esc(v.no)+' — '+esc(v.dept)+'</p>'+
         '<h3>'+esc(v.title)+'</h3><p>'+esc(v.meta)+'</p>'+
         '<span class="person__more">インタビューを読む</span></div>';
-      b.addEventListener('click', function(){ openIv(v.id); });
       pGrid.appendChild(b);
     });
   }

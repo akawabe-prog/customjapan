@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エントリー（応募） | 採用情報 | 株式会社カスタムジャパン</title>
+<meta name="description" content="株式会社カスタムジャパン 中途・新卒採用のエントリー（応募）フォームです。">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="../assets/logo/cj-mascot.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="form-topbar">
+  <a href="../corporate/index.html" class="form-topbar__logo" aria-label="企業サイト"><img src="../assets/logo/cj-logo-black-text.svg" alt="CUSTOM JAPAN"></a>
+  <a href="index.html" class="form-topbar__back">← 採用情報に戻る</a>
+</header>
+
+<main class="form-main">
+  <span class="ef-badge">ENTRY — エントリー（応募）</span>
+  <h1 class="sec-title sec-title--sm">エントリーフォーム</h1>
+  <p style="color:#3c4149;line-height:2;margin:12px 0 32px;max-width:680px">中途・新卒とも、こちらのフォームからご応募いただけます。ご応募から内定まで約2〜4週間。学歴・性別・国籍による制限はありません。<br>学生向けの長期インターンは <a href="../index.html" style="color:var(--c-blue);text-decoration:underline">こちらのページ</a> をご覧ください。</p>
+
+  <form class="entry-form" id="entryForm" novalidate>
+    <div class="ef-2col">
+      <div class="ef-row"><label>応募区分<span class="req">必須</span></label>
+        <select name="type" required><option value="">選択してください</option><option>中途採用</option><option>新卒採用</option><option>長期インターン</option></select>
+        <p class="ef-error">選択してください</p></div>
+      <div class="ef-row"><label>希望職種<span class="req">必須</span></label>
+        <select name="position" id="posSelect" required><option value="">選択してください</option></select>
+        <p class="ef-error">選択してください</p></div>
+    </div>
+    <div class="ef-2col">
+      <div class="ef-row"><label>お名前<span class="req">必須</span></label>
+        <input type="text" name="name" placeholder="山田 太郎" required>
+        <p class="ef-error">お名前を入力してください</p></div>
+      <div class="ef-row"><label>フリガナ<span class="req">必須</span></label>
+        <input type="text" name="kana" placeholder="ヤマダ タロウ" required>
+        <p class="ef-error">フリガナを入力してください</p></div>
+    </div>
+    <div class="ef-2col">
+      <div class="ef-row"><label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <p class="ef-error">正しいメールアドレスを入力してください</p></div>
+      <div class="ef-row"><label>電話番号<span class="req">必須</span></label>
+        <input type="tel" name="tel" placeholder="09012345678" required>
+        <p class="ef-error">電話番号を入力してください</p></div>
+    </div>
+    <div class="ef-2col">
+      <div class="ef-row"><label>お住まい(都道府県)<span class="opt">任意</span></label>
+        <input type="text" name="area" placeholder="大阪府"></div>
+      <div class="ef-row"><label>現在のご状況<span class="opt">任意</span></label>
+        <select name="status"><option value="">選択してください</option><option>在職中</option><option>離職中</option><option>学生</option><option>その他</option></select></div>
+    </div>
+    <div class="ef-row"><label>履歴書・職務経歴書<span class="opt">任意</span></label>
+      <input type="file" name="resume" accept=".pdf,.doc,.docx,.jpg,.png">
+      <p class="ef-note" style="margin-top:8px">※ PDF・Word・画像に対応。後日メールでのご提出も可能です。</p></div>
+    <div class="ef-row"><label>志望動機・自己PR<span class="opt">任意</span></label>
+      <textarea name="message" placeholder="これまでのご経験や、当社でチャレンジしたいことをお聞かせください。"></textarea></div>
+    <label class="ef-consent"><input type="checkbox" name="consent" required><span><a href="https://customjapan.jp/" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します。ご入力いただいた情報は採用選考の目的にのみ利用します。<span class="req">必須</span></span></label>
+    <button type="submit" class="btn-solid" style="border:none;cursor:pointer;font-family:inherit">この内容で応募する</button>
+    <p class="ef-note">※ 海外出身の方の応募には日本語能力試験N1が必要です。<br>※ お問い合わせ: TEL 06-6563-9317(平日9:00–18:00) / MAIL recruit@customjapan.jp</p>
+  </form>
+  <div class="ef-done" id="efDone">
+    <h3>ご応募ありがとうございます</h3>
+    <p>内容を確認のうえ、担当者より2〜4週間以内にご連絡いたします。<br>お急ぎの場合は recruit@customjapan.jp までお問い合わせください。</p>
+  </div>
+</main>
+
+<script src="jobs-data.js"></script>
+<script>
+(function(){
+  var jobs = window.CJ_JOBS || [];
+  var sel = document.getElementById('posSelect');
+  if (sel) {
+    jobs.forEach(function(j){ var o=document.createElement('option'); o.value=j.title; o.textContent=j.title; sel.appendChild(o); });
+    var o2=document.createElement('option'); o2.value='その他・未定'; o2.textContent='その他・未定'; sel.appendChild(o2);
+    // 求人票からの遷移: ?position= で希望職種を事前選択
+    try {
+      var pos = new URLSearchParams(location.search).get('position');
+      if (pos) { sel.value = pos; }
+    } catch(e){}
+  }
+  var form = document.getElementById('entryForm'), done = document.getElementById('efDone');
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function(f){
+        var row = f.closest('.ef-row') || f.closest('.ef-consent');
+        var bad = (f.type==='checkbox') ? !f.checked : !String(f.value).trim() || (f.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+        if (row && row.classList) row.classList.toggle('is-invalid', bad);
+        if (bad) ok = false;
+      });
+      if (!ok) { var first = form.querySelector('.is-invalid'); if(first) first.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+      form.classList.add('is-submitted');
+      if (done) { done.style.display='block'; window.scrollTo({top:0,behavior:'smooth'}); }
+    });
+    form.querySelectorAll('input,select,textarea').forEach(function(f){
+      f.addEventListener('input', function(){ var r=f.closest('.ef-row')||f.closest('.ef-consent'); if(r&&r.classList) r.classList.remove('is-invalid'); });
+    });
+  }
+})();
+</script>
+</body>
+</html>
