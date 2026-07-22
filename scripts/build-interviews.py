@@ -40,16 +40,21 @@ def page(slug):
 
     ch_html = ""
     for i, ch in enumerate(chapters, 1):
-        if ch["h"]:
+        photo = f"{ROOT}/assets/img/interview/{slug}-{i}.jpg"
+        has_photo = os.path.exists(photo)
+        head = f'<h2><span>{i:02d}</span>{esc(ch["h"])}</h2>' if ch["h"] else ''
+        body = head + ''.join(f'<p>{esc(p)}</p>' for p in ch["paras"])
+        if has_photo:
+            alt_cls = ' ivp-chapter--flip' if i % 2 == 0 else ''
             ch_html += f'''
-      <section class="ivp-chapter reveal">
-        <h2><span>{i:02d}</span>{esc(ch["h"])}</h2>
-        {''.join(f'<p>{esc(p)}</p>' for p in ch["paras"])}
+      <section class="ivp-chapter ivp-chapter--photo{alt_cls} reveal">
+        <figure><img src="../../assets/img/interview/{slug}-{i}.jpg" alt="" loading="lazy"></figure>
+        <div>{body}</div>
       </section>'''
         else:
             ch_html += f'''
       <section class="ivp-chapter reveal">
-        {''.join(f'<p>{esc(p)}</p>' for p in ch["paras"])}
+        {body}
       </section>'''
 
     sched_html = ""
@@ -97,6 +102,11 @@ def page(slug):
 .ivp-hero__meta b{{color:var(--c-black);font-weight:700}}
 @media(max-width:760px){{.ivp-hero{{grid-template-columns:1fr}}}}
 .ivp-chapter{{max-width:760px;margin:0 auto clamp(40px,7vh,64px)}}
+.ivp-chapter--photo{{max-width:1060px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,52px);align-items:center}}
+.ivp-chapter--photo figure{{margin:0}}
+.ivp-chapter--photo img{{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}}
+.ivp-chapter--flip figure{{order:2}}
+@media(max-width:760px){{.ivp-chapter--photo{{grid-template-columns:1fr}}.ivp-chapter--flip figure{{order:0}}}}
 .ivp-chapter h2{{display:flex;gap:16px;align-items:baseline;font-size:clamp(17px,2.1vw,22px);font-weight:900;line-height:1.7;margin-bottom:18px}}
 .ivp-chapter h2 span{{font-family:var(--font-en);font-weight:800;font-size:12px;letter-spacing:.18em;color:var(--c-red);flex-shrink:0}}
 .ivp-chapter p{{font-size:14.5px;color:#3c4149;line-height:2.15;margin-bottom:1.2em}}

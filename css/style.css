@@ -820,3 +820,11 @@ ul{list-style:none}
 .ef-done p{font-size:13px;color:#3c4149;line-height:2}
 .entry-form.is-submitted{display:none}
 .entry-form.is-submitted + .ef-done{display:block}
+
+/* 求める人物像(VALUES) — 行動指針から生まれた4カード */
+.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1000px}
+@media(max-width:768px){.value-grid{grid-template-columns:1fr}}
+.value-card{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--c-line);border-radius:16px;padding:30px 32px;background:var(--c-white)}
+.value-card b{font-family:var(--font-en);font-weight:800;font-size:26px;color:var(--c-red);line-height:1;flex-shrink:0}
+.value-card h3{font-size:15.5px;font-weight:900;margin-bottom:8px;line-height:1.6}
+.value-card p{font-size:12.5px;color:#3c4149;line-height:2}

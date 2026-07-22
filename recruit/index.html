@@ -16,21 +16,13 @@
   position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;
   background:var(--c-dark);color:#fff;
 }
-.rc-hero img.rc-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
-.rc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,14,.88) 0%,rgba(8,10,14,.2) 60%)}
+.rc-hero img.rc-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78}
+.rc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,14,.62) 0%,rgba(8,10,14,.05) 60%)}
 .rc-hero__inner{position:relative;z-index:2;padding:18vh 6vw 8vh;width:100%}
 .rc-hero__label{font-family:var(--font-en);font-weight:800;font-size:12px;letter-spacing:.4em;color:#ff6b6a;margin-bottom:20px}
 .rc-hero__title{font-size:clamp(26px,5.2vw,64px);font-weight:900;line-height:1.5;letter-spacing:.04em;white-space:nowrap}
 .rc-hero__lead{margin-top:20px;color:rgba(255,255,255,.85);font-size:clamp(13px,1.5vw,15.5px)}
 .rc-hero__btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.rc-strip{
-  position:relative;z-index:2;display:flex;flex-wrap:wrap;
-  border-top:1px solid rgba(255,255,255,.16);background:rgba(8,10,14,.42);backdrop-filter:blur(5px);
-}
-.rc-strip div{flex:1;min-width:150px;padding:18px 20px;border-right:1px solid rgba(255,255,255,.12);text-align:center}
-.rc-strip b{font-family:var(--font-en);font-weight:800;font-size:clamp(20px,2.4vw,30px);display:block;color:#fff}
-.rc-strip b small{font-size:.5em;font-weight:600;margin-left:2px}
-.rc-strip span{font-size:10.5px;color:rgba(255,255,255,.66);letter-spacing:.08em}
 
 .rc-data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--c-line);border:1px solid var(--c-line);border-radius:16px;overflow:hidden}
 .rc-data{background:var(--c-white);padding:34px 30px;text-align:center}
@@ -115,32 +107,12 @@
 .entry-card p{font-size:12.5px;color:#3c4149;flex:1}
 
 /* VALUES */
-.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1000px}
-@media(max-width:768px){.value-grid{grid-template-columns:1fr}}
-.value-card{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--c-line);border-radius:16px;padding:30px 32px;background:var(--c-white)}
-.value-card b{font-family:var(--font-en);font-weight:800;font-size:26px;color:var(--c-red);line-height:1;flex-shrink:0}
-.value-card h3{font-size:15.5px;font-weight:900;margin-bottom:8px;line-height:1.6}
-.value-card p{font-size:12.5px;color:#3c4149;line-height:2}
 /* CULTURE */
-.culture-grid{display:grid;grid-template-columns:2fr 1fr;gap:22px}
-@media(max-width:900px){.culture-grid{grid-template-columns:1fr}}
-.culture-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.culture-photos img{width:100%;height:100%;object-fit:cover;border-radius:14px;aspect-ratio:4/3}
-.culture-points{display:flex;flex-direction:column;gap:14px}
 .culture-point{border:1px solid var(--c-line);border-radius:14px;padding:22px 24px;background:var(--c-white)}
 .culture-point b{font-family:var(--font-en);font-weight:800;font-size:22px;color:var(--c-blue);display:block;line-height:1.1}
 .culture-point b small{font-size:.5em;font-weight:600}
 .culture-point span{font-size:12px;color:#3c4149;line-height:1.7;display:block;margin-top:4px}
 /* GROWTH */
-.growth-flow{display:flex;gap:0;flex-wrap:wrap;max-width:1000px}
-.growth-step{flex:1;min-width:180px;border:1px solid var(--c-line);border-radius:14px;padding:26px 24px;background:var(--c-white);position:relative;margin-right:26px;margin-bottom:20px}
-.growth-step:last-child{margin-right:0}
-.growth-step::after{content:"→";position:absolute;right:-20px;top:50%;transform:translateY(-50%);color:var(--c-gray);font-weight:700}
-.growth-step:last-child::after{display:none}
-.growth-step b{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.16em;color:var(--c-red);display:block;margin-bottom:10px}
-.growth-step h3{font-size:14.5px;font-weight:700;margin-bottom:8px;line-height:1.6}
-.growth-step p{font-size:12px;color:#3c4149;line-height:1.9}
-@media(max-width:768px){.growth-step{margin-right:0}.growth-step::after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%)}}
 /* FLOW */
 .flow-steps{counter-reset:fl;max-width:820px}
 .flow-steps li{display:flex;gap:22px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--c-line)}
@@ -247,6 +219,49 @@
 .rc-brand-note span{font-size:11.5px;color:rgba(255,255,255,.6);letter-spacing:.06em}
 
 /* ---- full-bleed: statement band(写真+コピー) ---- */
+/* ===== intern意匠: CULTUREフルブリード縦長スライダー ===== */
+.culture-slider{display:flex;gap:20px;overflow-x:auto;padding:16px 6vw 26px;margin-top:38px;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--c-line) transparent;cursor:grab}
+.culture-slider.is-drag{cursor:grabbing;scroll-snap-type:none}
+.culture-slider::-webkit-scrollbar{height:5px}
+.culture-slider::-webkit-scrollbar-thumb{background:var(--c-line);border-radius:3px}
+.scene-card{position:relative;flex:0 0 min(320px,72vw);scroll-snap-align:start;border-radius:16px;overflow:hidden;background:var(--c-dark);aspect-ratio:3/4;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.scene-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(13,15,18,.18)}
+.scene-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
+.scene-card:hover img{transform:scale(1.07)}
+.scene-card__tag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--font-en);font-weight:800;font-size:10px;
+  letter-spacing:.14em;color:#fff;background:rgba(8,10,14,.55);backdrop-filter:blur(4px);padding:6px 12px;border-radius:100px}
+.scene-card__cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:34px 18px 16px;color:#fff;font-size:12.5px;
+  font-weight:700;line-height:1.55;background:linear-gradient(to top,rgba(8,10,14,.92) 0%,rgba(8,10,14,0) 100%)}
+.scene-card__cap small{display:block;font-size:10.5px;color:rgba(255,255,255,.72);font-weight:500;margin-top:4px}
+.culture-points{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1120px}
+@media(max-width:900px){.culture-points{grid-template-columns:repeat(2,1fr)}}
+/* ===== intern意匠: GROWTH 特大1カラム(全画面ダークパネル) ===== */
+.growth-panel{background:var(--c-dark);color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:16vh 6vw}
+.growth-panel__inner{max-width:1120px;margin:0 auto;width:100%}
+.growth-panel__label{font-family:var(--font-en);font-weight:800;font-size:12px;letter-spacing:.3em;color:#ffd24a;margin-bottom:clamp(32px,6vh,64px)}
+.growth-panel__title{font-size:clamp(24px,3.4vw,40px);font-weight:900;letter-spacing:.03em;line-height:1.6;margin-bottom:10px}
+.growth-panel__lead{font-size:13.5px;color:rgba(255,255,255,.72);line-height:2;margin-bottom:clamp(28px,5vh,52px);max-width:640px}
+.growth-row{display:grid;grid-template-columns:minmax(84px,.42fr) 1fr;gap:clamp(20px,4vw,56px);align-items:baseline;
+  padding:clamp(24px,4vh,42px) 0;border-top:1px solid rgba(255,255,255,.16);transition:background .4s var(--ease)}
+.growth-row:hover{background:rgba(255,255,255,.03)}
+.growth-row:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.growth-row__num{font-family:var(--font-en);font-weight:800;font-size:clamp(42px,7vw,86px);line-height:.9;letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.5);text-stroke:1.5px rgba(255,255,255,.5);transition:-webkit-text-stroke .5s var(--ease),color .5s var(--ease)}
+.growth-row:hover .growth-row__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
+.growth-row__body h3{font-size:clamp(21px,3vw,36px);font-weight:900;line-height:1.4;margin-bottom:12px;letter-spacing:.02em}
+.growth-row__body p{font-size:clamp(13px,1.5vw,15.5px);color:rgba(255,255,255,.72);line-height:1.95;max-width:660px}
+@media(max-width:640px){.growth-row{grid-template-columns:1fr;gap:6px}.growth-row__num{font-size:46px}}
+/* フルブリード・ビジュアル帯(動きのバリエーション: パララックス/ズーム/動画) */
+.rcv{position:relative;height:clamp(420px,62vh,640px);overflow:hidden;background:var(--c-dark)}
+.rcv__media{position:absolute;left:0;right:0;top:-12%;height:124%;width:100%;object-fit:cover;will-change:transform}
+.rcv--zoom .rcv__media{top:0;height:100%}
+.rcv::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,14,.74),rgba(8,10,14,.12) 55%)}
+.rcv__inner{position:absolute;left:0;right:0;bottom:0;z-index:2;max-width:1200px;margin:0 auto;padding:0 6vw 7vh;color:#fff}
+.rcv__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:#ffd24a;margin-bottom:14px}
+.rcv__title{font-size:clamp(24px,3.6vw,44px);font-weight:900;line-height:1.5;letter-spacing:.03em}
+.rcv__sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.85);max-width:560px;line-height:2}
 .rc-band{position:relative;min-height:56svh;display:flex;align-items:center;overflow:hidden;background:var(--c-dark)}
 .rc-band__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
 .rc-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,14,.82) 0%,rgba(8,10,14,.5) 55%,rgba(8,10,14,.2) 100%)}
@@ -309,7 +324,6 @@
     <img src="../assets/logo/cj-logo-black-text.svg" alt="株式会社カスタムジャパン" class="header__logo-color">
   </a>
   <nav class="header__nav">
-    <a href="#values">VALUES</a>
     <a href="#jobs">JOBS</a>
     <a href="#people">PEOPLE</a>
     <a href="#benefits">BENEFITS</a>
@@ -327,7 +341,6 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <nav>
-    <a href="#values">VALUES</a>
     <a href="#jobs">JOBS</a>
     <a href="#people">PEOPLE</a>
     <a href="#benefits">BENEFITS</a>
@@ -358,12 +371,6 @@
       <a href="entry.html" class="btn-line btn-line--light">エントリー</a>
     </div>
   </div>
-  <div class="rc-strip" aria-label="働く環境データ">
-    <div><b>125<small>日</small></b><span>年間休日</span></div>
-    <div><b>1.2<small>h/日</small></b><span>平均残業</span></div>
-    <div><b>4.9 : 5.1</b><span>男女比</span></div>
-    <div><b>7.25<small>年</small></b><span>平均勤続</span></div>
-  </div>
 </section>
 <div class="crumb"><a href="../corporate/index.html">企業サイト</a><span>/</span>採用情報</div>
 
@@ -379,7 +386,7 @@
       <div class="rc-data"><b>4.9 : 5.1</b><h3>男女比</h3><p>性別・年齢に関係なく全従業員が活躍できる職場へ</p></div>
       <div class="rc-data"><b>7.25<small>年</small></b><h3>平均勤続年数</h3><p>長く働ける環境づくりを続けています</p></div>
       <div class="rc-data"><b>107<small>名</small></b><h3>従業員数</h3><p>2025年9月現在。多国籍なメンバーが活躍中</p></div>
-      <div class="rc-data"><b>85<small>万点</small></b><h3>取扱商品数</h3><p>EC会員13万人。業界最大級のプラットフォーム</p></div>
+      <div class="rc-data"><b>100<small>万点</small></b><h3>取扱商品数</h3><p>EC会員13万人。業界最大級のプラットフォーム</p></div>
     </div>
   </div>
 </section>
@@ -402,20 +409,16 @@
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="page-section" id="values">
-  <div class="inner">
-    <p class="sec-label reveal">VALUES</p>
-    <h2 class="sec-title sec-title--sm reveal">こんな人と、働きたい</h2>
-    <p class="sec-lead reveal">特別なスキルより、大切にしている姿勢があります。カスタムジャパンの行動指針から生まれた「求める人物像」です。乗り物やモビリティの知識は、入社時点では必要ありません。</p>
-    <div class="value-grid">
-      <div class="value-card reveal"><b>01</b><div><h3>明るく・真摯に、プラス発想で挑める人</h3><p>正解のない挑戦が多い会社です。困難も面白がり、前向きに一歩を踏み出せる人と働きたい。</p></div></div>
-      <div class="value-card reveal"><b>02</b><div><h3>数字・ファクト・ロジックで考えられる人</h3><p>勘や勢いだけでなく、事実とデータに基づいて「なぜそうするか」を語れる人を歓迎します。</p></div></div>
-      <div class="value-card reveal"><b>03</b><div><h3>相手の立場になって動ける人</h3><p>主語を自分から相手へ転換する。お客様・仲間・取引先の視点で考え、行動できる人。</p></div></div>
-      <div class="value-card reveal"><b>04</b><div><h3>モノづくりと世界を、面白がれる人</h3><p>乗り物・ガジェット・海外——好奇心を持って学び続けられる人なら、経験は問いません。</p></div></div>
-    </div>
+
+<!-- VISUAL BAND 1: ブランドムービー(華やかな舞台) -->
+<div class="rcv rcv--zoom" aria-label="ライディングシーン">
+  <video class="rcv__media" src="../assets/video/hero.mp4" autoplay muted loop playsinline data-zoom></video>
+  <div class="rcv__inner">
+    <p class="rcv__label reveal">ON THE STAGE</p>
+    <p class="rcv__title reveal">ノル人を、ツクる側へ。</p>
+    <p class="rcv__sub reveal">万博を走ったeXs、鈴鹿8耐、エヴァンゲリオンコラボ——華やかな舞台も、私たちの日常です。</p>
   </div>
-</section>
+</div>
 
 <!-- JOBS / DIVISIONS -->
 <section class="page-section page-section--off" id="jobs">
@@ -440,42 +443,67 @@
     <p class="sec-label reveal" style="color:#ff6b6a">OUR BRANDS</p>
     <h2 class="sec-title sec-title--sm reveal">あなたが動かすのは、<br>これらのブランド。</h2>
     <p class="rc-brands__lead reveal">部品商社の枠を超え「企画から販売まで」を担う私たちには、自ら生み出したブランドと、世界から預かるブランドの両方があります。入社後、あなたが企画・仕入・マーケティング・物流で関わるのは、これらの実在するブランドです。「モノ」と「文化」の両方を、自分の手で市場へ届けられます。</p>
+  </div>
 
-    <div class="rc-brand-block reveal">
-      <p class="rc-brand-cat"><span>自社開発ブランド</span>ゼロから企画し、世に問う</p>
-      <ul class="rc-brand-logos">
-        <li><img src="../assets/brands/pic_brand_original_eXs.png" alt="eXs"></li>
-        <li><img src="../assets/brands/pic_brand_original_protools.png" alt="ProTOOLs"></li>
-        <li><img src="../assets/brands/pic_brand_original_proselect_bk.png" alt="ProSelect"></li>
-        <li><img src="../assets/brands/pic_brand_original_mirax.png" alt="MIRAX"></li>
-        <li><img src="../assets/brands/pic_brand_original_optimum.png" alt="Optimum"></li>
-        <li><img src="../assets/brands/pic_brand_original_pfp.png" alt="PFP"></li>
-      </ul>
-    </div>
-
-    <div class="rc-brand-block reveal">
-      <p class="rc-brand-cat"><span>日本総代理店・正規取扱</span>世界のブランドを、日本へ</p>
-      <ul class="rc-brand-logos">
-        <li><img src="../assets/brands/pic_brand_abroad_asmax.png" alt="ASMAX"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_shad.png" alt="SHAD"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_timsun.png" alt="TIMSUN"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_zontes.png" alt="ZONTES"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_eleveit.png" alt="ELEVEIT"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_ariete.png" alt="ariete"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_customchrome.png" alt="CUSTOM CHROME"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_protaper.png" alt="PROTAPER"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_ufoplast.png" alt="UFO PLAST"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_polisport.png" alt="Polisport"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_ncy.png" alt="NCY"></li>
-        <li><img src="../assets/brands/pic_brand_abroad_torch.png" alt="TORCH"></li>
-      </ul>
-    </div>
-
-    <div class="rc-brand-note reveal">
-      <div><b>30<small>+</small></b><span>取扱ブランド</span></div>
-      <div><b>85<small>万点</small></b><span>取扱商品数</span></div>
-      <div><b>7<small>カ国</small></b><span>海外取引エリア(ASEAN・中華圏)</span></div>
-    </div>
+  <!-- corporate TOPと同じビジュアルモザイク -->
+  <div class="brand-mosaic">
+    <a class="brand-tile" href="https://exs.customjapan.net/" target="_blank" rel="noopener">
+      <video src="../assets/video/brand-exs.mp4" autoplay muted loop playsinline></video>
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">OUR BRAND</span>
+        <h3>eXs</h3>
+        <p>大阪・関西万博を走った次世代モビリティ。企画から品質管理まで、自社で担います。</p>
+      </div>
+    </a>
+    <a class="brand-tile" href="https://asmax.customjapan.net/" target="_blank" rel="noopener">
+      <img src="../assets/img/ride-night.jpg" alt="ASMAX" loading="lazy">
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">PARTNER BRAND</span>
+        <h3>ASMAX</h3>
+        <p>次世代スマートインカム。EVA RACINGコラボなど、話題づくりも仕事になります。</p>
+      </div>
+    </a>
+    <a class="brand-tile" href="https://shad-japan.com/" target="_blank" rel="noopener">
+      <video src="../assets/video/brand-shad.mp4" autoplay muted loop playsinline></video>
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">PARTNER BRAND</span>
+        <h3>SHAD</h3>
+        <p>スペイン発、世界基準のモーターサイクルケース。Shad Bikesも日本初上陸。</p>
+      </div>
+    </a>
+    <a class="brand-tile" href="https://sp-connect.customjapan.net/" target="_blank" rel="noopener">
+      <img src="../assets/img/spconnect.jpg" alt="SP Connect" loading="lazy">
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">PARTNER BRAND</span>
+        <h3>SP Connect</h3>
+        <p>一つのスマートフォンを、すべての“ノル”へ。日本国内正規販売を担当。</p>
+      </div>
+    </a>
+    <a class="brand-tile" href="https://eleveit.customjapan.net/" target="_blank" rel="noopener">
+      <img src="../assets/img/eleveit-enduro.jpg" alt="ELEVEIT" loading="lazy">
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">PARTNER BRAND</span>
+        <h3>ELEVEIT</h3>
+        <p>世界王者ホルコムが開発に関わるイタリアンオフロードブーツ。</p>
+      </div>
+    </a>
+    <a class="brand-tile" href="https://www.timsun-japan.com/" target="_blank" rel="noopener">
+      <img src="../assets/img/slide-timsun2.jpg" alt="TIMSUN" loading="lazy">
+      <div class="brand-tile__veil"></div>
+      <div class="brand-tile__body">
+        <span class="brand-tile__tag">PARTNER BRAND</span>
+        <h3>TIMSUN</h3>
+        <p>世界40カ国以上で走るタイヤブランド。JNCC・CGCをオフィシャルサポート。</p>
+      </div>
+    </a>
+  </div>
+  <div class="inner" style="margin-top:44px">
+    <p class="reveal"><a href="../corporate/brands.html" class="btn-line btn-line--light">すべてのブランドを見る</a></p>
   </div>
 </section>
 
@@ -485,20 +513,21 @@
     <p class="sec-label reveal">CULTURE</p>
     <h2 class="sec-title sec-title--sm reveal">働く環境と、カルチャー</h2>
     <p class="sec-lead reveal">「挑戦」と「安心」の両立。多様なバックグラウンドの仲間が、フラットに意見を交わしながら、長く働ける環境です。</p>
-    <div class="culture-grid">
-      <div class="culture-photos reveal">
-        <img src="../assets/img/recruit-office-1.jpg" alt="" loading="lazy">
-        <img src="../assets/img/recruit-office-2.jpg" alt="" loading="lazy">
-        <img src="../assets/img/recruit-culture-team-generated.jpg" alt="" loading="lazy">
-        <img src="../assets/img/recruit-entrance.jpg" alt="" loading="lazy">
-      </div>
-      <div class="culture-points reveal">
-        <div class="culture-point"><b>4.9 : 5.1</b><span>性別・年齢に関係なく活躍できる男女比。役職や国籍も問いません。</span></div>
-        <div class="culture-point"><b>多国籍</b><span>商品開発・海外事業を中心に、さまざまな国出身のメンバーが在籍。</span></div>
-        <div class="culture-point"><b>7.25<small>年</small></b><span>平均勤続年数。長く働き、成長できる土台があります。</span></div>
-        <div class="culture-point"><b>20<small>年連続</small></b><span>増収を続ける安定基盤の上で、新しい挑戦に踏み出せます。</span></div>
-      </div>
+    <div class="culture-points reveal">
+      <div class="culture-point"><b>4.9 : 5.1</b><span>性別・年齢に関係なく活躍できる男女比。役職や国籍も問いません。</span></div>
+      <div class="culture-point"><b>多国籍</b><span>商品開発・海外事業を中心に、さまざまな国出身のメンバーが在籍。</span></div>
+      <div class="culture-point"><b>7.25<small>年</small></b><span>平均勤続年数。長く働き、成長できる土台があります。</span></div>
+      <div class="culture-point"><b>20<small>年連続</small></b><span>増収を続ける安定基盤の上で、新しい挑戦に踏み出せます。</span></div>
     </div>
+  </div>
+  <div class="culture-slider" id="cultureSlider">
+    <div class="scene-card reveal"><span class="scene-card__tag">OFFICE</span><img src="../assets/img/interview/iv2-1.jpg" alt="オフィスで働く社員" loading="lazy"><span class="scene-card__cap">フラットに、話せる距離感<small>役員と社員の垣根が低いオフィス</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">LOGISTICS</span><img src="../assets/img/logistics/logistics-picking-staff.jpg" alt="ピッキング作業をするスタッフ" loading="lazy"><span class="scene-card__cap">100万点を、正確に速く<small>当日出荷を支える自社物流</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">PLANNING</span><img src="../assets/img/intern-meeting-real.jpg" alt="商品企画ミーティング" loading="lazy"><span class="scene-card__cap">企画は、対話から生まれる<small>商品企画のミーティング風景</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">EVENT</span><img src="../assets/img/events/suzuka8h-2026.jpg" alt="鈴鹿8耐の会場" loading="lazy"><span class="scene-card__cap">鈴鹿8耐に、初出展<small>レースの熱量を肌で感じる現場</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">CUSTOMER</span><img src="../assets/img/interview/iv3-2.jpg" alt="カスタマーセンターの様子" loading="lazy"><span class="scene-card__cap">声のトーンまで、丁寧に<small>プロを支えるカスタマーセンター</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">WAREHOUSE</span><img src="../assets/img/logistics/logistics-forklift-operator.jpg" alt="フォークリフトを操作するスタッフ" loading="lazy"><span class="scene-card__cap">現場のプロフェッショナル<small>安全第一のマテハン運用</small></span></div>
+    <div class="scene-card reveal"><span class="scene-card__tag">YOUNG TALENT</span><img src="../assets/img/interview/iv7-2.jpg" alt="若手社員の働く様子" loading="lazy"><span class="scene-card__cap">新卒から、海外調達の最前線へ<small>若手に任せるカルチャー</small></span></div>
   </div>
 </section>
 
@@ -512,18 +541,27 @@
   </div>
 </section>
 
+
+<!-- VISUAL BAND 2: 物流現場(泥臭さが地力になる) -->
+<div class="rcv" aria-label="自社物流センターの現場">
+  <img src="../assets/img/logistics/logistics-warehouse-aisle.jpg" alt="" class="rcv__media" data-parallax loading="lazy">
+  <div class="rcv__inner">
+    <p class="rcv__label reveal">REAL FIELD</p>
+    <p class="rcv__title reveal">100万点が動く現場が、<br>事業のリアル。</p>
+    <p class="rcv__sub reveal">華やかさの裏には、モノを動かす泥臭い現場がある。ここで鍛えた地力が、次のキャリアの土台になります。</p>
+  </div>
+</div>
+
 <!-- GROWTH -->
-<section class="page-section" id="growth">
-  <div class="inner">
-    <p class="sec-label reveal">GROWTH</p>
-    <h2 class="sec-title sec-title--sm reveal">入社後の、成長ストーリー</h2>
-    <p class="sec-lead reveal">未経験からでも段階的に成長できる仕組みがあります。ポテンシャルを重視し、学びと挑戦を後押しします。</p>
-    <div class="growth-flow">
-      <div class="growth-step reveal"><b>STEP 01</b><h3>OJT</h3><p>配属先で先輩とともに実務からスタート。小さな担当から任せ、少しずつ範囲を広げます。</p></div>
-      <div class="growth-step reveal"><b>STEP 02</b><h3>読書研修</h3><p>思考力を鍛える読書研修を実施。自分の頭で考え、言語化する力を養います。</p></div>
-      <div class="growth-step reveal"><b>STEP 03</b><h3>外部研修</h3><p>SMBCビジネスセミナー等の豊富なメニューから、希望の講座を受講できます。</p></div>
-      <div class="growth-step reveal"><b>STEP 04</b><h3>評価とキャリア</h3><p>年1回、目標への成果を確認し評価・賞与に反映。挑戦の幅を広げていけます。</p></div>
-    </div>
+<section class="growth-panel" id="growth">
+  <div class="growth-panel__inner">
+    <p class="growth-panel__label reveal">GROWTH — 4 STEPS</p>
+    <h2 class="growth-panel__title reveal">入社後に、できるようになること。</h2>
+    <p class="growth-panel__lead reveal">20年連続増収のこの会社は、人の成長で伸びてきました。アルバイトから物流センター長へ。新卒2年目で海外調達の最前線へ。未経験からECモールのマーケターへ——すべて、ここで実際に起きたキャリアです。次は、あなたの番です。</p>
+    <div class="growth-row reveal"><span class="growth-row__num">01</span><div class="growth-row__body"><h3>初日から、当事者になる。</h3><p>研修室ではなく、現場からのスタート。先輩の隣で「小さな持ち場」を任され、実務の中で仕事を覚えます。見学者ではなく当事者として扱われるから、覚悟も面白さも初日から違います。</p></div></div>
+    <div class="growth-row reveal"><span class="growth-row__num">02</span><div class="growth-row__body"><h3>考える地力を、鍛える。</h3><p>読書研修で「読む→考える→自分の言葉にする」を反復。「数字・ファクト・ロジック」で語る行動指針が身につけば、経験の浅さを補って余りある武器になります。</p></div></div>
+    <div class="growth-row reveal"><span class="growth-row__num">03</span><div class="growth-row__body"><h3>学びに、会社が投資する。</h3><p>SMBCビジネスセミナー等の外部研修は希望制で受講OK。月1回の社内研修や、書籍を会社が揃える「CJライブラリー」も。学びたい気持ちに、会社が本気で乗ってきます。</p></div></div>
+    <div class="growth-row reveal"><span class="growth-row__num">04</span><div class="growth-row__body"><h3>挑戦した分だけ、返ってくる。</h3><p>年1回の評価で成果を確認し、賞与とキャリアに反映。事業が広がり続ける会社だから、ポジションと挑戦の機会は増え続けます。物流から商品開発へ、オペレーションからマーケへ——手を挙げた人に、次の持ち場が用意されます。</p></div></div>
   </div>
 </section>
 
@@ -625,6 +663,17 @@
     </p>
   </div>
 </section>
+
+
+<!-- VISUAL BAND 3: 配送トラック(ズームアウト) -->
+<div class="rcv rcv--zoom" aria-label="カスタムジャパンの配送トラック">
+  <img src="../assets/img/logistics/logistics-truck-loading.jpg" alt="" class="rcv__media" data-zoom loading="lazy">
+  <div class="rcv__inner">
+    <p class="rcv__label reveal">DELIVER THE PROMISE</p>
+    <p class="rcv__title reveal">届けきるまでが、仕事。</p>
+    <p class="rcv__sub reveal">全国のプロの現場へ。カスタムジャパンの物流が、今日も信頼を運びます。</p>
+  </div>
+</div>
 
 <!-- FAQ -->
 <section class="page-section" id="faq">
@@ -879,6 +928,30 @@
 
   // 共通: Escで開いているモーダルを閉じる
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeModal(); closeIv(); } });
+
+
+  // CULTUREスライダー: ドラッグでスクロール
+  (function(){
+    var sl = document.getElementById('cultureSlider');
+    if (!sl) return;
+    var down=false, startX=0, startLeft=0, moved=0;
+    sl.addEventListener('pointerdown', function(e){ down=true; moved=0; startX=e.clientX; startLeft=sl.scrollLeft; sl.setPointerCapture(e.pointerId); });
+    sl.addEventListener('pointermove', function(e){ if(!down) return; moved=e.clientX-startX; if(Math.abs(moved)>4) sl.classList.add('is-drag'); sl.scrollLeft=startLeft-moved; });
+    ['pointerup','pointercancel'].forEach(function(ev){ sl.addEventListener(ev, function(){ down=false; sl.classList.remove('is-drag'); }); });
+    sl.addEventListener('click', function(e){ if(Math.abs(moved)>6) e.preventDefault(); }, true);
+  })();
+
+  // フルブリード帯: 動きのバリエーション(パララックス / ズームアウト)
+  if (window.gsap && window.ScrollTrigger && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    document.querySelectorAll('[data-parallax]').forEach(function(el){
+      gsap.fromTo(el, {yPercent:-8}, {yPercent:8, ease:'none',
+        scrollTrigger:{trigger:el.parentElement, start:'top bottom', end:'bottom top', scrub:true}});
+    });
+    document.querySelectorAll('[data-zoom]').forEach(function(el){
+      gsap.fromTo(el, {scale:1.15}, {scale:1, ease:'none',
+        scrollTrigger:{trigger:el.parentElement, start:'top bottom', end:'center center', scrub:true}});
+    });
+  }
 
   // 4) entry form validation + confirmation (no backend in prototype)
   var form = document.getElementById('entryForm'), done = document.getElementById('efDone');

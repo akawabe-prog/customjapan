@@ -19,6 +19,11 @@
 .ivp-hero__meta b{color:var(--c-black);font-weight:700}
 @media(max-width:760px){.ivp-hero{grid-template-columns:1fr}}
 .ivp-chapter{max-width:760px;margin:0 auto clamp(40px,7vh,64px)}
+.ivp-chapter--photo{max-width:1060px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,52px);align-items:center}
+.ivp-chapter--photo figure{margin:0}
+.ivp-chapter--photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+.ivp-chapter--flip figure{order:2}
+@media(max-width:760px){.ivp-chapter--photo{grid-template-columns:1fr}.ivp-chapter--flip figure{order:0}}
 .ivp-chapter h2{display:flex;gap:16px;align-items:baseline;font-size:clamp(17px,2.1vw,22px);font-weight:900;line-height:1.7;margin-bottom:18px}
 .ivp-chapter h2 span{font-family:var(--font-en);font-weight:800;font-size:12px;letter-spacing:.18em;color:var(--c-red);flex-shrink:0}
 .ivp-chapter p{font-size:14.5px;color:#3c4149;line-height:2.15;margin-bottom:1.2em}
@@ -57,17 +62,17 @@
     </div>
   </div>
 
-      <section class="ivp-chapter reveal">
-        <h2><span>01</span>フットサル中心の生活から一転、会社の成長に「ワクワク」した日々</h2>
-        <p>入社のきっかけは「家から近くて、フットサル中心の生活に合っていたから」という、正直な理由でした。私がアルバイトで入社したのは会社の創業期で、当時はWEB注文よりFAXや電話注文も多く、物流システムもない状態でピッキングや梱包をしていました。でも、そこから会社が新しいシステムを導入し、ものすごいスピードで綺麗に、効率的に進化していく過程を最前線で見てきました。やることは同じでも、常に新しいことに挑戦し続けているというワクワク感があり、終わりを決めずにここで働き続けたいと思うようになりました。</p>
+      <section class="ivp-chapter ivp-chapter--photo reveal">
+        <figure><img src="../../assets/img/interview/iv2-1.jpg" alt="" loading="lazy"></figure>
+        <div><h2><span>01</span>フットサル中心の生活から一転、会社の成長に「ワクワク」した日々</h2><p>入社のきっかけは「家から近くて、フットサル中心の生活に合っていたから」という、正直な理由でした。私がアルバイトで入社したのは会社の創業期で、当時はWEB注文よりFAXや電話注文も多く、物流システムもない状態でピッキングや梱包をしていました。でも、そこから会社が新しいシステムを導入し、ものすごいスピードで綺麗に、効率的に進化していく過程を最前線で見てきました。やることは同じでも、常に新しいことに挑戦し続けているというワクワク感があり、終わりを決めずにここで働き続けたいと思うようになりました。</p></div>
       </section>
-      <section class="ivp-chapter reveal">
-        <h2><span>02</span>「見つかるまで探す」執念と、チーム戦で挑むやりがい</h2>
-        <p>現在は商品開発・企画部門で、国内仕入商品の調達や価格交渉、新規開拓などを担っています。仕事をする上で一番意識しているのは、イレギュラーが発生した場合も「見つかるまで探す」こと。例えば大雪でいつものルートから仕入れができなくなったとしても、郵便配達のバイクは雪でも止まりません。だからこそ、関西中の在庫を探し回ってでも部品をお届けするのが我々の使命です。また、大きな値引きや条件交渉は私1人ではできません。今までの信用をベースに「ここは上司に同席してもらって強めに交渉をお願いしよう」「マーケティング部門の販促と連動させよう」と、チームや他部署を巻き込んで進めます。周りのサポートのおかげで、厳しい目標も「ノルマ」ではなく「ワクワクするチャレンジ」として前向きに取り組めています。</p>
+      <section class="ivp-chapter ivp-chapter--photo ivp-chapter--flip reveal">
+        <figure><img src="../../assets/img/interview/iv2-2.jpg" alt="" loading="lazy"></figure>
+        <div><h2><span>02</span>「見つかるまで探す」執念と、チーム戦で挑むやりがい</h2><p>現在は商品開発・企画部門で、国内仕入商品の調達や価格交渉、新規開拓などを担っています。仕事をする上で一番意識しているのは、イレギュラーが発生した場合も「見つかるまで探す」こと。例えば大雪でいつものルートから仕入れができなくなったとしても、郵便配達のバイクは雪でも止まりません。だからこそ、関西中の在庫を探し回ってでも部品をお届けするのが我々の使命です。また、大きな値引きや条件交渉は私1人ではできません。今までの信用をベースに「ここは上司に同席してもらって強めに交渉をお願いしよう」「マーケティング部門の販促と連動させよう」と、チームや他部署を巻き込んで進めます。周りのサポートのおかげで、厳しい目標も「ノルマ」ではなく「ワクワクするチャレンジ」として前向きに取り組めています。</p></div>
       </section>
-      <section class="ivp-chapter reveal">
-        <h2><span>03</span>温かい仲間に支えられ、全部門で頼られる「マルチプレーヤー」へ</h2>
-        <p>この会社の魅力は、多様なバックグラウンドを持つメンバーから刺激をもらえることです。以前はデータ分析が全くできませんでしたが、同僚がエクセルの関数から見やすい資料の作り方まで全部教えてくれました。主婦のパートさんから掃除の裏技を教えてもらうこともあり、毎日が発見の連続です。実は一度、妻の体調不良と引っ越しの都合で退職したのですが、状況が落ち着いた際にまた応募したところ、温かく迎え入れてくれました。これからの目標は、仕入れの枠にとどまらず、どの部門でも戦力になれる「マルチプレーヤー」になることです。マーケティングがどんな商品を求めているか、オペレーションがどんな問い合わせで困っているか、自ら情報を取りに行き、会社全体の最適化に貢献していきたいです。</p>
+      <section class="ivp-chapter ivp-chapter--photo reveal">
+        <figure><img src="../../assets/img/interview/iv2-3.jpg" alt="" loading="lazy"></figure>
+        <div><h2><span>03</span>温かい仲間に支えられ、全部門で頼られる「マルチプレーヤー」へ</h2><p>この会社の魅力は、多様なバックグラウンドを持つメンバーから刺激をもらえることです。以前はデータ分析が全くできませんでしたが、同僚がエクセルの関数から見やすい資料の作り方まで全部教えてくれました。主婦のパートさんから掃除の裏技を教えてもらうこともあり、毎日が発見の連続です。実は一度、妻の体調不良と引っ越しの都合で退職したのですが、状況が落ち着いた際にまた応募したところ、温かく迎え入れてくれました。これからの目標は、仕入れの枠にとどまらず、どの部門でも戦力になれる「マルチプレーヤー」になることです。マーケティングがどんな商品を求めているか、オペレーションがどんな問い合わせで困っているか、自ら情報を取りに行き、会社全体の最適化に貢献していきたいです。</p></div>
       </section>
 
       <section class="ivp-schedule reveal">
