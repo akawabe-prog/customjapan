@@ -1014,6 +1014,22 @@ ul{list-style:none}
 .pf-domain > b,.pf-domain > h3,.pf-domain > p,.pf-domain > span{position:relative;z-index:2}
 .pf-domain{min-height:clamp(230px,24vw,290px);display:flex;flex-direction:column;justify-content:flex-end}
 .pf-domain::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(8,10,14,.92) 0%,rgba(8,10,14,.55) 60%,rgba(8,10,14,.25) 100%)}
+/* PLATFORM: 特大タイポのプロセス(写真なし・LP調) */
+.pf-flow{margin-top:clamp(40px,7vh,80px);border-top:1px solid rgba(255,255,255,.16)}
+.pf-flow__row{display:grid;grid-template-columns:minmax(90px,.34fr) 1fr;gap:clamp(20px,4vw,60px);
+  align-items:baseline;padding:clamp(28px,5vh,52px) 0;border-bottom:1px solid rgba(255,255,255,.16);
+  transition:background .5s var(--ease)}
+.pf-flow__row:hover{background:rgba(255,255,255,.03)}
+.pf-flow__num{font-family:var(--font-en);font-weight:800;font-size:clamp(44px,7.5vw,104px);line-height:.85;
+  letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.6px rgba(255,255,255,.45);
+  transition:-webkit-text-stroke .5s var(--ease),color .5s var(--ease)}
+.pf-flow__row:hover .pf-flow__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
+.pf-flow__en{display:block;font-family:var(--font-en);font-weight:800;font-size:10.5px;letter-spacing:.26em;
+  color:#ffd24a;margin-bottom:14px}
+.pf-flow__ttl{font-size:clamp(24px,4.4vw,54px);font-weight:900;line-height:1.35;letter-spacing:.02em;color:#fff;margin-bottom:14px}
+.pf-flow__txt{font-size:clamp(13px,1.5vw,15.5px);color:rgba(255,255,255,.72);line-height:2.05;max-width:44em}
+@media(max-width:640px){.pf-flow__row{grid-template-columns:1fr;gap:8px}.pf-flow__num{font-size:52px}}
+
 /* PLATFORM: 実像を写真で見せる横スクロール帯 */
 .pf-strip{display:flex;gap:2px;overflow-x:auto;margin:clamp(30px,5vh,48px) 0 0;
   scroll-snap-type:x mandatory;scrollbar-width:none}
