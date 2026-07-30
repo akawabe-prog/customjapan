@@ -1107,3 +1107,17 @@ ul{list-style:none}
 .header.is-scrolled .header__shop:hover{background:var(--c-off)}
 .header--solid .header__shop{border-color:var(--c-line)}
 .header--solid .header__shop:hover{background:var(--c-off)}
+
+/* フッター: 主要導線ボタン(採用/インターン/通販) */
+.footer__links{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.footer__link{display:flex;align-items:center;gap:12px;padding:13px 18px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.22);transition:background .35s,border-color .35s,transform .35s var(--ease)}
+.footer__link:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5);transform:translateX(3px)}
+.footer__link img{width:24px;height:24px;flex-shrink:0}
+.footer__link b{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.16em;line-height:1.3;display:block}
+.footer__link span{font-size:10.5px;color:rgba(255,255,255,.62);letter-spacing:.06em;display:block;margin-top:3px}
+.footer__link i{margin-left:auto;font-style:normal;font-size:13px;color:rgba(255,255,255,.6)}
+.footer__link--recruit{background:rgba(201,30,29,.16);border-color:rgba(201,30,29,.5)}
+.footer__link--recruit:hover{background:rgba(201,30,29,.28);border-color:var(--c-red)}
+.footer__link--intern{background:rgba(0,70,140,.2);border-color:rgba(70,140,220,.45)}
+.footer__link--intern:hover{background:rgba(0,70,140,.34);border-color:rgba(90,160,240,.8)}

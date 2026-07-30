@@ -114,11 +114,24 @@
 .culture-point span{font-size:12px;color:#3c4149;line-height:1.7;display:block;margin-top:4px}
 /* GROWTH */
 /* FLOW */
-.flow-steps{counter-reset:fl;max-width:820px}
-.flow-steps li{display:flex;gap:22px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--c-line)}
-.flow-steps li::before{counter-increment:fl;content:"0" counter(fl);font-family:var(--font-en);font-weight:800;font-size:16px;color:var(--c-red);flex-shrink:0}
-.flow-steps h3{font-size:15px;font-weight:700;margin-bottom:4px}
-.flow-steps p{font-size:12.5px;color:#3c4149;line-height:1.9}
+.flow-steps{counter-reset:fl;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1120px;list-style:none;padding:0}
+@media(max-width:900px){.flow-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.flow-steps{grid-template-columns:1fr}}
+.flow-steps li{position:relative;display:flex;flex-direction:column;gap:14px;
+  border:1px solid var(--c-line);border-radius:16px;padding:28px 26px 30px;background:var(--c-white);
+  transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.flow-steps li:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(13,15,18,.09);border-color:var(--c-red)}
+.flow-steps li::before{counter-increment:fl;content:"0" counter(fl);font-family:var(--font-en);font-weight:800;
+  font-size:clamp(26px,3vw,38px);line-height:1;color:transparent;-webkit-text-stroke:1.4px rgba(201,30,29,.5);
+  transition:color .4s var(--ease),-webkit-text-stroke .4s var(--ease)}
+.flow-steps li:hover::before{color:var(--c-red);-webkit-text-stroke-color:var(--c-red)}
+/* ステップ間の矢印 */
+.flow-steps li:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+  width:7px;height:7px;border-top:1.5px solid var(--c-line);border-right:1.5px solid var(--c-line);rotate:45deg}
+@media(max-width:900px){.flow-steps li:nth-child(2n)::after{display:none}}
+@media(max-width:560px){.flow-steps li::after{display:none}}
+.flow-steps h3{font-size:15.5px;font-weight:900;margin-bottom:0;line-height:1.6}
+.flow-steps p{font-size:12.5px;color:#3c4149;line-height:1.95}
 .flow-note{margin-top:26px;font-size:12.5px;color:var(--c-gray)}
 /* NOTE / BLOG */
 .note-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:44px}
@@ -831,6 +844,15 @@
         <a href="../index.html">企業サイト</a>
       </nav>
       <div class="footer__contact">
+        <div class="footer__links">
+          <a class="footer__link footer__link--intern" href="../intern/index.html">
+            <span><b>INTERN</b><span>長期インターン採用</span></span><i>→</i>
+          </a>
+          <a class="footer__link" href="https://www.customjapan.net/" target="_blank" rel="noopener">
+            <img src="../assets/logo/cj-mascot.svg" alt="">
+            <span><b>ONLINE STORE</b><span>公式通販サイト</span></span><i>↗</i>
+          </a>
+        </div>
         <p>ご応募はこちら</p>
         <a href="entry.html" class="btn-line btn-line--light">エントリーフォーム</a>
       </div>
