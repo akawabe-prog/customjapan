@@ -51,13 +51,13 @@
     <a href="news.html">NEWS</a>
     <a href="contact.html">CONTACT</a>
     <a href="en/events.html" class="header__lang">EN</a>
-    <a href="intern/index.html" class="header__intern">
-      <span class="header__recruit-en">INTERN</span>
-      <span class="header__recruit-jp">インターン採用</span>
-    </a>
     <a href="recruit/index.html" class="header__recruit">
       <span class="header__recruit-en">RECRUIT</span>
       <span class="header__recruit-jp">採用サイト</span>
+    </a>
+    <a href="https://www.customjapan.net/" class="header__shop" target="_blank" rel="noopener" aria-label="カスタムジャパン 公式通販サイト">
+      <img src="assets/logo/cj-mascot.svg" alt="">
+      <span>ONLINE STORE<i>公式通販サイト ↗</i></span>
     </a>
   </nav>
   <button class="header__menu-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="メニュー"><span></span><span></span></button>
@@ -72,7 +72,6 @@
     <a href="news.html">NEWS</a>
     <a href="contact.html">CONTACT</a>
     <a href="en/events.html">EN — English</a>
-    <a href="intern/index.html" class="mobile-menu__intern">INTERN — インターン採用サイト</a>
     <a href="recruit/index.html" class="mobile-menu__recruit">RECRUIT — 採用サイト</a>
   </nav>
 </div>
@@ -93,17 +92,6 @@
   </div>
 </section>
 <div class="crumb"><a href="index.html">TOP</a><span>/</span>イベント・レーシング</div>
-
-<!-- 現場のギャラリー(写真主役) -->
-<div class="ev-gallery" aria-label="出展・参戦の現場">
-  <a class="ev-gallery__item ev-gallery__item--xl reveal" href="#activities" data-jump="race"><img src="assets/img/events/suzuka8h-2026.jpg" alt="鈴鹿8耐の会場" loading="lazy"><span class="ev-gallery__cap"><b>RACE — SUZUKA 8H</b><span>鈴鹿8耐に、初出展。</span></span></a>
-  <a class="ev-gallery__item ev-gallery__item--w reveal" href="#activities" data-jump="show"><img src="assets/img/events/tmcs2026-venue.jpg" alt="東京モーターサイクルショーの会場" loading="lazy"><span class="ev-gallery__cap"><b>SHOW — TMCS 2026</b><span>過去最大規模で出展</span></span></a>
-  <a class="ev-gallery__item reveal" href="#activities"><img src="assets/img/events/tmcs2026-asmax-booth.jpg" alt="ASMAXブース" loading="lazy"><span class="ev-gallery__cap"><b>BOOTH</b><span>ASMAX</span></span></a>
-  <a class="ev-gallery__item reveal" href="#activities"><img src="assets/img/events/tmcs2026-shad-cases.jpg" alt="SHADのケース展示" loading="lazy"><span class="ev-gallery__cap"><b>BOOTH</b><span>SHAD</span></span></a>
-  <a class="ev-gallery__item ev-gallery__item--t reveal" href="#activities"><img src="assets/img/events/tmcs2026-timsun-scooter.jpg" alt="TIMSUN装着スクーター" loading="lazy"><span class="ev-gallery__cap"><b>EXHIBIT</b><span>TIMSUN</span></span></a>
-  <a class="ev-gallery__item ev-gallery__item--w reveal" href="#activities"><img src="assets/img/events/tmcs2026-timsun-stage.jpg" alt="TIMSUNステージ" loading="lazy"><span class="ev-gallery__cap"><b>STAGE</b><span>ブランドの熱量を、現場で。</span></span></a>
-  <a class="ev-gallery__item reveal" href="#activities" data-jump="expo"><img src="assets/img/exs-street-ride.jpg" alt="eXs Street" loading="lazy"><span class="ev-gallery__cap"><b>EXPO 2025</b><span>eXs</span></span></a>
-</div>
 
 <section class="page-section" id="activities">
   <div class="inner">
@@ -232,14 +220,6 @@
     if(cnt) cnt.textContent=n+'件';
     if(window.ScrollTrigger) ScrollTrigger.refresh();
   }
-  // ギャラリータイルからカテゴリ連動
-  document.querySelectorAll('[data-jump]').forEach(function(a){
-    a.addEventListener('click',function(){
-      var key=a.getAttribute('data-jump');
-      var btn=f.querySelector('[data-filter="'+key+'"]');
-      if(btn) btn.click();
-    });
-  });
   f.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
     f.querySelectorAll('button').forEach(function(x){x.classList.toggle('is-active',x===b);});
