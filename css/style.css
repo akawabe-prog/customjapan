@@ -968,11 +968,9 @@ ul{list-style:none}
 .pf-bnr:hover .pf-bnr__img{transform:scale(1.08)}
 /* 左から効かせる薄いグラデ(写真を活かす) */
 .pf-bnr::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg,rgba(8,10,14,.86) 0%,rgba(8,10,14,.55) 42%,rgba(8,10,14,.08) 78%,transparent 100%)}
+  background:linear-gradient(100deg,rgba(8,10,14,.9) 0%,rgba(8,10,14,.68) 40%,rgba(8,10,14,.22) 74%,rgba(8,10,14,.06) 100%)}
 .pf-bnr__inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;
   justify-content:center;gap:0;padding:clamp(30px,3.6vw,58px) clamp(26px,3.4vw,56px);color:#fff;max-width:min(560px,86%)}
-.pf-bnr__logo{height:clamp(26px,2.6vw,36px);width:auto;margin-bottom:clamp(16px,2vw,24px);
-  filter:drop-shadow(0 2px 16px rgba(0,0,0,.55))}
 .pf-bnr__tag{display:inline-block;align-self:flex-start;font-family:var(--font-en);font-weight:800;font-size:9px;
   letter-spacing:.2em;color:#0d0f12;background:#ffd24a;padding:5px 12px;border-radius:3px;margin-bottom:16px}
 .pf-bnr--blue .pf-bnr__tag{background:#fff;color:#0d0f12}
