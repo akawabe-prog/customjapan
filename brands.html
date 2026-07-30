@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブランド | 株式会社カスタムジャパン</title>
+<meta name="description" content="カスタムジャパンのブランドポートフォリオ。スマートシリーズ・eXsなどの自社開発ブランドと、ASMAX・SHAD・TIMSUN・SP Connectなど日本総代理店・正規取扱の世界ブランドをご紹介します。">
+<link rel="icon" href="assets/logo/cj-mascot.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://customjapan.jp/brands.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社カスタムジャパン">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="ブランド | 株式会社カスタムジャパン">
+<meta property="og:description" content="カスタムジャパンのブランドポートフォリオ。スマートシリーズ・eXsなどの自社開発ブランドと、ASMAX・SHAD・TIMSUN・SP Connectなど日本総代理店・正規取扱の世界ブランドをご紹介します。">
+<meta property="og:url" content="https://customjapan.jp/brands.html">
+<meta property="og:image" content="https://customjapan.jp/assets/img/hero-rider.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ブランド | 株式会社カスタムジャパン">
+<meta name="twitter:description" content="カスタムジャパンのブランドポートフォリオ。スマートシリーズ・eXsなどの自社開発ブランドと、ASMAX・SHAD・TIMSUN・SP Connectなど日本総代理店・正規取扱の世界ブランドをご紹介します。">
+<meta name="twitter:image" content="https://customjapan.jp/assets/img/hero-rider.jpg">
+<link rel="alternate" hreflang="ja" href="https://customjapan.jp/brands.html">
+<link rel="alternate" hreflang="en" href="https://customjapan.jp/en/brands.html">
+<link rel="alternate" hreflang="x-default" href="https://customjapan.jp/brands.html">
+<style>
+/* ブランド紹介モーダル(カード→ページ内紹介→公式サイト) */
+.bm-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:5vh 5vw;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.bm-modal.is-open{opacity:1;visibility:visible}
+.bm-modal__backdrop{position:absolute;inset:0;background:rgba(8,10,14,.6);backdrop-filter:blur(3px)}
+.bm-modal__panel{position:relative;z-index:2;background:var(--c-white);border-radius:18px;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;padding:clamp(32px,5vw,48px);text-align:center;transform:translateY(20px);transition:transform .4s var(--ease)}
+.bm-modal.is-open .bm-modal__panel{transform:translateY(0)}
+.bm-modal__close{position:absolute;top:16px;right:18px;width:36px;height:36px;border-radius:50%;border:1px solid var(--c-line);background:var(--c-white);cursor:pointer;font-size:18px;line-height:1;color:var(--c-gray);transition:background .3s,color .3s}
+.bm-modal__close:hover{background:var(--c-off);color:var(--c-black)}
+.bm-modal__logo{height:76px;display:flex;align-items:center;justify-content:center;margin:6px auto 20px}
+.bm-modal__logo img{max-height:100%;max-width:220px;object-fit:contain}
+.bm-modal__tag{display:inline-block;font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.2em;color:var(--c-red);border:1px solid currentColor;border-radius:100px;padding:4px 14px;margin-bottom:14px}
+.bm-modal__name{font-size:22px;font-weight:900;letter-spacing:.03em;margin-bottom:14px}
+.bm-modal__desc{font-size:13.5px;color:#3c4149;line-height:2.05;text-align:left;margin-bottom:26px}
+.bm-modal__link{display:inline-block}
+.bm-modal__note{font-size:10.5px;color:var(--c-gray);margin-top:12px}
+</style>
+</head>
+<body>
+
+<header class="header header--solid" id="header">
+  <a href="index.html" class="header__logo">
+    <img src="assets/logo/cj-logo-white-text.svg" alt="" class="header__logo-white" aria-hidden="true">
+    <img src="assets/logo/cj-logo-black-text.svg" alt="株式会社カスタムジャパン" class="header__logo-color">
+  </a>
+  <nav class="header__nav">
+    <a href="about.html">ABOUT</a>
+    <a href="business.html">BUSINESS</a>
+    <a href="brands.html">BRANDS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="en/brands.html" class="header__lang">EN</a>
+    <a href="intern/index.html" class="header__intern">
+      <span class="header__recruit-en">INTERN</span>
+      <span class="header__recruit-jp">インターン採用</span>
+    </a>
+    <a href="recruit/index.html" class="header__recruit">
+      <span class="header__recruit-en">RECRUIT</span>
+      <span class="header__recruit-jp">採用サイト</span>
+    </a>
+  </nav>
+  <button class="header__menu-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="メニュー"><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="about.html">ABOUT</a>
+    <a href="business.html">BUSINESS</a>
+    <a href="brands.html">BRANDS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="en/brands.html">EN — English</a>
+    <a href="intern/index.html" class="mobile-menu__intern">INTERN — インターン採用サイト</a>
+    <a href="recruit/index.html" class="mobile-menu__recruit">RECRUIT — 採用サイト</a>
+  </nav>
+</div>
+
+<button class="mascot-top" id="mascotTop" aria-label="ページの先頭へ戻る">
+  <img src="assets/logo/cj-mascot.svg" alt="">
+  <span>TOP</span>
+</button>
+
+<main>
+
+<section class="page-hero">
+  <div class="inner">
+    <p class="page-hero__label">BRANDS</p>
+    <h1 class="page-hero__title">PORTFOLIO</h1>
+    <p class="page-hero__jp">ブランド — 自社開発と世界のブランド、ふたつのポートフォリオ</p>
+  </div>
+</section>
+<div class="crumb"><a href="index.html">TOP</a><span>/</span>ブランド</div>
+
+<!-- SMART SERIES -->
+<section class="page-section" style="padding-bottom:0">
+  <div class="inner">
+    <p class="sec-label reveal">FOCUS</p>
+    <h2 class="sec-title sec-title--sm reveal">スマートシリーズ — スマートライドを、すべてのノル人へ。</h2>
+    <p class="sec-lead reveal">CarPlay/Android Auto対応ディスプレイ「SRD 5」、純正カーナビをスマホ化する「SmartCarLink」、電動エアポンプ「SAP2000」、電源不要の高圧洗浄機「スマートポータブル01」。ツーリングとガレージの体験を更新する自社開発ガジェット群を、他に先駆けて展開しています。</p>
+  </div>
+  <a class="smart-feature reveal" href="https://smartseries.customjapan.net/" target="_blank" rel="noopener" aria-label="SMART SERIES">
+    <video class="smart-feature__video" src="assets/video/smart-srd.mp4" autoplay muted loop playsinline></video>
+    <div class="smart-feature__inner">
+      <p class="smart-feature__tag">OUR BRAND — FOCUS</p>
+      <h3 class="smart-feature__title">SMART SERIES</h3>
+      <p class="smart-feature__copy">ディスプレイ、電源、エア、ウォッシュ。<br>ライドの体験を、まるごとアップデートする。</p>
+      <ul class="smart-feature__chips">
+        <li>SRD 5 スマートライドディスプレイ</li>
+        <li>SmartCarLink</li>
+        <li>SAP2000 エアポンプ</li>
+        <li>スマートポータブル01</li>
+      </ul>
+    </div>
+  </a>
+</section>
+
+<!-- OUR BRANDS -->
+<section class="page-section">
+  <div class="inner">
+    <p class="sec-label reveal">OUR BRANDS</p>
+    <h2 class="sec-title sec-title--sm reveal">自社開発ブランド</h2>
+    <div class="brand-list">
+      <a class="brand-card reveal" href="https://exs.customjapan.net/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_eXs.png" alt="eXs"></div><h3>eXs</h3><p>大阪・関西万博を走った次世代モビリティブランド。電動キックボードからe-Bikeまで、ラストワンマイルの答えをツクる。</p></a>
+      <a class="brand-card reveal" href="https://www.proselect.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_proselect_bk.png" alt="ProSelect"></div><h3>ProSelect Battery</h3><p>2007年から続くプロ仕様のオートバイ用バッテリー。車種別適合検索で整備現場の定番に。</p></a>
+      <a class="brand-card reveal" href="https://protools.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_protools.png" alt="ProTOOLs"></div><h3>ProTOOLs</h3><p>整備業者向けの工具・ケミカルブランド。ポータブル発電機などガレージの電源まで領域を拡大。</p></a>
+      <a class="brand-card reveal" href="https://mirax.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_mirax.png" alt="MIRAX"></div><h3>MIRAX</h3><p>創業期から展開するバイク用ミラーブランド。安全と視界を支えるベーシックの代名詞。</p></a>
+      <a class="brand-card reveal" href="https://motoboite.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_bb.png" alt="moto boite BB"></div><h3>moto boite BB</h3><p>「バイクの空間を創造する」をテーマにしたボックス・収納ブランド。</p></a>
+      <a class="brand-card reveal" href="https://optimum.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_optimum.png" alt="Optimum"></div><h3>Optimum</h3><p>ライダー向けのパーツ・用品セレクション。コストと品質の最適解を提案。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=KUSTOM1" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_kustomone.png" alt="KUSTOM1"></div><h3>KUSTOM1</h3><p>カスタムシーンに向けたパーツブランド。</p></a>
+      <a class="brand-card reveal" href="https://pfp.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_pfp.png" alt="PFP"></div><h3>PFP</h3><p>創業期から展開する純正対応パーツブランド。フロントフォークインナーチューブなど補修の定番。</p></a>
+      <a class="brand-card reveal" href="https://toruna.customjapan.jp/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_toruna.png" alt="TORUNA"></div><h3>TORUNA</h3><p>「とるな」の名を冠した防犯用品の総合ブランド。ロックからセキュリティ用品まで。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=Re%3Acode" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_recode.png" alt="Re:code"></div><h3>Re:code</h3><p>モビリティパーツのリニューアルを提案するブランド。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=ROLZ" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_rolz.png" alt="ROLZ"></div><h3>ROLZ</h3><p>ライディングを支えるパーツ・用品ブランド。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=Smart+Arms" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_original_Smart_Arms.png" alt="Smart Arms"></div><h3>Smart Arms</h3><p>スマートデバイスまわりのマウント・アームを展開するブランド。</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER BRANDS -->
+<section class="page-section page-section--off">
+  <div class="inner">
+    <p class="sec-label reveal">PARTNER BRANDS</p>
+    <h2 class="sec-title sec-title--sm reveal">日本総代理店・正規取扱ブランド</h2>
+    <div class="brand-list">
+      <a class="brand-card reveal" href="https://asmax.customjapan.net/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_asmax.png" alt="ASMAX"></div><h3>ASMAX</h3><p>音声コントロール搭載の次世代スマートインカム。日本総代理店として展開し、EVA RACINGコラボ「EVA R」も話題に。</p></a>
+      <a class="brand-card reveal" href="https://shad-japan.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_shad.png" alt="SHAD"></div><h3>SHAD</h3><p>スペイン発、世界基準のモーターサイクルケース。都市型自転車ライン「Shad Bikes」も日本初上陸。</p></a>
+      <a class="brand-card reveal" href="https://www.timsun-japan.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_timsun.png" alt="TIMSUN"></div><h3>TIMSUN</h3><p>世界40カ国以上で走るタイヤブランド。JNCC・CGCハードエンデューロをオフィシャルサポート。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?filter-maker=5&maker=5" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_zontes.png" alt="ZONTES"></div><h3>ZONTES</h3><p>欧州で躍進するモーターサイクルブランド。洗練されたデザインと最新装備。</p></a>
+      <a class="brand-card reveal" href="https://eleveit.customjapan.net/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_eleveit.png" alt="ELEVEIT"></div><h3>ELEVEIT</h3><p>エンデューロ世界王者スティーブ・ホルコムが開発に関わるイタリアンオフロードブーツ。</p></a>
+      <a class="brand-card reveal" href="https://www.ariete.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_ariete.png" alt="ariete"></div><h3>ariete</h3><p>イタリアの老舗ゴーグル・グリップブランド。8Kゴーグルなど先進プロダクトも。</p></a>
+      <a class="brand-card reveal" href="https://us.ufoplast.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_ufoplast.png" alt="UFO PLAST"></div><h3>UFO PLAST</h3><p>イタリア発のオフロード外装・プロテクションブランド。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=PROTAPER" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_protaper.png" alt="PROTAPER"></div><h3>PROTAPER</h3><p>ハンドルバーをはじめとする米国発オフロードコンポーネント。</p></a>
+      <a class="brand-card reveal" href="https://www.customchrome.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_customchrome.png" alt="CUSTOM CHROME"></div><h3>CUSTOM CHROME</h3><p>ハーレーダビッドソン系カスタムパーツの世界的ブランド。</p></a>
+      <a class="brand-card reveal" href="https://torchsparkplug.japanese.globalmarket.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_torch.png" alt="TORCH"></div><h3>TORCH</h3><p>グローバルに展開するスパークプラグブランド。</p></a>
+      <a class="brand-card reveal" href="https://airace-japan.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_airace.png" alt="AIRACE"></div><h3>AIRACE</h3><p>自転車用ポンプ・空気入れの専門ブランド。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=TOBE" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_tobe.png" alt="TOBE"></div><h3>TOBE</h3><p>過酷な環境に応えるライディングギアブランド。</p></a>
+      <a class="brand-card reveal" href="https://www.ncy-motor.com.tw/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_ncy.png" alt="NCY"></div><h3>NCY</h3><p>スクーターカスタムパーツの定番ブランド。</p></a>
+      <a class="brand-card reveal" href="https://www.jetech-japan.com/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_jetechtool.png" alt="JETECH"></div><h3>JETECH TOOL</h3><p>プロユースに応える整備工具ブランド。</p></a>
+      <a class="brand-card reveal" href="https://www.customjapan.net/maker/COMPASS" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_compass_2021.png" alt="COMPASS"></div><h3>COMPASS</h3><p>モビリティ用品・パーツブランド。</p></a>
+      <a class="brand-card reveal" href="https://www.customjapan.net/maker/IXIL" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_ixil.png" alt="IXIL"></div><h3>IXIL</h3><p>スペイン発のエキゾースト(マフラー)ブランド。</p></a>
+      <a class="brand-card reveal" href="https://www.polisport.com/en/" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_polisport.png" alt="Polisport"></div><h3>Polisport</h3><p>ポルトガル発の外装・ハンドガード・チャイルドシートブランド。</p></a>
+      <a class="brand-card reveal" href="https://moto.customjapan.net/search?q=UNIBEAR" target="_blank" rel="noopener"><div class="brand-card__logo"><img src="assets/brands/pic_brand_abroad_unibear.png" alt="UNIBEAR"></div><h3>UNIBEAR</h3><p>ドライブチェーンの専門ブランド。</p></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="inner">
+    <div class="footer__top">
+      <div class="footer__company">
+        <img src="assets/logo/cj-logo-white-text.svg" alt="CUSTOM JAPAN" class="footer__logo">
+        <p class="footer__address">株式会社カスタムジャパン<br>〒542-0073 大阪市中央区日本橋2-9-16 日本橋センタービル6F<br>設立 2005年8月9日</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="about.html">ABOUT</a>
+        <a href="business.html">BUSINESS</a>
+        <a href="brands.html">BRANDS</a>
+        <a href="events.html">EVENTS</a>
+        <a href="news.html">NEWS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="intern/index.html">INTERN</a>
+        <a href="recruit/index.html">RECRUIT</a>
+      </nav>
+      <div class="footer__contact">
+        <p>お取引・お問い合わせ</p>
+        <a href="contact.html" class="btn-line btn-line--light">お問い合わせ</a>
+      </div>
+    </div>
+    <p class="footer__copy">&copy; Custom Japan Co., Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</main>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ブランドカード: ページ内で紹介 → 公式サイトへ(直リンクをモーダルに変更) */
+(function(){
+  var cards=document.querySelectorAll('.brand-card');
+  if(!cards.length) return;
+  var m=document.createElement('div');
+  m.className='bm-modal'; m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true'); m.setAttribute('aria-hidden','true');
+  m.innerHTML='<div class="bm-modal__backdrop" data-close></div>'+
+    '<div class="bm-modal__panel" data-lenis-prevent>'+
+    '<button class="bm-modal__close" data-close aria-label="閉じる">×</button>'+
+    '<div class="bm-modal__logo"><img id="bmLogo" src="" alt=""></div>'+
+    '<span class="bm-modal__tag" id="bmTag"></span>'+
+    '<h3 class="bm-modal__name" id="bmName"></h3>'+
+    '<p class="bm-modal__desc" id="bmDesc"></p>'+
+    '<a class="btn-solid bm-modal__link" id="bmLink" href="#" target="_blank" rel="noopener">公式サイトはこちら ↗</a>'+
+    '<p class="bm-modal__note">外部サイトが新しいタブで開きます</p>'+
+    '</div>';
+  document.body.appendChild(m);
+  function open(card){
+    var img=card.querySelector('.brand-card__logo img');
+    document.getElementById('bmLogo').src=img?img.getAttribute('src'):'';
+    document.getElementById('bmLogo').alt=img?img.getAttribute('alt'):'';
+    var sec=card.closest('section');
+    var t=sec?sec.querySelector('.sec-title'):null;
+    document.getElementById('bmTag').textContent=t?t.textContent.trim():'BRAND';
+    document.getElementById('bmName').textContent=card.querySelector('h3')?card.querySelector('h3').textContent:'';
+    document.getElementById('bmDesc').textContent=card.querySelector('p')?card.querySelector('p').textContent:'';
+    document.getElementById('bmLink').href=card.getAttribute('href');
+    m.classList.add('is-open'); m.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+  }
+  function close(){ m.classList.remove('is-open'); m.setAttribute('aria-hidden','true'); document.documentElement.style.overflow=''; }
+  cards.forEach(function(card){
+    card.addEventListener('click', function(e){ e.preventDefault(); open(card); });
+  });
+  m.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', close); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+</body>
+</html>

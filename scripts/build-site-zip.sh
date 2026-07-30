@@ -10,18 +10,11 @@ mkdir -p "$STAGE"
 
 # ---- ルート直下のページ/スクリプト ----
 PAGES=(
-  index.html                 # TOP = インターンページ
-  entry.html                  # 応募(本エントリー)フォーム
-  casual.html                 # カジュアル面談フォーム
-  intern-thanks.html
-  intern-error.html
-  intern-entry.php
-  casual-entry.php
-  intern-entry-config.local.php.example
+  index.html about.html business.html brands.html events.html news.html contact.html  # コーポレート(ルート)
 )
 
 # ---- 同梱ディレクトリ ----
-DIRS=( corporate recruit en css js assets )
+DIRS=( intern recruit en css js assets )
 
 for f in "${PAGES[@]}"; do
   [ -f "$f" ] && cp "$f" "$STAGE/$f"
@@ -36,16 +29,16 @@ cat > "$STAGE/README-deploy.txt" <<'TXT'
 新コーポレート/採用サイト 配置手順
 ====================================
 構成:
-  /                → TOP（インターン採用ページ）= index.html
-  /corporate/      → 会社サイト（about / business / brands / events / news / contact）
+  /                → コーポレートサイト（index / about / business / brands / events / news / contact）
   /recruit/        → 採用サイト
+  /intern/         → 長期インターン採用（フォーム含む）
   /en/             → 英語版
   /css /js /assets → 共有アセット
 
 ・この intern/ の中身を、公開したいルート直下にそのまま配置してください。
-・エントリーフォーム送信は PHP が動くサーバーが必要です（intern-entry.php）。
+・エントリーフォーム送信は PHP が動くサーバーが必要です（intern/intern-entry.php）。
   静的ホスト(GitHub Pages 等)では送信されません。
-  宛先/SMTP を設定する場合は intern-entry-config.local.php.example を
+  宛先/SMTP を設定する場合は intern/ 内の intern-entry-config.local.php.example を
   intern-entry-config.local.php にコピーして記入（未設定なら mb_send_mail で送信）。
 ・SRD5(スマートシリーズ)専用ページ(smart/)は未完成のため未同梱・未リンクです。
 TXT

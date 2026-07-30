@@ -25,6 +25,23 @@
 <meta name="twitter:title" content="Brands | Custom Japan Co., Ltd.">
 <meta name="twitter:description" content="Original brands including the Smart Series and eXs, plus exclusive distribution of ASMAX, SHAD, TIMSUN, SP Connect and more.">
 <meta name="twitter:image" content="https://customjapan.jp/assets/img/hero-rider.jpg">
+<style>
+/* ブランド紹介モーダル(カード→ページ内紹介→公式サイト) */
+.bm-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:5vh 5vw;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.bm-modal.is-open{opacity:1;visibility:visible}
+.bm-modal__backdrop{position:absolute;inset:0;background:rgba(8,10,14,.6);backdrop-filter:blur(3px)}
+.bm-modal__panel{position:relative;z-index:2;background:var(--c-white);border-radius:18px;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;padding:clamp(32px,5vw,48px);text-align:center;transform:translateY(20px);transition:transform .4s var(--ease)}
+.bm-modal.is-open .bm-modal__panel{transform:translateY(0)}
+.bm-modal__close{position:absolute;top:16px;right:18px;width:36px;height:36px;border-radius:50%;border:1px solid var(--c-line);background:var(--c-white);cursor:pointer;font-size:18px;line-height:1;color:var(--c-gray);transition:background .3s,color .3s}
+.bm-modal__close:hover{background:var(--c-off);color:var(--c-black)}
+.bm-modal__logo{height:76px;display:flex;align-items:center;justify-content:center;margin:6px auto 20px}
+.bm-modal__logo img{max-height:100%;max-width:220px;object-fit:contain}
+.bm-modal__tag{display:inline-block;font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.2em;color:var(--c-red);border:1px solid currentColor;border-radius:100px;padding:4px 14px;margin-bottom:14px}
+.bm-modal__name{font-size:22px;font-weight:900;letter-spacing:.03em;margin-bottom:14px}
+.bm-modal__desc{font-size:13.5px;color:#3c4149;line-height:2.05;text-align:left;margin-bottom:26px}
+.bm-modal__link{display:inline-block}
+.bm-modal__note{font-size:10.5px;color:var(--c-gray);margin-top:12px}
+</style>
 </head>
 <body>
 
@@ -40,7 +57,7 @@
     <a href="events.html">EVENTS</a>
     <a href="news.html">NEWS</a>
     <a href="contact.html">CONTACT</a>
-    <a href="../corporate/brands.html" class="header__lang">日本語</a>
+    <a href="../brands.html" class="header__lang">日本語</a>
     <a href="../recruit/index.html" class="header__recruit">
       <span class="header__recruit-en">RECRUIT</span>
       <span class="header__recruit-jp">JP ONLY</span>
@@ -57,7 +74,7 @@
     <a href="events.html">EVENTS</a>
     <a href="news.html">NEWS</a>
     <a href="contact.html">CONTACT</a>
-    <a href="../corporate/brands.html">日本語</a>
+    <a href="../brands.html">日本語</a>
     <a href="../recruit/index.html" class="mobile-menu__recruit">RECRUIT (JP)</a>
   </nav>
 </div>
@@ -83,7 +100,7 @@
     <h2 class="sec-title sec-title--sm reveal">Smart Series — smart riding for everyone.</h2>
     <p class="sec-lead reveal">The CarPlay/Android Auto-ready SRD 5 display, SmartCarLink which turns OEM car navigation into a smartphone hub, the SAP2000 electric air pump, and the cord-free Smart Portable 01 washer — in-house gadgets that upgrade touring and garage life.</p>
   </div>
-  <a class="smart-feature reveal" href="https://car.customjapan.net/" target="_blank" rel="noopener" aria-label="SMART SERIES">
+  <a class="smart-feature reveal" href="https://smartseries.customjapan.net/" target="_blank" rel="noopener" aria-label="SMART SERIES">
     <video class="smart-feature__video" src="../assets/video/smart-srd.mp4" autoplay muted loop playsinline></video>
     <div class="smart-feature__inner">
       <p class="smart-feature__tag">OUR BRAND — FOCUS</p>
@@ -149,5 +166,44 @@
 <script src="../js/vendor/ScrollTrigger.min.js"></script>
 <script src="../js/vendor/lenis.min.js"></script>
 <script src="../js/main.js"></script>
+<script>
+/* ブランドカード: ページ内で紹介 → 公式サイトへ(直リンクをモーダルに変更) */
+(function(){
+  var cards=document.querySelectorAll('.brand-card');
+  if(!cards.length) return;
+  var m=document.createElement('div');
+  m.className='bm-modal'; m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true'); m.setAttribute('aria-hidden','true');
+  m.innerHTML='<div class="bm-modal__backdrop" data-close></div>'+
+    '<div class="bm-modal__panel" data-lenis-prevent>'+
+    '<button class="bm-modal__close" data-close aria-label="Close">×</button>'+
+    '<div class="bm-modal__logo"><img id="bmLogo" src="" alt=""></div>'+
+    '<span class="bm-modal__tag" id="bmTag"></span>'+
+    '<h3 class="bm-modal__name" id="bmName"></h3>'+
+    '<p class="bm-modal__desc" id="bmDesc"></p>'+
+    '<a class="btn-solid bm-modal__link" id="bmLink" href="#" target="_blank" rel="noopener">Visit official site ↗</a>'+
+    '<p class="bm-modal__note">Opens in a new tab</p>'+
+    '</div>';
+  document.body.appendChild(m);
+  function open(card){
+    var img=card.querySelector('.brand-card__logo img');
+    document.getElementById('bmLogo').src=img?img.getAttribute('src'):'';
+    document.getElementById('bmLogo').alt=img?img.getAttribute('alt'):'';
+    var sec=card.closest('section');
+    var t=sec?sec.querySelector('.sec-title'):null;
+    document.getElementById('bmTag').textContent=t?t.textContent.trim():'BRAND';
+    document.getElementById('bmName').textContent=card.querySelector('h3')?card.querySelector('h3').textContent:'';
+    document.getElementById('bmDesc').textContent=card.querySelector('p')?card.querySelector('p').textContent:'';
+    document.getElementById('bmLink').href=card.getAttribute('href');
+    m.classList.add('is-open'); m.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+  }
+  function close(){ m.classList.remove('is-open'); m.setAttribute('aria-hidden','true'); document.documentElement.style.overflow=''; }
+  cards.forEach(function(card){
+    card.addEventListener('click', function(e){ e.preventDefault(); open(card); });
+  });
+  m.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', close); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
 </body>
 </html>
