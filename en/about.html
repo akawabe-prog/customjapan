@@ -69,7 +69,8 @@
 
 <main>
 
-<section class="page-hero">
+<section class="page-hero page-hero--photo">
+  <img src="../assets/img/intern-office-team-wide.jpg" alt="" class="page-hero__bg">
   <div class="inner">
     <p class="page-hero__label">ABOUT US</p>
     <h1 class="page-hero__title">COMPANY</h1>
@@ -85,6 +86,44 @@
       <p class="philosophy__en">RIDE TOGETHER AND MOVE FORWARD</p>
       <p>Together with our colleagues, customers and partners, we connect parts with parts, knowledge with technology, and people with people — building the knowledge and distribution infrastructure that supports every professional in mobility.</p>
       <p>We grow with excitement and keep creating experiential value for our customers, going beyond the traditional wholesale function to nurture a platform where industry knowledge is shared and optimized, crafting a mobility culture for generations to come.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy band -->
+<div class="phil-band" aria-label="Ride together and move forward">
+  <img src="../assets/img/world-ride.jpg" alt="" class="phil-band__bg" data-parallax>
+  <div class="phil-band__inner">
+    <p class="phil-band__label reveal">RIDE TOGETHER AND MOVE FORWARD</p>
+    <p class="phil-band__title reveal">Delivering parts alone<br>won't move the culture forward.</p>
+    <p class="phil-band__text reveal">Our distribution DNA began in 1954 at a small parts shop in Tsuruhashi, Osaka. Building on that heritage, we are shifting from a company that delivers to a company that creates — next-generation mobility, smart gadgets and the world's leading brands. We believe creating both products and culture is how we keep riders moving forward.</p>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="inner">
+    <div class="split">
+      <div class="split__media reveal"><img src="../assets/img/logistics/logistics-warehouse-aisle.jpg" alt="Racks inside our logistics center" loading="lazy"></div>
+      <div class="split__body reveal">
+        <p class="split__label">OUR POSITION</p>
+        <h3>Between global makers<br>and 90,000 professionals.</h3>
+        <p>We connect makers and brands worldwide with motorcycle, bicycle and automotive professional shops across Japan. One million SKUs in our database, in-house logistics enabling same-day shipping, and a hybrid print/web catalog — we have spent over 70 years refining the systems that keep professional procurement moving.</p>
+        <p>Even now, used by roughly 90% of motorcycle dealers in Japan, improvements still start from voices on the floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section page-section--off">
+  <div class="inner">
+    <div class="split split--flip">
+      <div class="split__media reveal"><img src="../assets/img/intern-meeting-real.jpg" alt="Product planning meeting" loading="lazy"></div>
+      <div class="split__body reveal">
+        <p class="split__label">WHAT'S NEXT</p>
+        <h3>From a distributor<br>to a company of brands.</h3>
+        <p>Our electric mobility brand eXs ran at EXPO 2025 Osaka, the Smart Series is updating the touring and garage experience, and we develop global brands such as ASMAX, SHAD and SP Connect as the exclusive distributor for Japan. Twenty consecutive years of revenue growth is the result of never stopping these challenges.</p>
+        <p>For the next twenty years, we will keep creating both products and culture.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -170,5 +209,14 @@
 <script src="../js/vendor/ScrollTrigger.min.js"></script>
 <script src="../js/vendor/lenis.min.js"></script>
 <script src="../js/main.js"></script>
+<script>
+(function(){
+  if(!(window.gsap && window.ScrollTrigger)) return;
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('[data-parallax]').forEach(function(el){
+    gsap.fromTo(el,{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+})();
+</script>
 </body>
 </html>
