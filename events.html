@@ -96,22 +96,29 @@
 
 <!-- 現場のギャラリー(写真主役) -->
 <div class="ev-gallery" aria-label="出展・参戦の現場">
-  <a class="ev-gallery__item ev-gallery__item--xl reveal" href="#activities"><img src="assets/img/events/suzuka8h-2026.jpg" alt="鈴鹿8耐の会場" loading="lazy"><span class="ev-gallery__cap"><b>RACE — SUZUKA 8H</b><span>鈴鹿8耐に、初出展。</span></span></a>
-  <a class="ev-gallery__item ev-gallery__item--w reveal" href="#activities"><img src="assets/img/events/tmcs2026-venue.jpg" alt="東京モーターサイクルショーの会場" loading="lazy"><span class="ev-gallery__cap"><b>SHOW — TMCS 2026</b><span>過去最大規模で出展</span></span></a>
+  <a class="ev-gallery__item ev-gallery__item--xl reveal" href="#activities" data-jump="race"><img src="assets/img/events/suzuka8h-2026.jpg" alt="鈴鹿8耐の会場" loading="lazy"><span class="ev-gallery__cap"><b>RACE — SUZUKA 8H</b><span>鈴鹿8耐に、初出展。</span></span></a>
+  <a class="ev-gallery__item ev-gallery__item--w reveal" href="#activities" data-jump="show"><img src="assets/img/events/tmcs2026-venue.jpg" alt="東京モーターサイクルショーの会場" loading="lazy"><span class="ev-gallery__cap"><b>SHOW — TMCS 2026</b><span>過去最大規模で出展</span></span></a>
   <a class="ev-gallery__item reveal" href="#activities"><img src="assets/img/events/tmcs2026-asmax-booth.jpg" alt="ASMAXブース" loading="lazy"><span class="ev-gallery__cap"><b>BOOTH</b><span>ASMAX</span></span></a>
   <a class="ev-gallery__item reveal" href="#activities"><img src="assets/img/events/tmcs2026-shad-cases.jpg" alt="SHADのケース展示" loading="lazy"><span class="ev-gallery__cap"><b>BOOTH</b><span>SHAD</span></span></a>
   <a class="ev-gallery__item ev-gallery__item--t reveal" href="#activities"><img src="assets/img/events/tmcs2026-timsun-scooter.jpg" alt="TIMSUN装着スクーター" loading="lazy"><span class="ev-gallery__cap"><b>EXHIBIT</b><span>TIMSUN</span></span></a>
   <a class="ev-gallery__item ev-gallery__item--w reveal" href="#activities"><img src="assets/img/events/tmcs2026-timsun-stage.jpg" alt="TIMSUNステージ" loading="lazy"><span class="ev-gallery__cap"><b>STAGE</b><span>ブランドの熱量を、現場で。</span></span></a>
-  <a class="ev-gallery__item reveal" href="#activities"><img src="assets/img/exs-street-ride.jpg" alt="eXs Street" loading="lazy"><span class="ev-gallery__cap"><b>EXPO 2025</b><span>eXs</span></span></a>
+  <a class="ev-gallery__item reveal" href="#activities" data-jump="expo"><img src="assets/img/exs-street-ride.jpg" alt="eXs Street" loading="lazy"><span class="ev-gallery__cap"><b>EXPO 2025</b><span>eXs</span></span></a>
 </div>
 
 <section class="page-section" id="activities">
   <div class="inner">
     <p class="sec-label reveal">2026 ACTIVITIES</p>
     <h2 class="sec-title sec-title--sm reveal">出展・参戦情報</h2>
-    <div class="events-grid">
+    <div class="news-filter reveal" id="evFilter" role="tablist" aria-label="カテゴリで絞り込む">
+      <button class="is-active" data-filter="all">すべて</button>
+      <button data-filter="show">展示会・ショー</button>
+      <button data-filter="race">レース・スポンサード</button>
+      <button data-filter="expo">万博・公式サプライヤー</button>
+      <span class="news-filter__count" id="evCount"></span>
+    </div>
+    <div class="events-grid" id="evGrid">
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="race">
         <div class="event-card__img"><img src="assets/img/ride-night.jpg" alt="" loading="lazy"></div>
         <div class="event-card__body">
           <div class="event-card__meta"><span class="event-card__cat event-card__cat--race">RACE</span><time>2026.07.03–05 鈴鹿サーキット</time></div>
@@ -121,7 +128,7 @@
         <div class="event-card__links"><a href="https://www.instagram.com/customjapan/" target="_blank" rel="noopener">INSTAGRAM</a></div>
       </article>
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="race">
         <div class="event-card__img"><img src="assets/img/eleveit-enduro.jpg" alt="" loading="lazy"></div>
         <div class="event-card__body">
           <div class="event-card__meta"><span class="event-card__cat event-card__cat--race">RACE</span><time>SEASON 2026</time></div>
@@ -131,37 +138,37 @@
         <div class="event-card__links"><a href="https://prtimes.jp/main/html/rd/p/000000050.000070755.html" target="_blank" rel="noopener">ELEVEIT 上陸リリース</a></div>
       </article>
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="show">
         <div class="event-card__img"><img src="assets/img/event-tmcs2026.jpg" alt="" loading="lazy"></div>
         <div class="event-card__body">
-          <div class="event-card__meta"><span class="event-card__cat">SHOW</span><time>2026.03.27–29 東京ビッグサイト</time></div>
+          <div class="event-card__meta"><span class="event-card__cat event-card__cat--show">SHOW</span><time>2026.03.27–29 東京ビッグサイト</time></div>
           <h3>第53回 東京モーターサイクルショー 2026</h3>
           <p>創業20周年を記念し、過去最大ブース規模で出展。TIMSUN・SHAD・カスタムジャパンの3ブランド体制で、タイヤからケース、スマートガジェットまでを一挙に展示しました。</p>
         </div>
         <div class="event-card__links"><a href="https://www.customjapan.net/a/moto/14699" target="_blank" rel="noopener">アフターレポート</a></div>
       </article>
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="show">
         <div class="event-card__img"><img src="assets/img/event-omcs2026.png" alt="" loading="lazy"></div>
         <div class="event-card__body">
-          <div class="event-card__meta"><span class="event-card__cat">SHOW</span><time>2026.03 インテックス大阪</time></div>
+          <div class="event-card__meta"><span class="event-card__cat event-card__cat--show">SHOW</span><time>2026.03 インテックス大阪</time></div>
           <h3>第42回 大阪モーターサイクルショー 2026</h3>
           <p>ASMAX「EVA R（エヴァンゲリオン レーシング）モデル」や話題のスマートシリーズを一挙展示。ハズレなしの来場者参加型イベントも開催し、多くのライダーにご来場いただきました。</p>
         </div>
         <div class="event-card__links"><a href="https://www.customjapan.net/a/moto/14085" target="_blank" rel="noopener">アフターレポート</a></div>
       </article>
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="show">
         <div class="event-card__img"><img src="assets/img/event-cyclemode.webp" alt="" loading="lazy"></div>
         <div class="event-card__body">
-          <div class="event-card__meta"><span class="event-card__cat">SHOW</span><time>2026.02–04 東京 / 大阪</time></div>
+          <div class="event-card__meta"><span class="event-card__cat event-card__cat--show">SHOW</span><time>2026.02–04 東京 / 大阪</time></div>
           <h3>サイクルモード東京 2026 / サイクルモード大阪 2026</h3>
           <p>次世代モビリティブランド「eXs」が日本最大級のスポーツサイクルフェスティバルに初出展。万博記念公園での特別試乗会や、SHADの都市型自転車ライン「Shad Bikes」（Brompton専用モデル含む）の展示公開も実施しました。</p>
         </div>
         <div class="event-card__links"><a href="https://www.customjapan.net/a/cycle/14456" target="_blank" rel="noopener">アフターレポート</a><a href="https://prtimes.jp/main/html/rd/p/000000083.000070755.html" target="_blank" rel="noopener">SHAD BIKES</a></div>
       </article>
 
-      <article class="event-card reveal">
+      <article class="event-card reveal" data-cat="expo">
         <div class="event-card__img"><img src="assets/img/exs-street-ride.jpg" alt="" loading="lazy"></div>
         <div class="event-card__body">
           <div class="event-card__meta"><span class="event-card__cat event-card__cat--expo">EXPO</span><time>2025 大阪・関西万博</time></div>
@@ -208,5 +215,37 @@
 <script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+/* EVENTS: カテゴリ絞り込み */
+(function(){
+  var f=document.getElementById('evFilter'), grid=document.getElementById('evGrid'), cnt=document.getElementById('evCount');
+  if(!f||!grid) return;
+  var cards=[].slice.call(grid.querySelectorAll('.event-card'));
+  function apply(key){
+    var n=0;
+    cards.forEach(function(c){
+      var hit=(key==='all'||c.getAttribute('data-cat')===key);
+      c.style.display=hit?'':'none';
+      if(hit) n++;
+    });
+    if(cnt) cnt.textContent=n+'件';
+    if(window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+  // ギャラリータイルからカテゴリ連動
+  document.querySelectorAll('[data-jump]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var key=a.getAttribute('data-jump');
+      var btn=f.querySelector('[data-filter="'+key+'"]');
+      if(btn) btn.click();
+    });
+  });
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    f.querySelectorAll('button').forEach(function(x){x.classList.toggle('is-active',x===b);});
+    apply(b.getAttribute('data-filter'));
+  });
+  apply('all');
+})();
+</script>
 </body>
 </html>

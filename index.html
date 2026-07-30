@@ -208,31 +208,52 @@
   <div class="inner">
     <p class="pf-band__label reveal">THE PLATFORM</p>
     <h2 class="pf-band__title reveal">70年の商流の上で、<br>扱う領域を広げ続ける。</h2>
-    <p class="pf-band__lead reveal">私たちのプラットフォームは、カタログでもカンでもなく、日々更新されるデータで動いています。バイク・自転車・自動車という既存のモビリティに専門ECを構えるだけでなく、電動キックボードやE-Bikeなどの<b style="color:#fff;font-weight:700">次世代モビリティ</b>、CarPlay対応ディスプレイや電動エアポンプといった<b style="color:#fff;font-weight:700">スマートガジェット</b>まで、扱う領域そのものを自ら広げています。老舗の仕入れ力と、スタートアップの開発速度を、同時に走らせる会社です。</p>
+    <p class="pf-band__lead reveal">全国のバイク・自転車・自動車のプロショップが仕入れに使う、会員制のBtoBプラットフォーム。さらに電動キックボードやE-Bikeなどの<b style="color:#fff;font-weight:700">次世代モビリティ</b>、CarPlay対応ディスプレイや電動エアポンプといった<b style="color:#fff;font-weight:700">スマートガジェット</b>まで、扱う領域そのものを自ら広げています。老舗の仕入れ力と、スタートアップの開発速度を、同時に走らせる会社です。</p>
 
-    <div class="pf-live reveal">
-      <div><em>ITEMS ONLINE</em><b>928,187</b></div>
-      <span>点の商品が、いま公式ECサイトに掲載されています<br>（自社データベースから毎日更新）</span>
+    <div class="pf-info">
+      <!-- 掲載点数: 大きな数字＋カテゴリ内訳バー -->
+      <div class="pf-card reveal">
+        <p class="pf-card__label">ITEMS ONLINE — 毎日更新</p>
+        <p class="pf-num" data-countup="928187">0<small>点</small></p>
+        <div class="pf-bars">
+          <div class="pf-bar" data-bar style="--w:100%"><span>バイク</span><span class="pf-bar__track"><span class="pf-bar__fill"></span></span><b>MOTO</b></div>
+          <div class="pf-bar" data-bar style="--w:58%"><span>自動車</span><span class="pf-bar__track"><span class="pf-bar__fill"></span></span><b>CAR</b></div>
+          <div class="pf-bar" data-bar style="--w:36%"><span>自転車</span><span class="pf-bar__track"><span class="pf-bar__fill"></span></span><b>CYCLE</b></div>
+          <div class="pf-bar" data-bar style="--w:22%"><span>工具・ケミカル</span><span class="pf-bar__track"><span class="pf-bar__fill"></span></span><b>TOOL</b></div>
+        </div>
+        <p class="pf-card__note">自社データベースを日々更新。掲載点数は公式ECサイトの実数です。</p>
+      </div>
+
+      <!-- シェア: 円形ゲージ -->
+      <div class="pf-card reveal">
+        <p class="pf-card__label">MARKET SHARE</p>
+        <div class="pf-gauge" data-gauge="90">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="45"></circle><circle class="fg" cx="50" cy="50" r="45"></circle></svg>
+          <span class="pf-gauge__val"><b>90<small style="font-size:.5em">%</small></b><span>国内バイク販売店</span></span>
+        </div>
+        <p class="pf-card__note">全国90,000店が会員登録。プロの現場の標準インフラです。</p>
+      </div>
+
+      <!-- 当日出荷: 時間軸 -->
+      <div class="pf-card reveal">
+        <p class="pf-card__label">SAME-DAY CUT-OFF</p>
+        <div class="pf-clock" data-clock>
+          <div class="pf-clock__line">
+            <span class="pf-clock__fill"></span>
+            <span class="pf-clock__mark" style="left:66%">16:00 締切</span>
+          </div>
+          <div class="pf-clock__scale"><span>9:00</span><span>13:00</span><span>18:00</span></div>
+        </div>
+        <p class="pf-card__note">16時までのご注文は、在庫品を当日出荷。自社物流2拠点が支えます。</p>
+      </div>
     </div>
 
-    <div class="pf-domains reveal">
-      <a class="pf-domain" href="https://moto.customjapan.net" target="_blank" rel="noopener">
+    <div class="pf-domains pf-domains--duo reveal">
+      <a class="pf-domain" href="https://www.customjapan.net/" target="_blank" rel="noopener">
         <img class="pf-domain__img" src="assets/img/ride-night.jpg" alt="" loading="lazy">
-        <b>MOTORCYCLE</b><h3>バイク専門EC</h3>
-        <p>純正部品の見積依頼から社外パーツ・用品まで。国内バイク販売店の約90%が利用するプロ向けインフラ。</p>
-        <span>moto.customjapan.net ↗</span>
-      </a>
-      <a class="pf-domain" href="https://cycle.customjapan.net" target="_blank" rel="noopener">
-        <img class="pf-domain__img" src="assets/img/exs-street-ride.jpg" alt="" loading="lazy">
-        <b>BICYCLE</b><h3>自転車専門EC</h3>
-        <p>一般車からスポーツバイク、E-Bikeまで。整備工具・消耗品を含め、自転車店の仕入れを一本化。</p>
-        <span>cycle.customjapan.net ↗</span>
-      </a>
-      <a class="pf-domain" href="https://car.customjapan.net" target="_blank" rel="noopener">
-        <img class="pf-domain__img" src="assets/img/slide-car.jpg" alt="" loading="lazy">
-        <b>AUTOMOBILE</b><h3>自動車専門EC</h3>
-        <p>車種適合検索を備えた自動車部品・用品。整備の現場を止めない品揃え。</p>
-        <span>car.customjapan.net ↗</span>
+        <b>PRO SHOPS — MOTORCYCLE / BICYCLE / CAR</b><h3>プロ向け仕入プラットフォーム</h3>
+        <p>バイク・自転車・自動車のカテゴリー別ECを一つのアカウントで。純正部品の見積から社外パーツ・整備工具まで、店舗の仕入れをここで完結できます。</p>
+        <span>customjapan.net ↗</span>
       </a>
       <a class="pf-domain pf-domain--accent" href="https://smartseries.customjapan.net/" target="_blank" rel="noopener">
         <img class="pf-domain__img" src="assets/img/smart-arms-hero.jpg" alt="" loading="lazy">
@@ -251,12 +272,6 @@
       <div class="pf-strip__item reveal"><img src="assets/img/intern-portfolio-real.jpg" alt="商品企画" loading="lazy"><span class="pf-strip__cap"><b>06 — CREATE</b><span>自ら、生み出す。</span><em>eXs・スマートシリーズを企画から</em></span></div>
     </div>
 
-    <div class="pf-feats">
-      <div class="pf-feat reveal"><b>SEARCH</b><h4>車種適合検索</h4><p>フレームNo・型式・純正品番から適合部品を特定。業界で初めて構築した独自システム。</p></div>
-      <div class="pf-feat reveal"><b>QUOTE</b><h4>純正部品見積</h4><p>メーカー純正部品の見積をオンラインで依頼。電話とFAXの手間を、仕組みで削減。</p></div>
-      <div class="pf-feat reveal"><b>SHIPPING</b><h4>当日出荷</h4><p>在庫品は16時までの注文で当日出荷。自社物流2拠点が支える即応体制。</p></div>
-      <div class="pf-feat reveal"><b>HYBRID</b><h4>紙×WEBカタログ</h4><p>業界最大級の仕入総合カタログとECを連動。現場の慣れ方に合わせて選べます。</p></div>
-    </div>
   </div>
 </section>
 
@@ -264,8 +279,8 @@
 <section class="strengths-sec" id="strengths">
   <div class="inner">
     <p class="sec-label reveal">OUR STRENGTHS</p>
-    <h2 class="sec-title sec-title--sm reveal">カスタムジャパンが選ばれる、5つの強み</h2>
-    <p class="sec-lead reveal">「探す・選ぶ・届ける」を、仕組みで支える。カタログ、業界初の適合検索システム、人によるサポート、徹底した品質管理、当日出荷の物流——70年の歴史で磨いた5つの強みが、プロの現場を止めません。</p>
+    <h2 class="sec-title sec-title--sm reveal">この規模を、支えている仕組み</h2>
+    <p class="sec-lead reveal">100万点近い商品を、迷わず選べて、その日に届く。それを可能にしているのは、70年かけて自社で磨いた5つの仕組みです。1枚ずつ、現場の写真とあわせてご紹介します。</p>
     <div class="str-slider reveal">
     <div class="str-cards" id="strengthsScroller">
       <article class="str-card reveal">
@@ -620,5 +635,43 @@
 <script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/vendor/lenis.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+/* PLATFORM: 数字インフォグラフィックの発火(カウントアップ / バー / 円ゲージ) */
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var el = en.target;
+      // 積み上げバー / 時間軸
+      if(el.hasAttribute('data-bar') || el.hasAttribute('data-clock')) el.classList.add('is-in');
+      // 円ゲージ: 90% → dashoffset
+      if(el.hasAttribute('data-gauge')){
+        var pct = parseFloat(el.getAttribute('data-gauge')) || 0;
+        el.style.setProperty('--off', String(283 - 283*pct/100));
+        el.classList.add('is-in');
+      }
+      // 数字カウントアップ
+      if(el.hasAttribute('data-countup')){
+        var target = parseInt(el.getAttribute('data-countup'),10) || 0;
+        var unit = el.querySelector('small') ? el.querySelector('small').outerHTML : '';
+        if(reduce){ el.innerHTML = target.toLocaleString() + unit; }
+        else {
+          var t0 = null, dur = 1800;
+          requestAnimationFrame(function step(ts){
+            if(!t0) t0 = ts;
+            var p = Math.min(1,(ts-t0)/dur);
+            var eased = 1 - Math.pow(1-p,3);
+            el.innerHTML = Math.round(target*eased).toLocaleString() + unit;
+            if(p<1) requestAnimationFrame(step);
+          });
+        }
+      }
+      io.unobserve(el);
+    });
+  },{threshold:.35});
+  document.querySelectorAll('[data-bar],[data-gauge],[data-clock],[data-countup]').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
