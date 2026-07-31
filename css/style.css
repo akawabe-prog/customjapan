@@ -1337,3 +1337,37 @@ ul{list-style:none}
 .gl-base p{display:none}
 .brand-tile__body h3{margin-bottom:0}
 .tall-banner__body h3{margin-bottom:10px}
+
+/* ============================================================
+   OUR STRENGTHS : ナビゲーション型リスト
+   ============================================================ */
+.str-nav-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  margin-bottom:clamp(28px,3.4vw,44px)}
+.str-nav{display:block;list-style:none;margin:0;padding:0;border-top:1px solid var(--c-line)}
+.str-nav li{display:block;width:100%;border-bottom:1px solid var(--c-line)}
+.str-nav a{display:grid;grid-template-columns:auto 11.5em 1fr auto auto;align-items:center;
+  gap:clamp(14px,2.2vw,34px);padding:clamp(16px,1.8vw,22px) 6vw;
+  transition:background .45s var(--ease)}
+.str-nav a:hover{background:var(--c-off)}
+.str-nav__no{font-family:var(--font-en);font-weight:800;font-size:clamp(20px,2.6vw,34px);line-height:1;
+  color:var(--c-line);transition:color .45s var(--ease)}
+.str-nav a:hover .str-nav__no{color:var(--c-red)}
+.str-nav__en{font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.2em;color:#8a9099;
+  transition:color .45s var(--ease)}
+.str-nav a:hover .str-nav__en{color:var(--c-red)}
+.str-nav__ttl{font-size:clamp(14px,1.6vw,20px);font-weight:900;line-height:1.6;letter-spacing:.02em}
+.str-nav__thumb{width:clamp(88px,10vw,140px);aspect-ratio:16/10;overflow:hidden;background:var(--c-off);
+  border-radius:2px}
+.str-nav__thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.str-nav a:hover .str-nav__thumb img{transform:scale(1.08)}
+.str-nav__arw{font-family:var(--font-en);font-size:14px;color:#b3b8c0;
+  transition:color .45s var(--ease),transform .45s var(--ease)}
+.str-nav a:hover .str-nav__arw{color:var(--c-red);transform:translateX(5px)}
+@media(max-width:900px){
+  .str-nav a{grid-template-columns:auto 1fr auto;gap:14px;padding:16px 6vw;row-gap:4px}
+  .str-nav__en{grid-column:2;font-size:9px}
+  .str-nav__ttl{grid-column:2;grid-row:2}
+  .str-nav__no{grid-row:1 / span 2}
+  .str-nav__thumb{grid-column:3;grid-row:1 / span 2;width:84px}
+  .str-nav__arw{display:none}
+}
