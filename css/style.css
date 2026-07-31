@@ -1264,7 +1264,7 @@ ul{list-style:none}
    ENGINEERING & DIGITAL : 適合データの回路図バンド
    ============================================================ */
 .eng-band{position:relative;overflow:hidden;background:#0a0c11;color:#fff;
-  padding:clamp(78px,10vh,140px) 0 0}
+  padding:clamp(78px,10vh,140px) 0 clamp(72px,9vh,124px)}
 .eng-band__bg{position:absolute;inset:0;z-index:0}
 .eng-band__bg img{width:100%;height:100%;object-fit:cover;opacity:.2}
 .eng-band__bg::after{content:"";position:absolute;inset:0;
@@ -1275,93 +1275,64 @@ ul{list-style:none}
   max-width:44em;margin-top:22px}
 .eng-title{font-size:clamp(26px,4.6vw,60px);font-weight:900;line-height:1.28;letter-spacing:-.01em}
 .eng-title em{font-style:normal;color:#ffd24a}
-/* 回路図フロー */
-.eng-flow{display:grid;grid-template-columns:repeat(5,1fr);margin-top:clamp(44px,6vh,78px);
-  border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
-@media(max-width:1080px){.eng-flow{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:780px){.eng-flow{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.eng-flow{grid-template-columns:1fr}}
-.eng-node{position:relative;padding:clamp(26px,2.8vw,42px) clamp(18px,1.8vw,28px) clamp(30px,3.2vw,48px);
-  border-left:1px solid rgba(255,255,255,.16);transition:background .5s var(--ease)}
-.eng-node:first-child{border-left:none}
-@media(max-width:1080px){.eng-node{border-left:1px solid rgba(255,255,255,.16)}
-  .eng-node:nth-child(3n+1){border-left:none}
-  .eng-node:nth-child(n+4){border-top:1px solid rgba(255,255,255,.16)}}
-@media(max-width:780px){.eng-node{border-left:1px solid rgba(255,255,255,.16);border-top:none}
-  .eng-node:nth-child(3n+1){border-left:1px solid rgba(255,255,255,.16)}
-  .eng-node:nth-child(odd){border-left:none}
-  .eng-node:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}}
-@media(max-width:520px){.eng-node{border-left:none;border-top:1px solid rgba(255,255,255,.16)}
-  .eng-node:nth-child(odd),.eng-node:nth-child(3n+1){border-left:none}
-  .eng-node:first-child{border-top:none}}
-.eng-node:hover{background:rgba(255,255,255,.045)}
-/* ノード間の結線 */
-.eng-node::before{content:"";position:absolute;left:0;top:50%;width:9px;height:9px;border-radius:50%;
-  transform:translate(-50%,-50%);background:#0a0c11;box-shadow:0 0 0 1px rgba(255,255,255,.4) inset,
-  0 0 0 4px rgba(10,12,17,1);transition:background .5s var(--ease),box-shadow .5s var(--ease)}
-.eng-node:first-child::before{display:none}
-.eng-node:hover::before{background:#ffd24a;box-shadow:0 0 0 1px #ffd24a inset,0 0 0 4px rgba(10,12,17,1),0 0 16px rgba(255,210,74,.7)}
-@media(max-width:1080px){.eng-node::before{display:none}}
-.eng-node__no{font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.2em;color:#ffd24a;
-  display:block;margin-bottom:14px}
-.eng-node__ttl{font-size:clamp(14.5px,1.4vw,18px);font-weight:900;line-height:1.55;letter-spacing:.02em;
-  margin-bottom:10px}
-.eng-node__txt{font-size:clamp(11.5px,1vw,12.5px);line-height:1.95;color:rgba(255,255,255,.66)}
-.eng-node__tag{display:inline-block;margin-top:14px;font-family:var(--font-en);font-weight:700;font-size:9.5px;
-  letter-spacing:.14em;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.22);
-  border-radius:100px;padding:4px 10px}
-/* 数値 */
-.eng-figs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(255,255,255,.16)}
-@media(max-width:760px){.eng-figs{grid-template-columns:1fr}}
-.eng-fig{padding:clamp(28px,3vw,44px) clamp(18px,1.8vw,28px);border-left:1px solid rgba(255,255,255,.16)}
-.eng-fig:first-child{border-left:none}
-@media(max-width:760px){.eng-fig{border-left:none;border-top:1px solid rgba(255,255,255,.16)}
-  .eng-fig:first-child{border-top:none}}
-.eng-fig__v{font-family:var(--font-en);font-weight:800;font-size:clamp(28px,3.4vw,48px);line-height:1;
-  letter-spacing:-.02em;white-space:nowrap;font-variant-numeric:tabular-nums;min-height:1em;margin-bottom:12px}
-.eng-fig__l{font-size:12.5px;font-weight:800;letter-spacing:.04em;margin-bottom:6px}
-.eng-fig__n{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.85}
-/* 編集記事バナー(2分割・フルブリード) */
-.eng-journal{display:grid;grid-template-columns:.86fr 1.14fr;align-items:stretch;
-  background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.16)}
-@media(max-width:900px){.eng-journal{grid-template-columns:1fr}}
-.eng-journal__media{position:relative;overflow:hidden;min-height:clamp(220px,26vw,340px)}
-.eng-journal__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transition:transform 1.4s var(--ease)}
-.eng-journal:hover .eng-journal__media img{transform:scale(1.05)}
-.eng-journal__body{display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(30px,4vw,64px) clamp(24px,5vw,72px)}
-.eng-journal__cat{font-family:var(--font-en);font-weight:800;font-size:10px;letter-spacing:.22em;color:#ffd24a;
-  margin-bottom:16px}
-.eng-journal__body h3{font-size:clamp(17px,2.1vw,27px);font-weight:900;line-height:1.6;letter-spacing:.01em;
-  margin-bottom:16px}
-.eng-journal__body p{font-size:clamp(12.5px,1.2vw,14px);line-height:2.05;color:rgba(255,255,255,.72);
-  max-width:36em;margin-bottom:22px}
-.eng-journal__more{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-en);font-weight:800;
-  font-size:10.5px;letter-spacing:.14em;color:#fff}
-.eng-journal__more::after{content:"";width:34px;height:1px;background:rgba(255,255,255,.6);
-  transition:width .5s var(--ease)}
-.eng-journal:hover .eng-journal__more::after{width:56px;background:#ffd24a}
-/* 下部リンク列 */
-.eng-links{display:flex;gap:14px;flex-wrap:wrap;padding:clamp(30px,3.6vw,52px) 6vw;
-  border-top:1px solid rgba(255,255,255,.16);align-items:center}
-.eng-links__note{flex:1 1 22em;min-width:16em;font-size:12.5px;line-height:1.95;color:rgba(255,255,255,.62)}
-.eng-sub{padding:0 6vw clamp(34px,4vw,58px);font-size:12.5px;line-height:1.95;color:rgba(255,255,255,.5)}
+/* 一本線のフロー */
+.eng-line{display:flex;align-items:stretch;margin-top:clamp(44px,6vh,80px);
+  border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.eng-step{position:relative;flex:1 1 0;display:flex;flex-direction:column;justify-content:center;
+  gap:10px;padding:clamp(26px,3vw,42px) clamp(14px,1.6vw,26px);
+  border-left:1px solid rgba(255,255,255,.18);transition:background .5s var(--ease)}
+.eng-step:first-child{border-left:none}
+.eng-step:hover{background:rgba(255,255,255,.05)}
+.eng-step__no{font-family:var(--font-en);font-weight:800;font-size:9.5px;letter-spacing:.2em;
+  color:rgba(255,255,255,.45);transition:color .4s var(--ease)}
+.eng-step:hover .eng-step__no{color:#ffd24a}
+.eng-step__ttl{font-size:clamp(14px,1.5vw,19px);font-weight:900;line-height:1.5;letter-spacing:.02em}
+/* 接続点 */
+.eng-step::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;
+  transform:translate(-50%,-50%);background:#0a0c11;box-shadow:0 0 0 1px rgba(255,255,255,.45) inset,0 0 0 4px #0a0c11;
+  transition:background .4s var(--ease),box-shadow .4s var(--ease)}
+.eng-step:first-child::before{display:none}
+.eng-step:hover::before{background:#ffd24a;box-shadow:0 0 0 1px #ffd24a inset,0 0 0 4px #0a0c11,0 0 14px rgba(255,210,74,.7)}
+@media(max-width:900px){.eng-line{flex-wrap:wrap}
+  .eng-step{flex:1 1 50%;border-left:1px solid rgba(255,255,255,.18)}
+  .eng-step:nth-child(odd){border-left:none}
+  .eng-step:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
+  .eng-step::before{display:none}}
+@media(max-width:520px){.eng-step{flex:1 1 100%;border-left:none;border-top:1px solid rgba(255,255,255,.18)}
+  .eng-step:first-child{border-top:none}}
+/* 補足1行 */
+.eng-inhouse{margin-top:clamp(24px,2.6vw,36px);font-size:clamp(12.5px,1.25vw,14px);line-height:2;
+  color:rgba(255,255,255,.66)}
+.eng-inhouse b{color:#ffd24a;font-weight:800;font-family:var(--font-en);letter-spacing:.08em}
+/* DIGITAL SHIFT : 1行ストリップ */
+.eng-note{display:flex;align-items:center;gap:clamp(16px,2vw,30px);
+  margin-top:clamp(44px,5vh,68px);padding:clamp(14px,1.6vw,20px) clamp(16px,2vw,26px);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:4px;
+  transition:background .4s var(--ease),border-color .4s var(--ease)}
+.eng-note:hover{background:rgba(255,255,255,.09);border-color:rgba(255,210,74,.5)}
+.eng-note__thumb{flex:0 0 auto;width:clamp(74px,8vw,104px);aspect-ratio:16/10;overflow:hidden;border-radius:2px}
+.eng-note__thumb img{width:100%;height:100%;object-fit:cover}
+.eng-note__body{flex:1 1 auto;min-width:0}
+.eng-note__cat{display:block;font-family:var(--font-en);font-weight:800;font-size:9px;letter-spacing:.2em;
+  color:#ffd24a;margin-bottom:6px}
+.eng-note__ttl{font-size:clamp(12.5px,1.3vw,15px);font-weight:800;line-height:1.6}
+.eng-note__arw{flex:0 0 auto;font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.1em;
+  color:rgba(255,255,255,.6);transition:color .4s var(--ease),transform .4s var(--ease)}
+.eng-note:hover .eng-note__arw{color:#ffd24a;transform:translateX(4px)}
+
+.eng-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+  margin-top:clamp(38px,4.6vh,62px)}
+.eng-sub{margin-top:clamp(18px,2vw,26px);font-size:12.5px;line-height:1.95;color:rgba(255,255,255,.5)}
 .eng-sub a{color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px;
   transition:color .3s var(--ease),border-color .3s var(--ease)}
 .eng-sub a:hover{color:#ffd24a;border-color:#ffd24a}
-.eng-links{padding-bottom:clamp(22px,2.4vw,32px)}
 
 /* ===== 文字量削減にあわせたタイポ拡大（LP的な見せ方へ） ===== */
 .pf-flow__ttl{font-size:clamp(15px,1.7vw,23px);line-height:1.45;margin-bottom:0}
 .pf-flow__num{margin-bottom:clamp(20px,2.2vw,32px)}
 .pf-flow__row{padding-bottom:clamp(34px,3.4vw,52px)}
-.eng-node__ttl{font-size:clamp(16px,1.65vw,22px);line-height:1.45;margin-bottom:16px}
-.eng-node__tag{margin-top:0}
 .sup-col__ttl{font-size:clamp(17px,1.7vw,23px);line-height:1.5;margin-bottom:0}
 .str-row__body p{font-size:clamp(14px,1.7vw,17px);line-height:1.95;color:#4a5058;max-width:26em}
-.eng-fig{padding-bottom:clamp(24px,2.6vw,36px)}
-.eng-fig__l{margin-bottom:0}
 .gl-base p{display:none}
 .brand-tile__body h3{margin-bottom:0}
 .tall-banner__body h3{margin-bottom:10px}
