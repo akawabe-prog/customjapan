@@ -647,7 +647,7 @@ ul{list-style:none}
 .str-nav button:disabled{opacity:.3;cursor:default;background:var(--c-white);color:var(--c-dark);border-color:var(--c-line)}
 
 /* explore CTA (About / Business / Brands) */
-.explore{padding:15vh 0;background:var(--c-off)}
+.explore{padding:15vh 0;background:var(--c-dark);color:#fff}
 .explore__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
 .explore-card{
   display:flex;flex-direction:column;position:relative;
@@ -938,12 +938,12 @@ ul{list-style:none}
 
 
 /* ===== プラットフォームの実像(EC/機能/ドメイン) ===== */
-.pf-band{background:var(--c-dark);color:#fff;padding:clamp(70px,12vh,140px) 0;position:relative;overflow:hidden}
+.pf-band{background:var(--c-off);color:var(--c-dark);padding:clamp(70px,12vh,140px) 0;position:relative;overflow:hidden}
 .pf-band::before{content:"";position:absolute;left:-10%;top:-20%;width:52%;aspect-ratio:1;
-  background:radial-gradient(circle,rgba(0,70,140,.34),transparent 68%);pointer-events:none}
-.pf-band__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:#ffd24a;margin-bottom:18px}
+  background:radial-gradient(circle,rgba(0,70,140,.07),transparent 68%);pointer-events:none}
+.pf-band__label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:var(--c-red);margin-bottom:18px}
 .pf-band__title{font-size:clamp(26px,4.2vw,50px);font-weight:900;line-height:1.45;letter-spacing:.03em;margin-bottom:20px}
-.pf-band__lead{font-size:13.5px;color:rgba(255,255,255,.76);line-height:2.1;max-width:44em;margin-bottom:clamp(38px,6vh,64px)}
+.pf-band__lead{font-size:13.5px;color:#4a5058;line-height:2.1;max-width:44em;margin-bottom:clamp(38px,6vh,64px)}
 .pf-live{display:inline-flex;align-items:baseline;gap:12px;margin-bottom:clamp(34px,5vh,52px);padding:18px 26px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.04)}
 .pf-live b{font-family:var(--font-en);font-weight:300;font-size:clamp(34px,4.6vw,60px);line-height:1;color:#fff}
 .pf-live span{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.08em}
@@ -1184,68 +1184,17 @@ ul{list-style:none}
 
 /* ===== FOR SUPPLIERS: メーカー・仕入先向け ===== */
 .sup-sec{background:var(--c-off)}
-.sup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1120px}
-@media(max-width:980px){.sup-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.sup-grid{grid-template-columns:1fr}}
-.sup-card{background:var(--c-white);border:1px solid var(--c-line);border-radius:16px;padding:30px 28px 32px;
-  transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
-.sup-card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(13,15,18,.09);border-color:var(--c-blue)}
-.sup-card__num{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--c-blue);display:block;margin-bottom:14px}
-.sup-card h3{font-size:16px;font-weight:900;line-height:1.6;margin-bottom:10px}
-.sup-card p{font-size:12.5px;color:#3c4149;line-height:1.95}
-.sup-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(34px,5vh,52px);
-  background:var(--c-white);border:1px solid var(--c-line);border-radius:16px;padding:28px 32px}
-.sup-cta p{font-size:13px;color:#3c4149;line-height:1.9;margin:0;flex:1;min-width:260px}
-.sup-cta p b{display:block;font-size:15px;color:var(--c-black);font-weight:900;margin-bottom:6px}
-
-/* ============================================================
-   FOR MANUFACTURERS : カード脱却・フルブリード写真カラム
-   ============================================================ */
-.sup-sec{padding-bottom:0}
-.sup-cols{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(34px,5vh,56px)}
-@media(max-width:1000px){.sup-cols{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.sup-cols{grid-template-columns:1fr}}
-.sup-col{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
-  min-height:clamp(360px,38vw,520px);overflow:hidden;background:var(--c-dark);isolation:isolate}
-.sup-col__img{position:absolute;inset:0;z-index:0}
-.sup-col__img img{width:100%;height:100%;object-fit:cover;opacity:.58;
-  transition:transform 1.4s var(--ease),opacity .6s var(--ease)}
-.sup-col:hover .sup-col__img img{transform:scale(1.07);opacity:.72}
-.sup-col::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(to top,rgba(8,10,14,.94) 6%,rgba(8,10,14,.55) 48%,rgba(8,10,14,.12) 100%)}
-.sup-col + .sup-col{box-shadow:-1px 0 0 rgba(255,255,255,.14)}
-@media(max-width:1000px){.sup-col:nth-child(odd){box-shadow:none}
-  .sup-col:nth-child(n+3){box-shadow:-1px 0 0 rgba(255,255,255,.14),0 -1px 0 rgba(255,255,255,.14)}
-  .sup-col:nth-child(3){box-shadow:0 -1px 0 rgba(255,255,255,.14)}}
-.sup-col__inner{position:relative;z-index:2;padding:clamp(24px,2.4vw,34px)}
-.sup-col__num{display:block;font-family:var(--font-en);font-weight:800;line-height:1;
-  font-size:clamp(44px,4.4vw,68px);color:transparent;-webkit-text-stroke:1.4px rgba(255,255,255,.5);
-  margin-bottom:clamp(14px,1.6vw,22px);transition:color .5s var(--ease),-webkit-text-stroke .5s var(--ease)}
-.sup-col:hover .sup-col__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
-.sup-col__ttl{font-size:clamp(16px,1.5vw,20px);font-weight:900;line-height:1.6;letter-spacing:.02em;color:#fff;
-  margin-bottom:12px}
-.sup-col__txt{font-size:clamp(12px,1.05vw,13px);line-height:2;color:rgba(255,255,255,.74)}
-/* 相談バー(フルブリード) */
-.sup-bar{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,3vw,48px);
-  flex-wrap:wrap;padding:clamp(30px,3.6vw,52px) 6vw;background:var(--c-off);
-  border-top:1px solid var(--c-line)}
-.sup-bar__txt{max-width:52em}
-.sup-bar__txt b{display:block;font-family:var(--font-en);font-weight:800;font-size:10.5px;letter-spacing:.24em;
-  color:var(--c-red);margin-bottom:10px}
-.sup-bar__txt p{font-size:clamp(14px,1.5vw,17px);font-weight:800;line-height:1.85;letter-spacing:.02em}
-.sup-bar__txt span{display:block;margin-top:8px;font-size:12.5px;font-weight:400;color:#5b6069;line-height:1.9}
-.sup-bar__act{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ============================================================
    ENGINEERING & DIGITAL : 適合データの回路図バンド
    ============================================================ */
-.eng-band{position:relative;overflow:hidden;background:#0a0c11;color:#fff;
+.eng-band{position:relative;overflow:hidden;background:var(--c-dark);color:#fff;
   padding:clamp(78px,10vh,140px) 0 clamp(72px,9vh,124px)}
 .eng-band__bg{position:absolute;inset:0;z-index:0}
 .eng-band__bg img{width:100%;height:100%;object-fit:cover;opacity:.2}
 .eng-band__bg::after{content:"";position:absolute;inset:0;
   background:radial-gradient(120% 80% at 78% 0%,rgba(0,70,140,.5),transparent 62%),
-             linear-gradient(to bottom,rgba(10,12,17,.72),rgba(10,12,17,.96))}
+             linear-gradient(to bottom,rgba(16,18,22,.72),rgba(16,18,22,.96))}
 .eng-band > *:not(.eng-band__bg){position:relative;z-index:1}
 .eng-band__lead{font-size:clamp(13.5px,1.6vw,16.5px);line-height:2.15;color:rgba(255,255,255,.8);
   max-width:44em;margin-top:22px}
@@ -1265,10 +1214,10 @@ ul{list-style:none}
 .eng-step__ttl{font-size:clamp(14px,1.5vw,19px);font-weight:900;line-height:1.5;letter-spacing:.02em}
 /* 接続点 */
 .eng-step::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;
-  transform:translate(-50%,-50%);background:#0a0c11;box-shadow:0 0 0 1px rgba(255,255,255,.45) inset,0 0 0 4px #0a0c11;
+  transform:translate(-50%,-50%);background:var(--c-dark);box-shadow:0 0 0 1px rgba(255,255,255,.45) inset,0 0 0 4px var(--c-dark);
   transition:background .4s var(--ease),box-shadow .4s var(--ease)}
 .eng-step:first-child::before{display:none}
-.eng-step:hover::before{background:#ffd24a;box-shadow:0 0 0 1px #ffd24a inset,0 0 0 4px #0a0c11,0 0 14px rgba(255,210,74,.7)}
+.eng-step:hover::before{background:#ffd24a;box-shadow:0 0 0 1px #ffd24a inset,0 0 0 4px var(--c-dark),0 0 14px rgba(255,210,74,.7)}
 @media(max-width:900px){.eng-line{flex-wrap:wrap}
   .eng-step{flex:1 1 50%;border-left:1px solid rgba(255,255,255,.18)}
   .eng-step:nth-child(odd){border-left:none}
@@ -1305,7 +1254,6 @@ ul{list-style:none}
 .eng-sub a:hover{color:#ffd24a;border-color:#ffd24a}
 
 /* ===== 文字量削減にあわせたタイポ拡大（LP的な見せ方へ） ===== */
-.sup-col__ttl{font-size:clamp(17px,1.7vw,23px);line-height:1.5;margin-bottom:0}
 .str-row__body p{font-size:clamp(14px,1.7vw,17px);line-height:1.95;color:#4a5058;max-width:26em}
 .gl-base p{display:none}
 .brand-tile__body h3{margin-bottom:0}
@@ -1344,3 +1292,29 @@ ul{list-style:none}
   .str-nav__thumb{grid-column:3;grid-row:1 / span 2;width:84px}
   .str-nav__arw{display:none}
 }
+
+/* ============================================================
+   FOR MANUFACTURERS : 明色・左固定見出し＋番号付き写真リスト
+   ============================================================ */
+.sup-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,84px);align-items:start}
+@media(max-width:940px){.sup-wrap{grid-template-columns:1fr;gap:clamp(28px,4vw,44px)}}
+.sup-side{position:sticky;top:118px}
+@media(max-width:940px){.sup-side{position:static;top:auto}}
+.sup-side__ttl{font-size:clamp(23px,3.2vw,40px);font-weight:900;line-height:1.42;letter-spacing:-.005em;
+  margin-bottom:clamp(16px,1.8vw,24px)}
+.sup-side__lead{font-size:clamp(13px,1.4vw,15px);line-height:2.1;color:#4a5058;max-width:24em;
+  margin-bottom:clamp(24px,2.6vw,34px)}
+.sup-side__act{display:flex;gap:12px;flex-wrap:wrap}
+.sup-side__note{margin-top:18px;font-size:12px;line-height:1.95;color:#7d838c}
+/* 番号付きリスト */
+.sup-list{list-style:none;margin:0;padding:0;display:block;counter-reset:sup}
+.sup-list > li{display:block;padding-bottom:clamp(20px,2.2vw,28px);margin-bottom:clamp(20px,2.2vw,28px);
+  border-bottom:1px solid var(--c-line)}
+.sup-list > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:none}
+.sup-item__head{display:flex;align-items:baseline;gap:clamp(14px,1.8vw,26px);margin-bottom:clamp(12px,1.3vw,17px)}
+.sup-item__no{flex:0 0 auto;font-family:var(--font-en);font-weight:800;line-height:1;
+  font-size:clamp(26px,3.4vw,46px);color:var(--c-red);letter-spacing:-.02em}
+.sup-item__ttl{font-size:clamp(16px,1.9vw,25px);font-weight:900;line-height:1.5;letter-spacing:.01em}
+.sup-item__fig{margin:0;aspect-ratio:5/2;overflow:hidden;background:#e8eaed;border-radius:3px}
+.sup-item__fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--ease)}
+.sup-list > li:hover .sup-item__fig img{transform:scale(1.05)}
