@@ -246,6 +246,23 @@
     );
   }
 
+  /* ---- generic background parallax: [data-parallax] ---- */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-parallax]').forEach((el) => {
+      const host = el.closest('section') || el.parentElement;
+      gsap.set(el, { scale: 1.16, transformOrigin: '50% 50%' });
+      gsap.fromTo(
+        el,
+        { yPercent: -7 },
+        {
+          yPercent: 7,
+          ease: 'none',
+          scrollTrigger: { trigger: host, start: 'top bottom', end: 'bottom top', scrub: true },
+        }
+      );
+    });
+  }
+
   /* ---- pause offscreen videos ---- */
   const vids = document.querySelectorAll('video[autoplay]');
   const io = new IntersectionObserver(
