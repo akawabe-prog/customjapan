@@ -1051,30 +1051,6 @@ ul{list-style:none}
 .str-row__body h3{font-size:clamp(19px,2.5vw,30px);font-weight:900;line-height:1.6;letter-spacing:.02em;margin-bottom:16px}
 .str-row__body p{font-size:clamp(13px,1.5vw,14.5px);color:#3c4149;line-height:2.1;max-width:34em}
 
-/* PLATFORM: プロセス6分割(横並び・隙間なしフルブリード) */
-.pf-flow{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid rgba(255,255,255,.16);
-  border-bottom:1px solid rgba(255,255,255,.16)}
-.pf-flow__row{position:relative;display:flex;flex-direction:column;
-  padding:clamp(26px,2.6vw,42px) clamp(16px,1.6vw,26px) clamp(30px,3vw,46px);
-  border-left:1px solid rgba(255,255,255,.16);transition:background .5s var(--ease)}
-.pf-flow__row:first-child{border-left:none}
-.pf-flow__row:hover{background:rgba(255,255,255,.04)}
-.pf-flow__num{font-family:var(--font-en);font-weight:800;font-size:clamp(26px,2.6vw,40px);line-height:1;
-  letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.3px rgba(255,255,255,.42);margin-bottom:16px;
-  transition:-webkit-text-stroke .5s var(--ease),color .5s var(--ease)}
-.pf-flow__row:hover .pf-flow__num{color:#ffd24a;-webkit-text-stroke-color:#ffd24a}
-.pf-flow__en{display:block;font-family:var(--font-en);font-weight:800;font-size:9px;letter-spacing:.2em;
-  color:#ffd24a;margin-bottom:10px}
-.pf-flow__ttl{font-size:clamp(14px,1.35vw,18px);font-weight:900;line-height:1.55;letter-spacing:.02em;color:#fff;margin-bottom:12px}
-.pf-flow__txt{font-size:clamp(11px,.95vw,12.5px);color:rgba(255,255,255,.68);line-height:1.95}
-@media(max-width:1100px){.pf-flow{grid-template-columns:repeat(3,1fr)}
-  .pf-flow__row:nth-child(3n+1){border-left:none}
-  .pf-flow__row:nth-child(n+4){border-top:1px solid rgba(255,255,255,.16)}}
-@media(max-width:640px){.pf-flow{grid-template-columns:repeat(2,1fr)}
-  .pf-flow__row{border-left:1px solid rgba(255,255,255,.16)}
-  .pf-flow__row:nth-child(odd){border-left:none}
-  .pf-flow__row:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}}
-
 /* PLATFORM: 実像を写真で見せる横スクロール帯 */
 .pf-strip{display:flex;gap:2px;overflow-x:auto;margin:clamp(30px,5vh,48px) 0 0;
   scroll-snap-type:x mandatory;scrollbar-width:none}
@@ -1329,9 +1305,6 @@ ul{list-style:none}
 .eng-sub a:hover{color:#ffd24a;border-color:#ffd24a}
 
 /* ===== 文字量削減にあわせたタイポ拡大（LP的な見せ方へ） ===== */
-.pf-flow__ttl{font-size:clamp(15px,1.7vw,23px);line-height:1.45;margin-bottom:0}
-.pf-flow__num{margin-bottom:clamp(20px,2.2vw,32px)}
-.pf-flow__row{padding-bottom:clamp(34px,3.4vw,52px)}
 .sup-col__ttl{font-size:clamp(17px,1.7vw,23px);line-height:1.5;margin-bottom:0}
 .str-row__body p{font-size:clamp(14px,1.7vw,17px);line-height:1.95;color:#4a5058;max-width:26em}
 .gl-base p{display:none}
