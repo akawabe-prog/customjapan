@@ -205,6 +205,11 @@ ul{list-style:none}
 .sec-label--light{color:var(--c-red)}
 .sec-title{font-size:clamp(26px,4vw,44px);font-weight:900;line-height:1.5;letter-spacing:.04em;margin-bottom:32px}
 .sec-title--light{color:var(--c-white)}
+/* 英語のみの見出し（インデックス性のセクション用） */
+.sec-title--en{font-family:var(--font-en);font-weight:800;
+  font-size:clamp(30px,5.2vw,66px);line-height:1.06;letter-spacing:-.015em;
+  margin-bottom:clamp(24px,3vw,38px)}
+.sec-title--en.sec-title--sm{font-size:clamp(30px,5.2vw,66px)}
 .sec-lead{max-width:680px;color:#3c4149;margin-bottom:64px}
 .sec-lead--light{color:rgba(255,255,255,.72)}
 .reveal{opacity:0;transform:translateY(48px)}
