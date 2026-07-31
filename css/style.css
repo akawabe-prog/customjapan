@@ -1168,9 +1168,11 @@ ul{list-style:none}
 /* 海外ブランドロゴの流れる帯 */
 .gl-marquee{overflow:hidden;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);
   padding:26px 0;margin-bottom:clamp(30px,5vh,48px);position:relative}
-.gl-marquee__track{display:flex;gap:52px;width:max-content;animation:glmq 34s linear infinite;align-items:center}
-.gl-marquee__track img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.62;transition:opacity .4s}
-.gl-marquee:hover .gl-marquee__track img{opacity:.85}
+.gl-marquee__track{display:flex;gap:14px;width:max-content;animation:glmq 34s linear infinite;align-items:center}
+/* ブランド本来の色を白いチップの上に配置（透過なしPNGでも破綻しない） */
+.gl-marquee__track img{height:20px;width:auto;box-sizing:content-box;
+  padding:10px 16px;background:#fff;border-radius:3px;opacity:.9;transition:opacity .4s}
+.gl-marquee:hover .gl-marquee__track img{opacity:1}
 @keyframes glmq{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.gl-marquee__track{animation:none}}
 /* 数字 */
