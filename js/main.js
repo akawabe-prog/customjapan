@@ -94,12 +94,54 @@
       }, 900);
     });
 
-    gsap.to('.hero__video', { scale: 1, duration: 6, ease: 'power2.out' });
-    gsap.to('.hero__video', {
+    const heroBgSel = document.querySelector('.hero__slider') ? '.hero__slider' : '.hero__video';
+    gsap.to(heroBgSel, { scale: 1, duration: 6, ease: 'power2.out' });
+    gsap.to(heroBgSel, {
       yPercent: 12,
       ease: 'none',
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
     });
+
+    /* ---- hero image slider (crossfade) ---- */
+    const hSlider = document.getElementById('heroSlider');
+    if (hSlider) {
+      const slides = [...hSlider.querySelectorAll('.hero__slide')];
+      const dots = [...document.querySelectorAll('#heroDots .hero__dot')];
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let idx = 0;
+      let timer = null;
+
+      // data-src を実際に読み込む（loading=lazy だと非表示スライドが読まれないため）
+      const load = (n) => {
+        const im = slides[(n + slides.length) % slides.length].querySelector('img[data-src]');
+        if (im) { im.src = im.dataset.src; im.removeAttribute('data-src'); }
+      };
+      const preloadAll = () => slides.forEach((_, i) => setTimeout(() => load(i), i * 350));
+      if (document.readyState === 'complete') preloadAll();
+      else window.addEventListener('load', preloadAll);
+
+      const show = (n) => {
+        idx = (n + slides.length) % slides.length;
+        load(idx);
+        load(idx + 1); // 次の1枚を確実に用意する
+        slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+      };
+      const start = () => {
+        if (reduce || slides.length < 2) return;
+        stop();
+        timer = setInterval(() => show(idx + 1), 6000);
+      };
+      const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+      dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+      // ヒーローが画面外のときは止める
+      new IntersectionObserver(
+        (ents) => ents.forEach((en) => (en.isIntersecting ? start() : stop())),
+        { threshold: 0.05 }
+      ).observe(hSlider);
+      document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    }
     gsap.to('.hero__content', {
       opacity: 0,
       yPercent: -20,
