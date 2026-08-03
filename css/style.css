@@ -1180,7 +1180,7 @@ ul{list-style:none}
 .gl-band::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(8,10,14,.82) 0%,rgba(8,10,14,.62) 50%,rgba(8,10,14,.88) 100%)}
 .gl-band .inner{position:relative;z-index:2}
-.gl-label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:#ffd24a;margin-bottom:18px}
+.gl-label{font-family:var(--font-en);font-weight:800;font-size:11px;letter-spacing:.4em;color:var(--c-red);margin-bottom:18px}
 .gl-title{font-size:clamp(26px,4.2vw,50px);font-weight:900;line-height:1.45;letter-spacing:.03em;margin-bottom:20px}
 .gl-lead{font-size:13.5px;color:rgba(255,255,255,.78);line-height:2.1;max-width:44em;margin-bottom:clamp(38px,6vh,64px)}
 /* 拠点 */

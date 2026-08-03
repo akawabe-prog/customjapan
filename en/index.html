@@ -76,7 +76,13 @@
 
 <section class="hero">
   <div class="hero__bg">
-    <video class="hero__video" src="../assets/video/hero.mp4" poster="../assets/img/hero-rider.jpg" autoplay muted loop playsinline></video>
+    <div class="hero__slider" id="heroSlider">
+      <div class="hero__slide is-active"><img src="../assets/img/hero/hero-01-tmcs-crowd.jpg" alt="Visitors gathering at the Tokyo Motorcycle Show booth" fetchpriority="high"></div>
+      <div class="hero__slide"><img data-src="../assets/img/hero/hero-02-rider.jpg" alt="Rider and motorcycle on an off-road course"></div>
+      <div class="hero__slide"><img data-src="../assets/img/hero/hero-03-mount.jpg" alt="Mounting an accessory on a motorcycle handlebar"></div>
+      <div class="hero__slide"><img data-src="../assets/img/hero/hero-04-city-bike.jpg" alt="Cycling through the city"></div>
+      <div class="hero__slide"><img data-src="../assets/img/hero/hero-05-exs-street.jpg" alt="eXs electric kickboard on a tree-lined street"></div>
+    </div>
     <div class="hero__overlay"></div>
   </div>
   <div class="hero__content">
@@ -87,6 +93,13 @@
     </h1>
     <p class="hero__sub">#ノル人をツクる — from Osaka, Japan</p>
     <p class="hero__desc">We are the B2B distribution platform company supporting <br class="pc">motorcycle, bicycle and automotive professionals across Japan.</p>
+  </div>
+  <div class="hero__dots" id="heroDots" role="tablist" aria-label="Hero images">
+    <button class="hero__dot is-active" type="button" aria-label="Slide 1"></button>
+    <button class="hero__dot" type="button" aria-label="Slide 2"></button>
+    <button class="hero__dot" type="button" aria-label="Slide 3"></button>
+    <button class="hero__dot" type="button" aria-label="Slide 4"></button>
+    <button class="hero__dot" type="button" aria-label="Slide 5"></button>
   </div>
   <div class="hero__scroll"><span class="hero__scroll-line"></span>SCROLL</div>
 </section>
